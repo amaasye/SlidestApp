@@ -10,5 +10,6 @@
 
 @interface CreateViewController : UIViewController
 @property NSData *dataFromDropbox;
+@property NSString *name;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "CreateViewController.h"
 #import <DBChooser/DBChooser.h>
+#import <Parse/Parse.h>
 
 
 @interface CreateViewController ()
@@ -41,7 +42,16 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:chooser.link];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         self.dataFromDropbox = data;
+        self.name = chooser.name;
+        [self pushDataToParse];
     }];
+}
+
+- (void)pushDataToParse {
+    PFObject *slideshow = [PFObject objectWithClassName:@"Slideshow"];
+    PFFile *file = [PFFile fileWithData:self.dataFromDropbox];
+    slideshow[@"pdf"] = file;
+    slideshow[@"titleOfSlideshow"] = self.name;
 }
 
 
