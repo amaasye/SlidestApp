@@ -48,6 +48,20 @@
 
         [data writeToURL:documentsURL atomically:YES];
 
+        self.name = chooser.name;
+        self.passcode = self.passcodeTextField.text;
+        [self pushDataToParse];
+    }];
+}
+
+- (void)pushDataToParse {
+    PFObject *slideshow = [PFObject objectWithClassName:@"Slideshow"];
+    PFFile *file = [PFFile fileWithData:self.dataFromDropbox];
+    slideshow[@"pdf"] = file;
+    slideshow[@"titleOfSlideshow"] = self.name;
+    slideshow[@"passcode"] = self.passcode;
+    [slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saved! %@", error);
     }];
 }
 
