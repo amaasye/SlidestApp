@@ -8,11 +8,12 @@
 
 #import "CreateViewController.h"
 #import <DBChooser/DBChooser.h>
+#import <Parse/Parse.h>
 
 
 @interface CreateViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *titleOfSlideshowTextField;
+@property (weak, nonatomic) IBOutlet UITextField *slideshowTitleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 
 @end
 
