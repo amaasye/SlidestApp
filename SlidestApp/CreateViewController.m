@@ -41,6 +41,12 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:chooser.link];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         self.dataFromDropbox = data;
+
+        NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        documentsURL = [documentsURL URLByAppendingPathComponent:@"pdf.pdf"];
+
+        [data writeToURL:documentsURL atomically:YES];
+
     }];
 }
 
