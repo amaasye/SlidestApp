@@ -51,7 +51,11 @@
 
         self.name = chooser.name;
         self.passcode = self.passcodeTextField.text;
-        [self pushDataToParse];
+        if ([self.name containsString:@"pdf"]) {
+            [self pushDataToParse];
+        } else {
+            NSLog(@"File is not a PDF");
+        }
     }];
 }
 
