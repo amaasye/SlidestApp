@@ -48,6 +48,7 @@
 
         [data writeToURL:documentsURL atomically:YES];
 
+
         self.name = chooser.name;
         self.passcode = self.passcodeTextField.text;
         [self pushDataToParse];
@@ -55,8 +56,12 @@
 }
 
 - (void)pushDataToParse {
+
+    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    documentsURL = [documentsURL URLByAppendingPathComponent:@"pdf.pdf"];
+    NSData *data = [NSData dataWithContentsOfURL:documentsURL];
     PFObject *slideshow = [PFObject objectWithClassName:@"Slideshow"];
-    PFFile *file = [PFFile fileWithData:self.dataFromDropbox];
+    PFFile *file = [PFFile fileWithData:data contentType:@"pdf"];
     slideshow[@"pdf"] = file;
     slideshow[@"titleOfSlideshow"] = self.name;
     slideshow[@"passcode"] = self.passcode;
