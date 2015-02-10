@@ -33,5 +33,14 @@
     PageCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
     return cell;
 }
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat width = (self.view.frame.size.width ) ;
+    CGFloat height = (self.view.frame.size.height ) ;
+
+    return CGSizeMake(width, height);
+}
 
 @end
