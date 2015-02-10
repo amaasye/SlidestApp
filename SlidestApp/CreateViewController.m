@@ -12,7 +12,9 @@
 
 
 @interface CreateViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *slideshowTitleTextField;
+@property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
+@property (weak, nonatomic) IBOutlet UILabel *reminderLabel;
+
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 
 @end
@@ -21,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.passcodeTextField.hidden = YES;
+    self.reminderLabel.hidden = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -51,10 +55,19 @@
 
         self.name = chooser.name;
         self.passcode = self.passcodeTextField.text;
+
+        //checks to see if the file is a pdf and only saves it if it is
         if ([self.name containsString:@"pdf"]) {
+            self.reminderLabel.text = self.name;
+            self.reminderLabel.hidden = NO;
+            [self.reminderLabel sizeToFit];
+            self.passcodeTextField.hidden = NO;
+            self.uploadFromDropboxButton.hidden = YES;
             [self pushDataToParse];
+            
         } else {
-            NSLog(@"File is not a PDF");
+            //if the file is not a pdf, users are asked to only upload pdf files
+            self.reminderLabel.hidden = NO;
         }
     }];
 }
@@ -72,6 +85,7 @@
     [slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Saved! %@", error);
     }];
+
 }
 -(IBAction)unwind:(id)sender{
     

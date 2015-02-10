@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -181,20 +181,11 @@
                                     <segue destination="CvJ-LE-Ye6" kind="unwind" unwindAction="unwind:" id="tHg-VD-fbC"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="slideshow title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-gK-RvB">
-                                <rect key="frame" x="200" y="160" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="6xe-63-sME"/>
-                                    <constraint firstAttribute="height" constant="30" id="sgk-4f-9hx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="passcode for your audience" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y3C-kA-M0V">
                                 <rect key="frame" x="200" y="205" width="200" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Hoi-Bq-z3X"/>
-                                    <constraint firstAttribute="height" constant="30" id="oan-Y0-CL6"/>
+                                    <constraint firstAttribute="height" constant="30" id="6Df-Br-cIT"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZaN-FX-eAi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -202,8 +193,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jle-xD-1Fc">
                                 <rect key="frame" x="200" y="268" width="200" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="H8q-qr-FbJ"/>
-                                    <constraint firstAttribute="width" constant="200" id="sB2-cS-UhR"/>
+                                    <constraint firstAttribute="width" constant="200" id="2qa-wT-ao2"/>
+                                    <constraint firstAttribute="height" constant="42" id="c5a-PZ-ot8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="Get file from Dropbox">
@@ -229,24 +220,35 @@
                                     <segue destination="ljp-N3-uLQ" kind="show" id="yyy-gB-rYI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a PDF file only" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27x-5a-SIY">
+                                <rect key="frame" x="117" y="126" width="366" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="366" id="H9e-PN-lDu"/>
+                                    <constraint firstAttribute="height" constant="42" id="dEP-CW-PDS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="Caz-gK-RvB" secondAttribute="bottom" constant="15" id="9kk-ta-mI1"/>
-                            <constraint firstAttribute="centerX" secondItem="jle-xD-1Fc" secondAttribute="centerX" id="OA7-DV-xMB"/>
+                            <constraint firstAttribute="centerX" secondItem="27x-5a-SIY" secondAttribute="centerX" id="3Ua-A4-0G4"/>
+                            <constraint firstItem="jle-xD-1Fc" firstAttribute="top" secondItem="y3C-kA-M0V" secondAttribute="bottom" constant="33" id="5sz-qo-S8m"/>
+                            <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="37" id="FZ4-Bn-hPM"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="8" id="QDM-hq-1vI"/>
-                            <constraint firstAttribute="centerX" secondItem="Caz-gK-RvB" secondAttribute="centerX" id="TCG-lt-GPP"/>
                             <constraint firstItem="wZk-NY-nJg" firstAttribute="top" secondItem="Ux1-oa-j5Y" secondAttribute="bottom" constant="43" id="aYd-b2-NpC"/>
-                            <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="bUD-OU-q48"/>
+                            <constraint firstAttribute="centerX" secondItem="jle-xD-1Fc" secondAttribute="centerX" id="gWZ-c9-lfI"/>
+                            <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="jq7-qx-rte"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ux1-oa-j5Y" secondAttribute="trailing" constant="38" id="pbI-HZ-3os"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" id="soj-bu-G5W"/>
-                            <constraint firstItem="jle-xD-1Fc" firstAttribute="top" secondItem="y3C-kA-M0V" secondAttribute="bottom" constant="33" id="tGQ-Yn-Y4Z"/>
-                            <constraint firstItem="Caz-gK-RvB" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="140" id="tLt-pB-bbq"/>
+                            <constraint firstItem="27x-5a-SIY" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="106" id="t5i-MP-m7h"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="passcodeTextField" destination="y3C-kA-M0V" id="eus-j0-gkr"/>
-                        <outlet property="slideshowTitleTextField" destination="Caz-gK-RvB" id="FcS-hZ-VDK"/>
+                        <outlet property="reminderLabel" destination="27x-5a-SIY" id="IDb-8d-fjg"/>
+                        <outlet property="uploadFromDropboxButton" destination="jle-xD-1Fc" id="nwc-eH-YvT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8d-oB-Wv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
