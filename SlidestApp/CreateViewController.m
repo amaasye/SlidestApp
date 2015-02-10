@@ -52,6 +52,9 @@
     PFFile *file = [PFFile fileWithData:self.dataFromDropbox];
     slideshow[@"pdf"] = file;
     slideshow[@"titleOfSlideshow"] = self.name;
+    [slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saved! %@", error);
+    }];
 }
 
 
