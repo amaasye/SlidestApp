@@ -34,6 +34,8 @@
 		B00371991A89CE830037157D /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00371981A89CE830037157D /* CreateViewController.m */; };
 		B003719C1A89CE8F0037157D /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B003719B1A89CE8F0037157D /* JoinViewController.m */; };
 		B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B003719E1A89CEA40037157D /* SlideshowViewController.m */; };
+		B00371A41A8A53610037157D /* DBChooser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B00371A21A8A53610037157D /* DBChooser.bundle */; };
+		B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371A31A8A53610037157D /* DBChooser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		B003719B1A89CE8F0037157D /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
 		B003719D1A89CEA40037157D /* SlideshowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideshowViewController.h; sourceTree = "<group>"; };
 		B003719E1A89CEA40037157D /* SlideshowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideshowViewController.m; sourceTree = "<group>"; };
+		B00371A21A8A53610037157D /* DBChooser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DBChooser.bundle; sourceTree = "<group>"; };
+		B00371A31A8A53610037157D /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				B003718B1A89CA110037157D /* StoreKit.framework in Frameworks */,
 				B00371891A89CA070037157D /* SystemConfiguration.framework in Frameworks */,
 				B00371871A89C9F70037157D /* libz.dylib in Frameworks */,
+				B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */,
 				B00371851A89C9ED0037157D /* libsqlite3.dylib in Frameworks */,
 				B00371831A89C9DF0037157D /* MessageUI.framework in Frameworks */,
 				B00371811A89C9CE0037157D /* ImageIO.framework in Frameworks */,
@@ -123,6 +128,8 @@
 		B00371421A89C8860037157D = {
 			isa = PBXGroup;
 			children = (
+				B00371A21A8A53610037157D /* DBChooser.bundle */,
+				B00371A31A8A53610037157D /* DBChooser.framework */,
 				B00371961A89CA710037157D /* Frameworks */,
 				B003714D1A89C8860037157D /* SlidestApp */,
 				B00371671A89C8860037157D /* SlidestAppTests */,
@@ -307,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B003715A1A89C8860037157D /* Main.storyboard in Resources */,
+				B00371A41A8A53610037157D /* DBChooser.bundle in Resources */,
 				B003715F1A89C8860037157D /* LaunchScreen.xib in Resources */,
 				B003715C1A89C8860037157D /* Images.xcassets in Resources */,
 			);

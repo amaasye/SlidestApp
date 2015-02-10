@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CreateViewController : UIViewController
+@property NSData *dataFromDropbox;
 
 @end
