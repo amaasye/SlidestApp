@@ -245,8 +245,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="Caz-gK-RvB" id="y34-PY-i68"/>
-                        <outlet property="titleOfSlideshowTextField" destination="y3C-kA-M0V" id="Uf0-Y0-zyZ"/>
+                        <outlet property="passcodeTextField" destination="y3C-kA-M0V" id="eus-j0-gkr"/>
+                        <outlet property="slideshowTitleTextField" destination="Caz-gK-RvB" id="FcS-hZ-VDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8d-oB-Wv7" userLabel="First Responder" sceneMemberID="firstResponder"/>

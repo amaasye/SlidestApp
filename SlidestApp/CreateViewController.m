@@ -12,8 +12,8 @@
 
 
 @interface CreateViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *titleOfSlideshowTextField;
+@property (weak, nonatomic) IBOutlet UITextField *slideshowTitleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 
 @end
 
@@ -43,6 +43,7 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         self.dataFromDropbox = data;
         self.name = chooser.name;
+        self.passcode = self.passcodeTextField.text;
         [self pushDataToParse];
     }];
 }
@@ -52,6 +53,7 @@
     PFFile *file = [PFFile fileWithData:self.dataFromDropbox];
     slideshow[@"pdf"] = file;
     slideshow[@"titleOfSlideshow"] = self.name;
+    slideshow[@"passcode"] = self.passcode;
     [slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Saved! %@", error);
     }];

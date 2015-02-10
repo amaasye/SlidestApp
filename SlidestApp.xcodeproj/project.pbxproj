@@ -128,8 +128,6 @@
 		B00371421A89C8860037157D = {
 			isa = PBXGroup;
 			children = (
-				B00371A21A8A53610037157D /* DBChooser.bundle */,
-				B00371A31A8A53610037157D /* DBChooser.framework */,
 				B00371961A89CA710037157D /* Frameworks */,
 				B003714D1A89C8860037157D /* SlidestApp */,
 				B00371671A89C8860037157D /* SlidestAppTests */,
@@ -189,6 +187,8 @@
 		B00371961A89CA710037157D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B00371A21A8A53610037157D /* DBChooser.bundle */,
+				B00371A31A8A53610037157D /* DBChooser.framework */,
 				B00371941A89CA530037157D /* AudioToolbox.framework */,
 				B00371921A89CA440037157D /* CFNetwork.framework */,
 				B00371901A89CA380037157D /* CoreGraphics.framework */,
