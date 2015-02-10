@@ -36,6 +36,7 @@
 		B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B003719E1A89CEA40037157D /* SlideshowViewController.m */; };
 		B00371A41A8A53610037157D /* DBChooser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B00371A21A8A53610037157D /* DBChooser.bundle */; };
 		B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371A31A8A53610037157D /* DBChooser.framework */; };
+		C924A2541A8AB02D00DFBABD /* PageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C924A2531A8AB02D00DFBABD /* PageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		B003719E1A89CEA40037157D /* SlideshowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideshowViewController.m; sourceTree = "<group>"; };
 		B00371A21A8A53610037157D /* DBChooser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DBChooser.bundle; sourceTree = "<group>"; };
 		B00371A31A8A53610037157D /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
+		C924A2521A8AB02D00DFBABD /* PageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCell.h; sourceTree = "<group>"; };
+		C924A2531A8AB02D00DFBABD /* PageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,8 @@
 				B003719B1A89CE8F0037157D /* JoinViewController.m */,
 				B003719D1A89CEA40037157D /* SlideshowViewController.h */,
 				B003719E1A89CEA40037157D /* SlideshowViewController.m */,
+				C924A2521A8AB02D00DFBABD /* PageCell.h */,
+				C924A2531A8AB02D00DFBABD /* PageCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				B00371991A89CE830037157D /* CreateViewController.m in Sources */,
 				B00371571A89C8860037157D /* RootViewController.m in Sources */,
 				B003719C1A89CE8F0037157D /* JoinViewController.m in Sources */,
+				C924A2541A8AB02D00DFBABD /* PageCell.m in Sources */,
 				B00371541A89C8860037157D /* AppDelegate.m in Sources */,
 				B00371511A89C8860037157D /* main.m in Sources */,
 				B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */,
@@ -540,6 +546,7 @@
 				B00371701A89C8860037157D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B00371711A89C8860037157D /* Build configuration list for PBXNativeTarget "SlidestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +555,7 @@
 				B00371731A89C8860037157D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
