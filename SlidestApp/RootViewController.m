@@ -24,7 +24,6 @@
 }
 
 -(IBAction)unwind:(UIStoryboardSegue *)sender {
-    NSLog(@"Cancelled");
 }
 
 @end
