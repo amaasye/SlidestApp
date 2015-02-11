@@ -61,24 +61,32 @@
         self.name = chooser.name;
         self.passcode = self.passcodeTextField.text;
 
-        //checks to see if the file is a pdf and only saves it if it is
-        if ([self.name containsString:@"pdf"]) {
-            self.reminderLabel.text = self.name;
-            self.reminderLabel.hidden = NO;
-            [self.reminderLabel sizeToFit];
-            self.passcodeTextField.hidden = NO;
-            self.uploadFromDropboxButton.hidden = YES;
-            self.startButton.hidden = NO;
-            self.horizontalLine.hidden = NO;
-            [self pushDataToParse];
-            
-        } else {
-            //if the file is not a pdf, users are asked to only upload pdf files
-            self.reminderLabel.hidden = NO;
-            self.horizontalLine.hidden = NO;
-        }
+        //checks to see if the file is a pdf and only saves it if it is, adjusts layout accordingly
+        [self checkForFileType];
     }];
 }
+
+
+- (void)checkForFileType {
+        //file is pdf
+    if ([self.name containsString:@"pdf"]) {
+        self.reminderLabel.text = self.name;
+        self.reminderLabel.hidden = NO;
+        [self.reminderLabel sizeToFit];
+        self.passcodeTextField.hidden = NO;
+        self.uploadFromDropboxButton.hidden = YES;
+        self.startButton.hidden = NO;
+        self.horizontalLine.hidden = NO;
+        [self pushDataToParse];
+
+    } else {
+        //if the file is not a pdf, users are asked to only upload pdf files
+        self.reminderLabel.hidden = NO;
+        self.horizontalLine.hidden = NO;
+    }
+
+}
+
 
 - (void)pushDataToParse {
 
@@ -95,7 +103,7 @@
     }];
 
 }
--(IBAction)unwind:(id)sender{
+-(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
     
 }
 
