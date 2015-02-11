@@ -7,6 +7,7 @@
 //
 
 #import "JoinViewController.h"
+#import <Parse/Parse.h>
 
 @interface JoinViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
@@ -18,6 +19,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+- (IBAction)onGoButtonTapped:(UIButton *)sender {
+    [self parseQuery];
+}
+
+-(void)parseQuery {
+    PFQuery *query = [PFQuery queryWithClassName:@"Slideshow"];
+    [query whereKey:@"passcode" equalTo:self.passcodeTextField.text];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu slideshow.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                [object pinInBackground];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+}
+
 
 
 @end
