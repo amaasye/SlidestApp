@@ -28,7 +28,7 @@
     [super viewDidLoad];
     self.passcodeTextField.hidden = YES;
     self.reminderLabel.hidden = YES;
-    self.startButton.hidden = NO;
+    self.startButton.hidden = YES;
     self.horizontalLine.hidden = YES;
     
     // Do any additional setup after loading the view.
