@@ -12,6 +12,7 @@
 @interface JoinViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 
+
 @end
 
 @implementation JoinViewController
@@ -28,17 +29,13 @@
     [query whereKey:@"passcode" equalTo:self.passcodeTextField.text];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
+            // Found something...
             NSLog(@"Successfully retrieved %lu slideshow.", (unsigned long)objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
-
                 [object pinInBackground];
-
-                NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-                NSString *download = [documentsPath stringByAppendingPathComponent:[object objectForKey:@"titleOfSlideshow"]];
-                NSLog(@"%@", download);
+                self.object = object;
             }
         } else {
             // Log details of the failure

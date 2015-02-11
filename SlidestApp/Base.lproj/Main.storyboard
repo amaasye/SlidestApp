@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -245,14 +245,24 @@
                                     <segue destination="ZE8-Vg-1wb" kind="show" id="bry-Um-8n6"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="iHy-VT-AKG">
+                                <rect key="frame" x="282" y="239" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="2ar-Ms-5Yu"/>
+                                    <constraint firstAttribute="width" constant="37" id="NKE-1t-ReE"/>
+                                </constraints>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="39" id="A96-95-qz9"/>
+                            <constraint firstAttribute="centerX" secondItem="iHy-VT-AKG" secondAttribute="centerX" id="Hgh-tC-4uZ"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leading" constant="13" id="JLL-Ry-gxJ"/>
                             <constraint firstAttribute="centerX" secondItem="Ux1-oa-j5Y" secondAttribute="centerX" id="MoH-gG-RQs"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="10" id="PTt-co-4OC"/>
+                            <constraint firstAttribute="centerY" secondItem="iHy-VT-AKG" secondAttribute="centerY" constant="42.5" id="SMm-34-Pce"/>
                             <constraint firstAttribute="centerX" secondItem="27x-5a-SIY" secondAttribute="centerX" id="Ykj-Xf-cCh"/>
                             <constraint firstItem="27x-5a-SIY" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="136" id="ZkH-p4-Pvb"/>
                             <constraint firstAttribute="centerX" secondItem="xip-23-CH0" secondAttribute="centerX" id="cQV-gE-lVo"/>
@@ -266,6 +276,7 @@
                         <outlet property="horizontalLine" destination="xip-23-CH0" id="njh-ir-Mkk"/>
                         <outlet property="passcodeTextField" destination="y3C-kA-M0V" id="eus-j0-gkr"/>
                         <outlet property="reminderLabel" destination="27x-5a-SIY" id="IDb-8d-fjg"/>
+                        <outlet property="spinner" destination="iHy-VT-AKG" id="r9a-19-icD"/>
                         <outlet property="startButton" destination="Ux1-oa-j5Y" id="9ra-T6-MPq"/>
                         <outlet property="uploadFromDropboxButton" destination="jle-xD-1Fc" id="nwc-eH-YvT"/>
                     </connections>
@@ -366,7 +377,7 @@
                                     <constraint firstAttribute="height" constant="47" id="IPI-5w-38X"/>
                                     <constraint firstAttribute="width" constant="316" id="ox3-qK-qkc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -391,7 +402,7 @@
                                     <constraint firstAttribute="height" constant="46" id="TZ1-ki-xo6"/>
                                     <constraint firstAttribute="width" constant="26" id="uy9-Sx-dHv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="46"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

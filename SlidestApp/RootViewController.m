@@ -8,8 +8,10 @@
 
 #import "RootViewController.h"
 #import <Parse/Parse.h>
+#import "JoinViewController.h"
 
 @interface RootViewController ()
+@property PFObject *object;
 
 @end
 
@@ -19,7 +21,14 @@
     [super viewDidLoad];
 }
 
--(IBAction)unwind:(UIStoryboardSegue *)sender {
+-(IBAction)unwind:(UIStoryboardSegue *)segue {
+    if ([segue.sourceViewController isKindOfClass:[JoinViewController class]]) {
+        JoinViewController *joinVC = segue.sourceViewController;
+        joinVC.object = self.object;
+        [self.object unpin];
+    }
 }
+
+
 
 @end

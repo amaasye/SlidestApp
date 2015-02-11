@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -30,6 +31,7 @@
     self.reminderLabel.hidden = YES;
     self.startButton.hidden = YES;
     self.horizontalLine.hidden = YES;
+    self.spinner.hidden = YES;
     
     // Do any additional setup after loading the view.
 }
@@ -49,6 +51,8 @@
 }
 
 - (void)downloadPDF:(DBChooserResult *)chooser {
+    self.spinner.hidden = NO;
+    [self.spinner startAnimating];
     NSURLRequest *request = [NSURLRequest requestWithURL:chooser.link];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         self.dataFromDropbox = data;
@@ -60,7 +64,8 @@
 
         self.name = chooser.name;
         self.passcode = self.passcodeTextField.text;
-
+        [self.spinner stopAnimating];
+        self.spinner.hidesWhenStopped = YES;
         //checks to see if the file is a pdf and only saves it if it is, adjusts layout accordingly
         [self checkForFileType];
     }];

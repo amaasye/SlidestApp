@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface JoinViewController : UIViewController
+@property PFObject *object;
 
 @end
