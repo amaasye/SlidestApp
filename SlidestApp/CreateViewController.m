@@ -9,6 +9,7 @@
 #import "CreateViewController.h"
 #import <DBChooser/DBChooser.h>
 #import <Parse/Parse.h>
+#import "SlideshowViewController.h"
 
 
 @interface CreateViewController ()
@@ -27,14 +28,14 @@
     [super viewDidLoad];
     self.passcodeTextField.hidden = YES;
     self.reminderLabel.hidden = YES;
-    self.startButton.hidden = YES;
+    self.startButton.hidden = NO;
     self.horizontalLine.hidden = YES;
     
     // Do any additional setup after loading the view.
 }
 
 - (IBAction)onUploadButtonTapped:(UIButton *)sender {
-    [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypePreview
+    [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypeDirect
                                     fromViewController:self completion:^(NSArray *results)
      {
          if ([results count]) {
