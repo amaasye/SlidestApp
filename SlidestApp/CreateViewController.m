@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
+@property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
 
 @end
 
@@ -27,6 +28,7 @@
     self.passcodeTextField.hidden = YES;
     self.reminderLabel.hidden = YES;
     self.startButton.hidden = YES;
+    self.horizontalLine.hidden = YES;
     
     // Do any additional setup after loading the view.
 }
@@ -67,11 +69,13 @@
             self.passcodeTextField.hidden = NO;
             self.uploadFromDropboxButton.hidden = YES;
             self.startButton.hidden = NO;
+            self.horizontalLine.hidden = NO;
             [self pushDataToParse];
             
         } else {
             //if the file is not a pdf, users are asked to only upload pdf files
             self.reminderLabel.hidden = NO;
+            self.horizontalLine.hidden = NO;
         }
     }];
 }
