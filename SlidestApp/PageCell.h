@@ -10,5 +10,4 @@
 
 @interface PageCell : UICollectionViewCell
 
-
 @end

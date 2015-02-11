@@ -11,21 +11,25 @@
 @implementation PageScrollView
 
 -(void)openFile{
+
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self drawInContext:UIGraphicsGetCurrentContext()];
+
+
+}
+- (void)drawRect:(CGRect)rect {
     self.backgroundColor = [UIColor clearColor];
     NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectoryPath = [searchPaths objectAtIndex:0];
     NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"pdf.pdf"];
-    NSLog(@"PATH: %@", tempPath);
 
     //Display PDF
     CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
     pdf = CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithURL(pdfURL));
-    NSLog(@"%@",pdfURL);
-
-}
-
-
-- (void)drawRect:(CGRect)rect {
+    self.pageNr = 1;
     [self drawInContext:UIGraphicsGetCurrentContext()];
 }
 

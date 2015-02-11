@@ -31,17 +31,13 @@
     return 15;
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    PageCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
-    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height );
-    PageScrollView *pdfView = [[PageScrollView alloc] initWithFrame:frame];
-    [pdfView openFile];
-    [cell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    pdfView.pageNr = (int)indexPath.row +1;
-
-
-    [cell addSubview:pdfView];
-
-    NSLog(@"%d",pdfView.pageNr);
+    UICollectionViewCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
+//    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height );
+//    PageScrollView *pdfView = [[PageScrollView alloc] initWithFrame:frame];
+//    [pdfView openFile];
+//    [cell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//    pdfView.pageNr = (int)indexPath.row +1;
+//    [cell addSubview:pdfView];
 
     return cell;
 }
@@ -51,9 +47,16 @@
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Adjust cell size for orientation
-    CGFloat width = self.view.frame.size.width;
-    CGFloat height = self.view.frame.size.height;
-        return CGSizeMake(width, height);
+    
+    if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    }
+    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
 }
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.collectionView performBatchUpdates:nil completion:nil];
+}
+
 
 @end
