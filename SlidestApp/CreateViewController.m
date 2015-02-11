@@ -57,7 +57,6 @@
 
         [data writeToURL:documentsURL atomically:YES];
 
-
         self.name = chooser.name;
         self.passcode = self.passcodeTextField.text;
 
@@ -67,7 +66,6 @@
 }
 
 - (void)checkForFileType {
-
         //file is pdf
     if ([self.name hasSuffix:@"pdf"]) {
         self.reminderLabel.text = self.name;
@@ -78,13 +76,11 @@
         self.startButton.hidden = NO;
         self.horizontalLine.hidden = NO;
       //  [self pushDataToParse];
-
     } else {
         //if the file is not a pdf, users are asked to only upload pdf files
         self.reminderLabel.hidden = NO;
         self.horizontalLine.hidden = NO;
     }
-
 }
 
 - (IBAction)onStartButtonTapped:(UIButton *)sender {

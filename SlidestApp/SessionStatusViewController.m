@@ -18,9 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sessionTextLabel.numberOfLines = 0;
-    self.sessionTextLabel.text = @"Session started\rWaiting for peers to join";
-    [self.sessionTextLabel sizeToFit];
+    
 }
 
 -(IBAction)unwindToSessionStatusViewController:(UIStoryboardSegue *)sender{

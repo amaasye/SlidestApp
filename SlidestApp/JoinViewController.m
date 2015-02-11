@@ -33,7 +33,12 @@
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
+
                 [object pinInBackground];
+
+                NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+                NSString *download = [documentsPath stringByAppendingPathComponent:[object objectForKey:@"titleOfSlideshow"]];
+                NSLog(@"%@", download);
             }
         } else {
             // Log details of the failure
