@@ -9,6 +9,7 @@
 #import "CreateViewController.h"
 #import <DBChooser/DBChooser.h>
 #import <Parse/Parse.h>
+#import "SlideshowViewController.h"
 
 
 @interface CreateViewController ()
@@ -34,7 +35,7 @@
 }
 
 - (IBAction)onUploadButtonTapped:(UIButton *)sender {
-    [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypePreview
+    [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypeDirect
                                     fromViewController:self completion:^(NSArray *results)
      {
          if ([results count]) {

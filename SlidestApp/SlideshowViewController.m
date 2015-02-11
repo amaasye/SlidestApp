@@ -8,6 +8,8 @@
 
 #import "SlideshowViewController.h"
 #import "PageCell.h"
+#import "PageScrollView.h"
+
 @interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -17,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,13 +32,16 @@
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     PageCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
-   // CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height );
-    //SlidePage *pdfView = [[SlidePage alloc] initWithFrame:frame];
-   // pdfView.pageNr = indexPath.row +1;
-   // [cell addSubview:pdfView];
-    [cell openFile];
-    cell.pageNr = (int) indexPath.row+1;
-    NSLog(@"%d",cell.pageNr);
+    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height );
+    PageScrollView *pdfView = [[PageScrollView alloc] initWithFrame:frame];
+    [pdfView openFile];
+    [cell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    pdfView.pageNr = (int)indexPath.row +1;
+
+
+    [cell addSubview:pdfView];
+
+    NSLog(@"%d",pdfView.pageNr);
 
     return cell;
 }

@@ -8,14 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageCell : UICollectionViewCell{
-    CGPDFDocumentRef pdf;
-}
-@property int pageNr;
-
--(void)drawInContext:(CGContextRef)context;
--(void)openFile;
-
+@interface PageCell : UICollectionViewCell
 
 
 @end
