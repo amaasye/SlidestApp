@@ -14,6 +14,7 @@
 @interface CreateViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
 @property (weak, nonatomic) IBOutlet UILabel *reminderLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 
@@ -25,6 +26,8 @@
     [super viewDidLoad];
     self.passcodeTextField.hidden = YES;
     self.reminderLabel.hidden = YES;
+    self.startButton.hidden = YES;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -63,6 +66,7 @@
             [self.reminderLabel sizeToFit];
             self.passcodeTextField.hidden = NO;
             self.uploadFromDropboxButton.hidden = YES;
+            self.startButton.hidden = NO;
             [self pushDataToParse];
             
         } else {
