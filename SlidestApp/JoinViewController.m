@@ -33,6 +33,7 @@
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
+                [object pinInBackground];
             }
         } else {
             // Log details of the failure
@@ -41,5 +42,7 @@
     }];
 
 }
+
+
 
 @end
