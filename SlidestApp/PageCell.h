@@ -1,5 +1,5 @@
 //
-//  PageCell.h
+//  PageCellCollectionViewCell.h
 //  SlidestApp
 //
 //  Created by Matt on 2/10/15.
@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageCell : UICollectionViewCell
+@interface PageCell : UICollectionViewCell{
+    CGPDFDocumentRef pdf;
+}
+@property int pageNr;
+
+-(void)drawInContext:(CGContextRef)context;
+-(void)openFile;
+
+
 
 @end
