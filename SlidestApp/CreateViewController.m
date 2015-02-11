@@ -66,10 +66,10 @@
     }];
 }
 
-
 - (void)checkForFileType {
+
         //file is pdf
-    if ([self.name containsString:@"pdf"]) {
+    if ([self.name hasSuffix:@"pdf"]) {
         self.reminderLabel.text = self.name;
         self.reminderLabel.hidden = NO;
         [self.reminderLabel sizeToFit];
@@ -77,7 +77,7 @@
         self.uploadFromDropboxButton.hidden = YES;
         self.startButton.hidden = NO;
         self.horizontalLine.hidden = NO;
-        [self pushDataToParse];
+      //  [self pushDataToParse];
 
     } else {
         //if the file is not a pdf, users are asked to only upload pdf files
@@ -87,6 +87,10 @@
 
 }
 
+- (IBAction)onStartButtonTapped:(UIButton *)sender {
+    self.passcode = self.passcodeTextField.text;
+    [self pushDataToParse];
+}
 
 - (void)pushDataToParse {
 
@@ -103,6 +107,7 @@
     }];
 
 }
+
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
     
 }

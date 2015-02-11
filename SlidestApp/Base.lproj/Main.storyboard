@@ -131,6 +131,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onGoButtonTapped:" destination="tJo-2W-8cF" eventType="touchUpInside" id="Kce-rJ-dba"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,10 +230,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux1-oa-j5Y">
-                                <rect key="frame" x="282" y="341" width="37" height="29"/>
+                                <rect key="frame" x="282" y="298" width="37" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="ZuZ-vH-bge"/>
-                                    <constraint firstAttribute="width" constant="37" id="c7I-5g-wc2"/>
+                                    <constraint firstAttribute="width" constant="37" id="Bpc-hm-q1i"/>
+                                    <constraint firstAttribute="height" constant="29" id="I5Z-we-s65"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
                                 <state key="normal" title="Start">
@@ -238,6 +241,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onStartButtonTapped:" destination="oET-gY-IPk" eventType="touchUpInside" id="gQN-GZ-1SV"/>
                                     <segue destination="ZE8-Vg-1wb" kind="show" id="bry-Um-8n6"/>
                                 </connections>
                             </button>
@@ -245,12 +249,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
+                            <constraint firstItem="Ux1-oa-j5Y" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="39" id="A96-95-qz9"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leading" constant="13" id="JLL-Ry-gxJ"/>
+                            <constraint firstAttribute="centerX" secondItem="Ux1-oa-j5Y" secondAttribute="centerX" id="MoH-gG-RQs"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="10" id="PTt-co-4OC"/>
-                            <constraint firstItem="Ux1-oa-j5Y" firstAttribute="top" secondItem="jle-xD-1Fc" secondAttribute="bottom" constant="8" id="VLq-1v-H77"/>
                             <constraint firstAttribute="centerX" secondItem="27x-5a-SIY" secondAttribute="centerX" id="Ykj-Xf-cCh"/>
                             <constraint firstItem="27x-5a-SIY" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="136" id="ZkH-p4-Pvb"/>
-                            <constraint firstAttribute="centerX" secondItem="Ux1-oa-j5Y" secondAttribute="centerX" id="av4-gZ-GSf"/>
                             <constraint firstAttribute="centerX" secondItem="xip-23-CH0" secondAttribute="centerX" id="cQV-gE-lVo"/>
                             <constraint firstItem="xip-23-CH0" firstAttribute="top" secondItem="y3C-kA-M0V" secondAttribute="bottom" constant="26" id="fdl-rN-gzl"/>
                             <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="27" id="jQc-gM-p4K"/>
