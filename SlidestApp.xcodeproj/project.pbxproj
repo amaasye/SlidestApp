@@ -37,6 +37,7 @@
 		B00371A41A8A53610037157D /* DBChooser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B00371A21A8A53610037157D /* DBChooser.bundle */; };
 		B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371A31A8A53610037157D /* DBChooser.framework */; };
 		B00371A81A8BA2C60037157D /* SessionStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00371A71A8BA2C60037157D /* SessionStatusViewController.m */; };
+		C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C940F1451A8C43D700D7B2C0 /* CustomCell.m */; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
 /* End PBXBuildFile section */
 
@@ -91,10 +92,10 @@
 		B00371A31A8A53610037157D /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
 		B00371A61A8BA2C60037157D /* SessionStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionStatusViewController.h; sourceTree = "<group>"; };
 		B00371A71A8BA2C60037157D /* SessionStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionStatusViewController.m; sourceTree = "<group>"; };
+		C940F1441A8C43D700D7B2C0 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		C940F1451A8C43D700D7B2C0 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		C9B808C61A8BE7FC0044932E /* PageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageScrollView.h; sourceTree = "<group>"; };
 		C9B808C71A8BE7FC0044932E /* PageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageScrollView.m; sourceTree = "<group>"; };
-		C9B81FA11A8AD02F009BF752 /* PageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCell.h; sourceTree = "<group>"; };
-		C9B81FA21A8AD02F009BF752 /* PageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,8 +234,8 @@
 				B003719E1A89CEA40037157D /* SlideshowViewController.m */,
 				B003719A1A89CE8F0037157D /* JoinViewController.h */,
 				B003719B1A89CE8F0037157D /* JoinViewController.m */,
-				C9B81FA11A8AD02F009BF752 /* PageCell.h */,
-				C9B81FA21A8AD02F009BF752 /* PageCell.m */,
+				C940F1441A8C43D700D7B2C0 /* CustomCell.h */,
+				C940F1451A8C43D700D7B2C0 /* CustomCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -356,6 +357,7 @@
 				B00371511A89C8860037157D /* main.m in Sources */,
 				B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */,
 				B00371A81A8BA2C60037157D /* SessionStatusViewController.m in Sources */,
+				C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

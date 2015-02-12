@@ -14,7 +14,6 @@
 @property int pageNr;
 
 -(void)drawInContext:(CGContextRef)context;
--(void)openFile;
 
 
 

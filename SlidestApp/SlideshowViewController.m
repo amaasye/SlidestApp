@@ -7,8 +7,8 @@
 //
 
 #import "SlideshowViewController.h"
-#import "PageCell.h"
 #import "PageScrollView.h"
+#import "CustomCell.h"
 
 @interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -31,7 +31,7 @@
     return 15;
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
+    CustomCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
 //    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height );
 //    PageScrollView *pdfView = [[PageScrollView alloc] initWithFrame:frame];
 //    [pdfView openFile];
@@ -49,12 +49,13 @@
     // Adjust cell size for orientation
     
     if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
-        return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+        return CGSizeMake(200, 200);
     }
     return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
 }
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
+    [self.collectionView reloadData];
     [self.collectionView performBatchUpdates:nil completion:nil];
 }
 

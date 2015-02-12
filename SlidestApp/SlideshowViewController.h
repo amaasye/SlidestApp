@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SlideshowViewController : UIViewController
-@property NSData *data;
+
 @end

@@ -10,16 +10,8 @@
 
 @implementation PageScrollView
 
--(void)openFile{
-
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    [self drawInContext:UIGraphicsGetCurrentContext()];
 
 
-}
 - (void)drawRect:(CGRect)rect {
     self.backgroundColor = [UIColor clearColor];
     NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -32,11 +24,10 @@
     self.pageNr = 1;
     [self drawInContext:UIGraphicsGetCurrentContext()];
 }
-
 -(void)drawInContext:(CGContextRef)context {
     // PDF page drawing expects a Lower-Left coordinate system, so we flip the coordinate system
     // before we start drawing.
-    CGContextTranslateCTM(context, 0.0, self.bounds.size.height);
+    CGContextTranslateCTM(UIGraphicsGetCurrentContext(), 0.0, self.frame.size.height);
     CGContextScaleCTM(context, 1, -1);
 
     // Grab the first PDF page
