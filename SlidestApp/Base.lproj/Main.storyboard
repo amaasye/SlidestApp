@@ -315,8 +315,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="188" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="redraw" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMT-D9-nhl" customClass="PageScrollView">
-                                                    <rect key="frame" x="8" y="8" width="172" height="153"/>
+                                                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMT-D9-nhl" customClass="PageScrollView">
+                                                    <rect key="frame" x="13" y="13" width="162" height="143"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </scrollView>
                                             </subviews>
@@ -324,10 +324,10 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="sMT-D9-nhl" secondAttribute="trailing" id="1B3-zQ-aJR"/>
-                                            <constraint firstItem="sMT-D9-nhl" firstAttribute="top" secondItem="uO5-GS-YDK" secondAttribute="topMargin" id="N6e-tk-Td6"/>
-                                            <constraint firstItem="sMT-D9-nhl" firstAttribute="leading" secondItem="uO5-GS-YDK" secondAttribute="leadingMargin" id="rQ6-Jc-inw"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="sMT-D9-nhl" secondAttribute="bottom" id="ug1-4v-o4C"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="sMT-D9-nhl" secondAttribute="trailing" constant="5" id="1B3-zQ-aJR"/>
+                                            <constraint firstItem="sMT-D9-nhl" firstAttribute="top" secondItem="uO5-GS-YDK" secondAttribute="topMargin" constant="5" id="N6e-tk-Td6"/>
+                                            <constraint firstItem="sMT-D9-nhl" firstAttribute="leading" secondItem="uO5-GS-YDK" secondAttribute="leadingMargin" constant="5" id="rQ6-Jc-inw"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="sMT-D9-nhl" secondAttribute="bottom" constant="5" id="ug1-4v-o4C"/>
                                         </constraints>
                                         <size key="customSize" width="188" height="169"/>
                                     </collectionViewCell>

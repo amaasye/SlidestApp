@@ -32,12 +32,7 @@
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CustomCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
-//    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height );
-//    PageScrollView *pdfView = [[PageScrollView alloc] initWithFrame:frame];
-//    [pdfView openFile];
-//    [cell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-//    pdfView.pageNr = (int)indexPath.row +1;
-//    [cell addSubview:pdfView];
+
 
     return cell;
 }
@@ -49,7 +44,7 @@
     // Adjust cell size for orientation
     
     if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
-        return CGSizeMake(200, 200);
+        return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
     }
     return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
 }
