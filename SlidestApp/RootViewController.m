@@ -22,6 +22,7 @@
 }
 
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
+    //should delete the file from local storage
     if ([segue.sourceViewController isKindOfClass:[JoinViewController class]]) {
         JoinViewController *joinVC = segue.sourceViewController;
         joinVC.object = self.object;

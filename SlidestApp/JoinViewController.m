@@ -22,6 +22,7 @@
 }
 - (IBAction)onGoButtonTapped:(UIButton *)sender {
     [self parseQuery];
+    [self performSegueWithIdentifier:@"GoSegue" sender:sender];
 }
 
 -(void)parseQuery {
