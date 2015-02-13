@@ -254,26 +254,9 @@
                                 </constraints>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5D-bz-GEu">
-                                <rect key="frame" x="254" y="350" width="93" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="93" id="QWf-rU-RNa"/>
-                                    <constraint firstAttribute="height" constant="29" id="cDG-qY-PIj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
-                                <state key="normal" title="End Session">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onEndButtonTapped:" destination="oET-gY-IPk" eventType="touchUpInside" id="Vde-N1-Dcx"/>
-                                    <segue destination="CvJ-LE-Ye6" kind="unwind" unwindAction="unwind:" id="thv-7j-a08"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="C5D-bz-GEu" firstAttribute="top" secondItem="jle-xD-1Fc" secondAttribute="bottom" constant="17" id="239-6H-iay"/>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="39" id="A96-95-qz9"/>
                             <constraint firstAttribute="centerX" secondItem="iHy-VT-AKG" secondAttribute="centerX" id="Hgh-tC-4uZ"/>
@@ -288,11 +271,9 @@
                             <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="27" id="jQc-gM-p4K"/>
                             <constraint firstItem="jle-xD-1Fc" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="32" id="pWF-Qi-Zoi"/>
                             <constraint firstAttribute="centerX" secondItem="jle-xD-1Fc" secondAttribute="centerX" id="pjm-ch-pzw"/>
-                            <constraint firstAttribute="centerX" secondItem="C5D-bz-GEu" secondAttribute="centerX" id="yz3-Qc-OI4"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="endButton" destination="C5D-bz-GEu" id="rsJ-YH-0Hn"/>
                         <outlet property="horizontalLine" destination="xip-23-CH0" id="njh-ir-Mkk"/>
                         <outlet property="passcodeTextField" destination="y3C-kA-M0V" id="eus-j0-gkr"/>
                         <outlet property="reminderLabel" destination="27x-5a-SIY" id="IDb-8d-fjg"/>
@@ -437,13 +418,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-af-rQi">
-                                <rect key="frame" x="252" y="369" width="96" height="29"/>
+                                <rect key="frame" x="234" y="369" width="132" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="JBm-Y4-sgC"/>
+                                    <constraint firstAttribute="width" constant="132" id="JBm-Y4-sgC"/>
                                     <constraint firstAttribute="height" constant="29" id="fS7-RP-g9P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
-                                <state key="normal" title="Go to Slides">
+                                <state key="normal" title="Go to Slideshow">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -451,15 +432,32 @@
                                     <segue destination="ljp-N3-uLQ" kind="show" id="J1g-SV-h5b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tw0-aP-eAN">
+                                <rect key="frame" x="254" y="426" width="93" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Biz-QD-Wed"/>
+                                    <constraint firstAttribute="width" constant="93" id="yjk-wU-dtg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
+                                <state key="normal" title="End Session">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onEndSessionButtonTapped:" destination="ZE8-Vg-1wb" eventType="touchUpInside" id="uEa-50-37l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a9B-af-rQi" firstAttribute="top" secondItem="Qva-HY-Ifk" secondAttribute="bottom" constant="38" id="2xR-Mk-ilZ"/>
                             <constraint firstItem="huH-yi-6V9" firstAttribute="top" secondItem="ddG-um-tUR" secondAttribute="bottom" constant="8" id="91r-eM-2aC"/>
+                            <constraint firstAttribute="centerX" secondItem="tw0-aP-eAN" secondAttribute="centerX" id="BeN-Pu-Kvs"/>
                             <constraint firstItem="Qva-HY-Ifk" firstAttribute="top" secondItem="ia2-Ou-1yL" secondAttribute="bottom" constant="52" id="Dth-uY-jx0"/>
                             <constraint firstItem="huH-yi-6V9" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" id="FHs-qw-smh"/>
                             <constraint firstItem="ia2-Ou-1yL" firstAttribute="top" secondItem="T8z-DN-ldS" secondAttribute="bottom" constant="8" id="GJ7-YH-fHz"/>
                             <constraint firstItem="T8z-DN-ldS" firstAttribute="top" secondItem="ddG-um-tUR" secondAttribute="bottom" constant="137" id="XHQ-dE-gva"/>
+                            <constraint firstItem="tw0-aP-eAN" firstAttribute="top" secondItem="a9B-af-rQi" secondAttribute="bottom" constant="28" id="eWK-g4-aIl"/>
                             <constraint firstAttribute="centerX" secondItem="a9B-af-rQi" secondAttribute="centerX" id="gne-2x-3s2"/>
                             <constraint firstAttribute="centerX" secondItem="Qva-HY-Ifk" secondAttribute="centerX" constant="1" id="yFJ-8X-eg6"/>
                             <constraint firstAttribute="centerX" secondItem="T8z-DN-ldS" secondAttribute="centerX" id="ydh-mN-trq"/>
@@ -478,6 +476,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Oj3-oh-GDe"/>
+        <segue reference="J1g-SV-h5b"/>
     </inferredMetricsTieBreakers>
 </document>
