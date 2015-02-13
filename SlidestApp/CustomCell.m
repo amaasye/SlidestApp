@@ -9,5 +9,15 @@
 #import "CustomCell.h"
 
 @implementation CustomCell
+-(void)setPageView:(PageScrollView *)pageView{
+
+    if(_pageView != nil){
+        [_pageView removeFromSuperview];
+    }
+    _pageView = pageView;
+
+    [self addSubview:_pageView];
+
+}
 
 @end

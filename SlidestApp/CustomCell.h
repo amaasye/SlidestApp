@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageScrollView.h"
 
 @interface CustomCell : UICollectionViewCell
-
+@property (nonatomic) PageScrollView *pageView;
 @end

@@ -155,7 +155,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mlw-1d-gDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yFR-Ep-ZBZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="771"/>
+            <point key="canvasLocation" x="1165" y="647"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="Skd-2P-VXx">
@@ -298,9 +298,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6RR-WU-4HJ">
+                            <collectionView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6RR-WU-4HJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="r9n-Pk-O8s">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -314,21 +314,9 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="188" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMT-D9-nhl" customClass="PageScrollView">
-                                                    <rect key="frame" x="13" y="13" width="162" height="143"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </scrollView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="sMT-D9-nhl" secondAttribute="trailing" constant="5" id="1B3-zQ-aJR"/>
-                                            <constraint firstItem="sMT-D9-nhl" firstAttribute="top" secondItem="uO5-GS-YDK" secondAttribute="topMargin" constant="5" id="N6e-tk-Td6"/>
-                                            <constraint firstItem="sMT-D9-nhl" firstAttribute="leading" secondItem="uO5-GS-YDK" secondAttribute="leadingMargin" constant="5" id="rQ6-Jc-inw"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="sMT-D9-nhl" secondAttribute="bottom" constant="5" id="ug1-4v-o4C"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <size key="customSize" width="188" height="169"/>
                                     </collectionViewCell>
                                 </cells>
@@ -369,7 +357,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29l-Mt-rwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KKg-dP-0jT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2504" y="-97"/>
+            <point key="canvasLocation" x="2530" y="-97"/>
         </scene>
         <!--Session Status View Controller-->
         <scene sceneID="Wog-GP-t4y">

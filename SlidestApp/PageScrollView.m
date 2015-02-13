@@ -11,18 +11,23 @@
 @implementation PageScrollView
 
 
+-(void)displayPdf:(CGPDFDocumentRef)pdf{
+    self.pdf = pdf;
+
+}
 
 - (void)drawRect:(CGRect)rect {
-    self.backgroundColor = [UIColor clearColor];
-    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectoryPath = [searchPaths objectAtIndex:0];
-    NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"pdf.pdf"];
+//    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectoryPath = [searchPaths objectAtIndex:0];
+//    NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"pdf.pdf"];
+//
+//    //Display PDF
+//    if (pdf == nil) {
+//        CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
+//        pdf = CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithURL(pdfURL));
+       [self drawInContext:UIGraphicsGetCurrentContext()];
+    //}
 
-    //Display PDF
-    CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
-    pdf = CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithURL(pdfURL));
-    self.pageNr = 1;
-    [self drawInContext:UIGraphicsGetCurrentContext()];
 }
 -(void)drawInContext:(CGContextRef)context {
     // PDF page drawing expects a Lower-Left coordinate system, so we flip the coordinate system
@@ -31,7 +36,9 @@
     CGContextScaleCTM(context, 1, -1);
 
     // Grab the first PDF page
-    CGPDFPageRef page = CGPDFDocumentGetPage(pdf, self.pageNr);
+    CGPDFPageRef page = CGPDFDocumentGetPage(self.pdf, self.pageNr+1);
+
+
     // We're about to modify the context CTM to draw the PDF page where we want it, so save the graphics state in case we want to do more drawing
     CGContextSaveGState(context);
     // CGPDFPageGetDrawingTransform provides an easy way to get the transform for a PDF page. It will scale down to fit, including any

@@ -12,26 +12,53 @@
 
 @interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property CGPDFDocumentRef pdf;
+@property int numberOfPages;
 @end
 
 @implementation SlideshowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self openPdf];
     
 }
+-(void)openPdf{
+    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = searchPaths.firstObject;
+    NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"pdf.pdf"];
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //Display PDF
+        CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
+         self.pdf = CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithURL(pdfURL));
+    self.numberOfPages = (int)CGPDFDocumentGetNumberOfPages(self.pdf);
 }
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+
+    //[self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:5  inSection:0]
+        //                        atScrollPosition:UICollectionViewScrollPositionNone
+           //                             animated:YES];
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    for (UICollectionViewCell *cell in [self.collectionView visibleCells]) {
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+        NSLog(@"%d",(int)indexPath.row);
+    }
+}
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 15;
+    return self.numberOfPages;
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CustomCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
+    CGRect frame =  CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    PageScrollView *page = [[PageScrollView alloc] initWithFrame:frame];
+    [page displayPdf:self.pdf];
+    page.backgroundColor = [UIColor whiteColor];
+    page.pageNr = (int) indexPath.row;
+    cell.pageView = page;
 
 
     return cell;
@@ -42,6 +69,8 @@
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Adjust cell size for orientation
+
+
     
     if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
         return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);

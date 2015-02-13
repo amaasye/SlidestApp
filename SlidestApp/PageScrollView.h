@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface PageScrollView : UIScrollView{
-    CGPDFDocumentRef pdf;
 }
 @property int pageNr;
+@property  CGPDFDocumentRef pdf;
+
 
 -(void)drawInContext:(CGContextRef)context;
-
-
+-(void)displayPdf:(CGPDFDocumentRef)pdf;
 
 @end
