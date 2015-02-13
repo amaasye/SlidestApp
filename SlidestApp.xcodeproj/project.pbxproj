@@ -228,6 +228,8 @@
 				B00371981A89CE830037157D /* CreateViewController.m */,
 				B00371A61A8BA2C60037157D /* SessionStatusViewController.h */,
 				B00371A71A8BA2C60037157D /* SessionStatusViewController.m */,
+				B00371AC1A8E4B500037157D /* DataHandler.h */,
+				B00371AD1A8E4B500037157D /* DataHandler.m */,
 				C9B808C61A8BE7FC0044932E /* PageScrollView.h */,
 				C9B808C71A8BE7FC0044932E /* PageScrollView.m */,
 				B003719D1A89CEA40037157D /* SlideshowViewController.h */,
@@ -350,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B00371991A89CE830037157D /* CreateViewController.m in Sources */,
+				B00371AE1A8E4B500037157D /* DataHandler.m in Sources */,
 				B00371571A89C8860037157D /* RootViewController.m in Sources */,
 				C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */,
 				B003719C1A89CE8F0037157D /* JoinViewController.m in Sources */,

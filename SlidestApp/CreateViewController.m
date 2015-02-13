@@ -10,9 +10,10 @@
 #import <DBChooser/DBChooser.h>
 #import <Parse/Parse.h>
 #import "SlideshowViewController.h"
+#import "DataHandler.h"
 
 
-@interface CreateViewController ()
+@interface CreateViewController () <DataHandlerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
 @property (weak, nonatomic) IBOutlet UILabel *reminderLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property PFObject *slideshow;
+@property DataHandler *dataHandler;
 
 @end
 
@@ -29,6 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataHandler = [DataHandler new];
+    self.dataHandler.delegate = self;
     self.passcodeTextField.hidden = YES;
     self.reminderLabel.hidden = YES;
     self.startButton.hidden = YES;
@@ -45,39 +49,28 @@
      {
          if ([results count]) {
              DBChooserResult *chooser = results.firstObject;
-             [self downloadPDF:chooser];
+             [self.dataHandler downloadPDF:chooser];
          } else {
              // User canceled the action
          }
      }];
-
 }
 
-- (void)downloadPDF:(DBChooserResult *)chooser {
+
+- (void)downloadingShouldStart {
     self.spinner.hidden = NO;
     [self.spinner startAnimating];
-    NSURLRequest *request = [NSURLRequest requestWithURL:chooser.link];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        self.dataFromDropbox = data;
-
-        NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        documentsURL = [documentsURL URLByAppendingPathComponent:@"pdf.pdf"];
-
-        [data writeToURL:documentsURL atomically:YES];
-
-        self.name = chooser.name;
-        self.passcode = self.passcodeTextField.text;
-        [self.spinner stopAnimating];
-        self.spinner.hidesWhenStopped = YES;
-        //checks to see if the file is a pdf and only saves it if it is, adjusts layout accordingly
-        [self checkForFileType];
-    }];
 }
 
-- (void)checkForFileType {
-        //file is pdf
-    if ([self.name hasSuffix:@"pdf"]) {
-        self.reminderLabel.text = self.name;
+- (void)downloadingShouldEnd {
+    [self.spinner stopAnimating];
+    self.spinner.hidesWhenStopped = YES;
+}
+
+
+- (void)fileIsPDF:(BOOL)isPDF withName:(NSString *)name {
+    if (isPDF) {
+        self.reminderLabel.text = name;
         self.reminderLabel.hidden = NO;
         [self.reminderLabel sizeToFit];
         self.passcodeTextField.hidden = NO;
@@ -88,38 +81,18 @@
       //  [self pushDataToParse];
     } else {
         //if the file is not a pdf, users are asked to only upload pdf files
+        self.reminderLabel.text = name;
         self.reminderLabel.hidden = NO;
         self.horizontalLine.hidden = NO;
     }
 }
 
 - (IBAction)onStartButtonTapped:(UIButton *)sender {
-    self.passcode = self.passcodeTextField.text;
-    [self pushDataToParse];
-}
-
-- (IBAction)onEndButtonTapped:(UIButton *)sender {
-    [self.slideshow deleteInBackground];
-    [self.slideshow unpin];
-    [self viewDidLoad];
+//    self.passcode = self.passcodeTextField.text;
+    [self.dataHandler pushDataToParse:self.passcodeTextField.text];
 }
 
 
-- (void)pushDataToParse {
-
-    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    documentsURL = [documentsURL URLByAppendingPathComponent:@"pdf.pdf"];
-    NSData *data = [NSData dataWithContentsOfURL:documentsURL];
-    self.slideshow = [PFObject objectWithClassName:@"Slideshow"];
-    PFFile *file = [PFFile fileWithData:data contentType:@"pdf"];
-    self.slideshow[@"pdf"] = file;
-    self.slideshow[@"titleOfSlideshow"] = self.name;
-    self.slideshow[@"passcode"] = self.passcode;
-    [self.slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"Saved! %@", error);
-    }];
-
-}
 
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
     

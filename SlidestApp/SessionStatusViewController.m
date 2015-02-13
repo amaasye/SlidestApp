@@ -7,6 +7,7 @@
 //
 
 #import "SessionStatusViewController.h"
+#import <Parse/Parse.h>
 
 @interface SessionStatusViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *sessionTextLabel;
@@ -24,6 +25,12 @@
 -(IBAction)unwindToSessionStatusViewController:(UIStoryboardSegue *)sender{
 
 }
+
+//- (IBAction)onEndSessionButtonTapped:(UIButton *)sender {
+//    [self.slideshow deleteInBackground];
+//    [self.slideshow unpin];
+//    [self viewDidLoad];
+//}
 
 
 @end
