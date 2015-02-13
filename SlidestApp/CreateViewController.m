@@ -95,8 +95,8 @@
 
 
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
-    
-}
+    [self.dataHandler deleteFileWithName:self.name];
+    }
 
 
 @end

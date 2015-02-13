@@ -159,8 +159,6 @@
 		B003714D1A89C8860037157D /* SlidestApp */ = {
 			isa = PBXGroup;
 			children = (
-				C9BBB8B11A8E60C200D70D47 /* DataHandler.h */,
-				C9BBB8B21A8E60C200D70D47 /* DataHandler.m */,
 				B00371521A89C8860037157D /* AppDelegate.h */,
 				B00371531A89C8860037157D /* AppDelegate.m */,
 				B00371A01A89CEAA0037157D /* View Controllers */,
@@ -227,6 +225,8 @@
 		B00371A01A89CEAA0037157D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9BBB8B11A8E60C200D70D47 /* DataHandler.h */,
+				C9BBB8B21A8E60C200D70D47 /* DataHandler.m */,
 				B00371551A89C8860037157D /* RootViewController.h */,
 				B00371561A89C8860037157D /* RootViewController.m */,
 				B00371971A89CE830037157D /* CreateViewController.h */,

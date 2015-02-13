@@ -24,5 +24,6 @@
 @property NSData *dataFromDropbox;
 - (void)downloadPDF:(DBChooserResult *)chooser;
 - (void)pushDataToParse:(NSString *)passcode;
+-(void)deleteFileWithName:(NSString*)name;
 
 @end

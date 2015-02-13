@@ -56,6 +56,24 @@
     }];
     
 }
+-(void)deleteFileWithName:(NSString*)name{
+
+    NSString *path;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"downloads"];
+    path = [path stringByAppendingPathComponent:@"current.pdf"];
+    NSError *error;
+
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        if (![[NSFileManager defaultManager] removeItemAtPath:path error:&error])
+        {
+            NSLog(@"Delete file error: %@", error);
+        }
+    }
+    [self.slideshow deleteInBackground];
+}
 
 
 @end

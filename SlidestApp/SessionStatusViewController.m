@@ -7,17 +7,18 @@
 //
 
 #import "SessionStatusViewController.h"
-#import <Parse/Parse.h>
+#import "DataHandler.h"
 
 @interface SessionStatusViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *sessionTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *peerCounterLabel;
-
+@property DataHandler *dataHandler;
 @end
 
 @implementation SessionStatusViewController
 
 - (void)viewDidLoad {
+    self.dataHandler = [DataHandler new];
     [super viewDidLoad];
     
 }
@@ -26,11 +27,10 @@
 
 }
 
-//- (IBAction)onEndSessionButtonTapped:(UIButton *)sender {
-//    [self.slideshow deleteInBackground];
-//    [self.slideshow unpin];
-//    [self viewDidLoad];
-//}
+- (IBAction)onEndSessionButtonTapped:(UIButton *)sender {
+
+
+}
 
 
 @end
