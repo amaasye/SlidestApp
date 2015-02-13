@@ -39,6 +39,7 @@
 		B00371A81A8BA2C60037157D /* SessionStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00371A71A8BA2C60037157D /* SessionStatusViewController.m */; };
 		C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C940F1451A8C43D700D7B2C0 /* CustomCell.m */; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
+		C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B21A8E60C200D70D47 /* DataHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		C940F1451A8C43D700D7B2C0 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		C9B808C61A8BE7FC0044932E /* PageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageScrollView.h; sourceTree = "<group>"; };
 		C9B808C71A8BE7FC0044932E /* PageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageScrollView.m; sourceTree = "<group>"; };
+		C9BBB8B11A8E60C200D70D47 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
+		C9BBB8B21A8E60C200D70D47 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 		B003714D1A89C8860037157D /* SlidestApp */ = {
 			isa = PBXGroup;
 			children = (
+				C9BBB8B11A8E60C200D70D47 /* DataHandler.h */,
+				C9BBB8B21A8E60C200D70D47 /* DataHandler.m */,
 				B00371521A89C8860037157D /* AppDelegate.h */,
 				B00371531A89C8860037157D /* AppDelegate.m */,
 				B00371A01A89CEAA0037157D /* View Controllers */,
@@ -228,8 +233,6 @@
 				B00371981A89CE830037157D /* CreateViewController.m */,
 				B00371A61A8BA2C60037157D /* SessionStatusViewController.h */,
 				B00371A71A8BA2C60037157D /* SessionStatusViewController.m */,
-				B00371AC1A8E4B500037157D /* DataHandler.h */,
-				B00371AD1A8E4B500037157D /* DataHandler.m */,
 				C9B808C61A8BE7FC0044932E /* PageScrollView.h */,
 				C9B808C71A8BE7FC0044932E /* PageScrollView.m */,
 				B003719D1A89CEA40037157D /* SlideshowViewController.h */,
@@ -351,8 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */,
 				B00371991A89CE830037157D /* CreateViewController.m in Sources */,
-				B00371AE1A8E4B500037157D /* DataHandler.m in Sources */,
 				B00371571A89C8860037157D /* RootViewController.m in Sources */,
 				C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */,
 				B003719C1A89CE8F0037157D /* JoinViewController.m in Sources */,
