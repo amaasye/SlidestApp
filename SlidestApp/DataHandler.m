@@ -75,5 +75,32 @@
     [self.slideshow deleteInBackground];
 }
 
+-(void)parseQuery:(NSString *)passcode {
+    PFQuery *query = [PFQuery queryWithClassName:@"Slideshow"];
+    [query whereKey:@"passcode" equalTo:passcode];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // Found something...
+            NSLog(@"Successfully retrieved %lu slideshow.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                PFFile *pdf = [object objectForKey:@"pdf"];
+                [pdf getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    self.dataFromDropbox = data;
+                    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+                    documentsURL = [documentsURL URLByAppendingPathComponent:@"current.pdf"];
+
+                    [self.dataFromDropbox writeToURL:documentsURL atomically:YES];
+                    [self.delegate segueToSlideshow];
+                }];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+}
 
 @end

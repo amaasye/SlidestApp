@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "DataHandler.h"
 
 @interface JoinViewController : UIViewController
 @property PFObject *object;
+@property DataHandler *datahandler;
 
 @end

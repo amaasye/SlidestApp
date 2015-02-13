@@ -9,7 +9,7 @@
 #import "JoinViewController.h"
 #import <Parse/Parse.h>
 
-@interface JoinViewController ()
+@interface JoinViewController () <DataHandlerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 
 
@@ -19,32 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.datahandler = [DataHandler new];
+    self.datahandler.delegate = self;
+
 }
 - (IBAction)onGoButtonTapped:(UIButton *)sender {
-    [self parseQuery];
-    [self performSegueWithIdentifier:@"GoSegue" sender:sender];
+    [self.datahandler parseQuery:self.passcodeTextField.text];
 }
 
--(void)parseQuery {
-    PFQuery *query = [PFQuery queryWithClassName:@"Slideshow"];
-    [query whereKey:@"passcode" equalTo:self.passcodeTextField.text];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // Found something...
-            NSLog(@"Successfully retrieved %lu slideshow.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-                [object pinInBackground];
-                self.object = object;
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-
+- (void)segueToSlideshow {
+    [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
 }
+
 
 
 

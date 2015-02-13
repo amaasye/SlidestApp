@@ -26,7 +26,7 @@
 -(void)openPdf{
     NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectoryPath = searchPaths.firstObject;
-    NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"pdf.pdf"];
+    NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"current.pdf"];
 
     //Display PDF
         CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
