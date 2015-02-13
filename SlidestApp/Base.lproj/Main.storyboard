@@ -72,6 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="441" y="240"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="y8Q-34-LUW">
@@ -156,7 +157,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mlw-1d-gDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yFR-Ep-ZBZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1859" y="619"/>
+            <point key="canvasLocation" x="1193" y="601"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="Skd-2P-VXx">
@@ -285,7 +286,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8d-oB-Wv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CvJ-LE-Ye6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1165" y="-97"/>
+            <point key="canvasLocation" x="1193" y="-97"/>
         </scene>
         <!--Slideshow View Controller-->
         <scene sceneID="jol-L0-II4">
@@ -358,7 +359,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29l-Mt-rwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KKg-dP-0jT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2517" y="-97"/>
+            <point key="canvasLocation" x="2703" y="395"/>
         </scene>
         <!--Session Status View Controller-->
         <scene sceneID="Wog-GP-t4y">
@@ -378,7 +379,7 @@
                                     <constraint firstAttribute="height" constant="47" id="IPI-5w-38X"/>
                                     <constraint firstAttribute="width" constant="316" id="ox3-qK-qkc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -403,7 +404,7 @@
                                     <constraint firstAttribute="height" constant="46" id="TZ1-ki-xo6"/>
                                     <constraint firstAttribute="width" constant="26" id="uy9-Sx-dHv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -413,7 +414,7 @@
                                     <constraint firstAttribute="width" constant="188" id="HGl-nJ-W57"/>
                                     <constraint firstAttribute="height" constant="21" id="k96-K2-6R2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -472,7 +473,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvA-4x-xFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S1X-vp-sMb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="-97"/>
+            <point key="canvasLocation" x="1984" y="-97"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
