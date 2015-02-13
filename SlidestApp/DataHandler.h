@@ -15,6 +15,8 @@
 - (void)downloadingShouldStart;
 - (void)downloadingShouldEnd;
 - (void)fileIsPDF:(BOOL)isPDF withName:(NSString *)name;
+- (void)segueToSlideshow;
+
 
 @end
 @interface DataHandler : NSObject
@@ -25,5 +27,5 @@
 - (void)downloadPDF:(DBChooserResult *)chooser;
 - (void)pushDataToParse:(NSString *)passcode;
 -(void)deleteFileWithName:(NSString*)name;
-
+-(void)parseQuery:(NSString *)passcode;
 @end
