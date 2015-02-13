@@ -133,6 +133,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onGoButtonTapped:" destination="tJo-2W-8cF" eventType="touchUpInside" id="Kce-rJ-dba"/>
+                                    <segue destination="ljp-N3-uLQ" kind="show" identifier="GoSegue" id="Oj3-oh-GDe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -230,13 +231,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux1-oa-j5Y">
-                                <rect key="frame" x="282" y="298" width="37" height="29"/>
+                                <rect key="frame" x="251" y="298" width="99" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="37" id="Bpc-hm-q1i"/>
+                                    <constraint firstAttribute="width" constant="99" id="Bpc-hm-q1i"/>
                                     <constraint firstAttribute="height" constant="29" id="I5Z-we-s65"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Start Session">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -253,9 +254,26 @@
                                 </constraints>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5D-bz-GEu">
+                                <rect key="frame" x="254" y="350" width="93" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="QWf-rU-RNa"/>
+                                    <constraint firstAttribute="height" constant="29" id="cDG-qY-PIj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
+                                <state key="normal" title="End Session">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onEndButtonTapped:" destination="oET-gY-IPk" eventType="touchUpInside" id="Vde-N1-Dcx"/>
+                                    <segue destination="CvJ-LE-Ye6" kind="unwind" unwindAction="unwind:" id="thv-7j-a08"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="C5D-bz-GEu" firstAttribute="top" secondItem="jle-xD-1Fc" secondAttribute="bottom" constant="17" id="239-6H-iay"/>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="39" id="A96-95-qz9"/>
                             <constraint firstAttribute="centerX" secondItem="iHy-VT-AKG" secondAttribute="centerX" id="Hgh-tC-4uZ"/>
@@ -270,9 +288,11 @@
                             <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="27" id="jQc-gM-p4K"/>
                             <constraint firstItem="jle-xD-1Fc" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="32" id="pWF-Qi-Zoi"/>
                             <constraint firstAttribute="centerX" secondItem="jle-xD-1Fc" secondAttribute="centerX" id="pjm-ch-pzw"/>
+                            <constraint firstAttribute="centerX" secondItem="C5D-bz-GEu" secondAttribute="centerX" id="yz3-Qc-OI4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="endButton" destination="C5D-bz-GEu" id="rsJ-YH-0Hn"/>
                         <outlet property="horizontalLine" destination="xip-23-CH0" id="njh-ir-Mkk"/>
                         <outlet property="passcodeTextField" destination="y3C-kA-M0V" id="eus-j0-gkr"/>
                         <outlet property="reminderLabel" destination="27x-5a-SIY" id="IDb-8d-fjg"/>
@@ -457,4 +477,7 @@
             <point key="canvasLocation" x="1820" y="-97"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Oj3-oh-GDe"/>
+    </inferredMetricsTieBreakers>
 </document>

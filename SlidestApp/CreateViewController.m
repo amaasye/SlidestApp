@@ -16,10 +16,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
 @property (weak, nonatomic) IBOutlet UILabel *reminderLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *endButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property PFObject *slideshow;
 
 @end
 
@@ -32,6 +34,7 @@
     self.startButton.hidden = YES;
     self.horizontalLine.hidden = YES;
     self.spinner.hidden = YES;
+    self.endButton.hidden = YES;
     
     // Do any additional setup after loading the view.
 }
@@ -80,6 +83,7 @@
         self.passcodeTextField.hidden = NO;
         self.uploadFromDropboxButton.hidden = YES;
         self.startButton.hidden = NO;
+        self.endButton.hidden = NO;
         self.horizontalLine.hidden = NO;
       //  [self pushDataToParse];
     } else {
@@ -94,17 +98,24 @@
     [self pushDataToParse];
 }
 
+- (IBAction)onEndButtonTapped:(UIButton *)sender {
+    [self.slideshow deleteInBackground];
+    [self.slideshow unpin];
+    [self viewDidLoad];
+}
+
+
 - (void)pushDataToParse {
 
     NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     documentsURL = [documentsURL URLByAppendingPathComponent:@"pdf.pdf"];
     NSData *data = [NSData dataWithContentsOfURL:documentsURL];
-    PFObject *slideshow = [PFObject objectWithClassName:@"Slideshow"];
+    self.slideshow = [PFObject objectWithClassName:@"Slideshow"];
     PFFile *file = [PFFile fileWithData:data contentType:@"pdf"];
-    slideshow[@"pdf"] = file;
-    slideshow[@"titleOfSlideshow"] = self.name;
-    slideshow[@"passcode"] = self.passcode;
-    [slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    self.slideshow[@"pdf"] = file;
+    self.slideshow[@"titleOfSlideshow"] = self.name;
+    self.slideshow[@"passcode"] = self.passcode;
+    [self.slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Saved! %@", error);
     }];
 
