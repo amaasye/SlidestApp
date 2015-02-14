@@ -8,6 +8,7 @@
 
 #import "JoinViewController.h"
 #import <Parse/Parse.h>
+#import "SlideshowViewController.h"
 
 @interface JoinViewController () <DataHandlerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
@@ -30,8 +31,11 @@
 - (void)segueToSlideshow {
     [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
 }
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    SlideshowViewController *svc = [segue destinationViewController];
+    svc.dataHandler = self.datahandler;
 
-
+}
 
 
 @end
