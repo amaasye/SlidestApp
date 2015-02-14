@@ -97,8 +97,8 @@
     [self.dataHandler deleteFileWithName:self.name];
     }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    SessionStatusViewController *vc = [segue destinationViewController];
-    vc.dataHandler = self.dataHandler;
+  //  SessionStatusViewController *vc = [segue destinationViewController];
+  //  vc.dataHandler = self.dataHandler;
     
 }
 

@@ -7,11 +7,8 @@
 //
 
 #import "RootViewController.h"
-#import <Parse/Parse.h>
-#import "JoinViewController.h"
 
 @interface RootViewController ()
-@property PFObject *object;
 
 @end
 
@@ -22,12 +19,12 @@
 }
 
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
-    //should delete the file from local storage
-    if ([segue.sourceViewController isKindOfClass:[JoinViewController class]]) {
-        JoinViewController *joinVC = segue.sourceViewController;
-        joinVC.object = self.object;
-        [self.object unpin];
-    }
+//    //should delete the file from local storage
+//    if ([segue.sourceViewController isKindOfClass:[JoinViewController class]]) {
+//        JoinViewController *joinVC = segue.sourceViewController;
+//        joinVC.object = self.object;
+//        [self.object unpin];
+//    }
 }
 
 

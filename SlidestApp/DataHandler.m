@@ -43,9 +43,6 @@
 
 - (void)pushDataToParse:(NSString *)passcode {
 
-    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    documentsURL = [documentsURL URLByAppendingPathComponent:@"current.pdf"];
-    NSData *data = [NSData dataWithContentsOfURL:documentsURL];
     self.slideshow = [PFObject objectWithClassName:@"Slideshow"];
     PFFile *file = [PFFile fileWithData:self.dataFromDropbox contentType:@"pdf"];
     self.slideshow[@"pdf"] = file;
