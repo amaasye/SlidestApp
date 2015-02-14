@@ -28,9 +28,13 @@
     NSString *documentsDirectoryPath = searchPaths.firstObject;
     NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"current.pdf"];
 
+
+    CFDataRef myPDFData = (__bridge CFDataRef)self.dataHandler.dataFromDropbox;
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData(myPDFData);
+    self.pdf = CGPDFDocumentCreateWithProvider(provider);
     //Display PDF
-        CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
-         self.pdf = CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithURL(pdfURL));
+//        CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
+//         self.pdf = CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithURL(pdfURL));
     self.numberOfPages = (int)CGPDFDocumentGetNumberOfPages(self.pdf);
 }
 

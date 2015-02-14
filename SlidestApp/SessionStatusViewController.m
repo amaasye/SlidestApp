@@ -7,18 +7,17 @@
 //
 
 #import "SessionStatusViewController.h"
+#import "SlideshowViewController.h"
 #import "DataHandler.h"
 
 @interface SessionStatusViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *sessionTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *peerCounterLabel;
-@property DataHandler *dataHandler;
 @end
 
 @implementation SessionStatusViewController
 
 - (void)viewDidLoad {
-    self.dataHandler = [DataHandler new];
     [super viewDidLoad];
     
 }
@@ -31,6 +30,9 @@
 
 
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    SlideshowViewController *vc = [segue destinationViewController];
+    vc.dataHandler = self.dataHandler;
+}
 
 @end

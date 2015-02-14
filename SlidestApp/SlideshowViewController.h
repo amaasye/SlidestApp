@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataHandler.h"
 
 @interface SlideshowViewController : UIViewController
+@property DataHandler *dataHandler;
+
 @end

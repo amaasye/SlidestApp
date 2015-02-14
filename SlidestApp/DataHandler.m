@@ -27,7 +27,7 @@
     if ([name hasSuffix:@"pdf"]) {
         [self.delegate fileIsPDF:YES withName:name];
         self.name = name;
-        [self saveFileLocally];
+       // [self saveFileLocally];
     }
     else {
         [self.delegate fileIsPDF:NO withName:@"File type is not supported"];
@@ -47,7 +47,7 @@
     documentsURL = [documentsURL URLByAppendingPathComponent:@"current.pdf"];
     NSData *data = [NSData dataWithContentsOfURL:documentsURL];
     self.slideshow = [PFObject objectWithClassName:@"Slideshow"];
-    PFFile *file = [PFFile fileWithData:data contentType:@"pdf"];
+    PFFile *file = [PFFile fileWithData:self.dataFromDropbox contentType:@"pdf"];
     self.slideshow[@"pdf"] = file;
     self.slideshow[@"titleOfSlideshow"] = self.name;
     self.slideshow[@"passcode"] = passcode;
@@ -58,20 +58,21 @@
 }
 -(void)deleteFileWithName:(NSString*)name{
 
-    NSString *path;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"downloads"];
-    path = [path stringByAppendingPathComponent:@"current.pdf"];
-    NSError *error;
-
-
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
-    {
-        if (![[NSFileManager defaultManager] removeItemAtPath:path error:&error])
-        {
-            NSLog(@"Delete file error: %@", error);
-        }
-    }
+//    NSString *path;
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"downloads"];
+//    path = [path stringByAppendingPathComponent:@"current.pdf"];
+//    NSError *error;
+//
+//
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+//    {
+//        if (![[NSFileManager defaultManager] removeItemAtPath:path error:&error])
+//        {
+//            NSLog(@"Delete file error: %@", error);
+//        }
+//    }
+    self.dataFromDropbox = nil;
     [self.slideshow deleteInBackground];
 }
 
@@ -88,10 +89,10 @@
                 PFFile *pdf = [object objectForKey:@"pdf"];
                 [pdf getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     self.dataFromDropbox = data;
-                    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-                    documentsURL = [documentsURL URLByAppendingPathComponent:@"current.pdf"];
-
-                    [self.dataFromDropbox writeToURL:documentsURL atomically:YES];
+//                    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+//                    documentsURL = [documentsURL URLByAppendingPathComponent:@"current.pdf"];
+//
+//                    [self.dataFromDropbox writeToURL:documentsURL atomically:YES];
                     [self.delegate segueToSlideshow];
                 }];
             }

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataHandler.h"
 
 @interface SessionStatusViewController : UIViewController
+@property DataHandler *dataHandler;
 
 @end

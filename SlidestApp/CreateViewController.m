@@ -9,9 +9,8 @@
 #import "CreateViewController.h"
 #import <DBChooser/DBChooser.h>
 #import <Parse/Parse.h>
-#import "SlideshowViewController.h"
 #import "DataHandler.h"
-
+#import "SessionStatusViewController.h"
 
 @interface CreateViewController () <DataHandlerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
@@ -97,6 +96,10 @@
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
     [self.dataHandler deleteFileWithName:self.name];
     }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    SessionStatusViewController *vc = [segue destinationViewController];
+    vc.dataHandler = self.dataHandler;
+    
+}
 
 @end
