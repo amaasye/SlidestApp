@@ -94,12 +94,14 @@
 
 
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
-    [self.dataHandler deleteFileWithName:self.name];
+    [self.dataHandler deleteFile];
     }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-  //  SessionStatusViewController *vc = [segue destinationViewController];
-  //  vc.dataHandler = self.dataHandler;
-    
+    if ([[segue identifier] isEqualToString:@"toSession"]){
+
+    SessionStatusViewController *vc = [segue destinationViewController];
+    vc.dataHandler = self.dataHandler;
+    }
 }
 
 @end

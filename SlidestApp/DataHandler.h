@@ -20,12 +20,13 @@
 
 @end
 @interface DataHandler : NSObject
+@property NSString *passcode;
 @property PFObject *slideshow;
 @property NSString *name;
 @property id<DataHandlerDelegate> delegate;
 @property NSData *dataFromDropbox;
 - (void)downloadPDF:(DBChooserResult *)chooser;
 - (void)pushDataToParse:(NSString *)passcode;
--(void)deleteFileWithName:(NSString*)name;
+-(void)deleteFile;
 -(void)parseQuery:(NSString *)passcode;
 @end

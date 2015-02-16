@@ -25,7 +25,6 @@
 		B00371851A89C9ED0037157D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371841A89C9ED0037157D /* libsqlite3.dylib */; };
 		B00371871A89C9F70037157D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371861A89C9F70037157D /* libz.dylib */; };
 		B00371891A89CA070037157D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371881A89CA070037157D /* SystemConfiguration.framework */; };
-		B003718B1A89CA110037157D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B003718A1A89CA110037157D /* StoreKit.framework */; };
 		B003718D1A89CA1C0037157D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B003718C1A89CA1C0037157D /* Security.framework */; };
 		B003718F1A89CA2A0037157D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B003718E1A89CA2A0037157D /* MobileCoreServices.framework */; };
 		B00371911A89CA380037157D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371901A89CA380037157D /* CoreGraphics.framework */; };
@@ -40,6 +39,7 @@
 		C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C940F1451A8C43D700D7B2C0 /* CustomCell.m */; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
 		C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B21A8E60C200D70D47 /* DataHandler.m */; };
+		C9BBB8B61A90051400D70D47 /* ParseSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B51A90051400D70D47 /* ParseSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,6 @@
 		B00371841A89C9ED0037157D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B00371861A89C9F70037157D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B00371881A89CA070037157D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B003718A1A89CA110037157D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B003718C1A89CA1C0037157D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B003718E1A89CA2A0037157D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B00371901A89CA380037157D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +98,8 @@
 		C9B808C71A8BE7FC0044932E /* PageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageScrollView.m; sourceTree = "<group>"; };
 		C9BBB8B11A8E60C200D70D47 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
 		C9BBB8B21A8E60C200D70D47 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
+		C9BBB8B41A90051400D70D47 /* ParseSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseSession.h; sourceTree = "<group>"; };
+		C9BBB8B51A90051400D70D47 /* ParseSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseSession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +112,6 @@
 				B00371911A89CA380037157D /* CoreGraphics.framework in Frameworks */,
 				B003718F1A89CA2A0037157D /* MobileCoreServices.framework in Frameworks */,
 				B003718D1A89CA1C0037157D /* Security.framework in Frameworks */,
-				B003718B1A89CA110037157D /* StoreKit.framework in Frameworks */,
 				B00371891A89CA070037157D /* SystemConfiguration.framework in Frameworks */,
 				B00371871A89C9F70037157D /* libz.dylib in Frameworks */,
 				B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */,
@@ -206,7 +206,6 @@
 				B00371901A89CA380037157D /* CoreGraphics.framework */,
 				B003718E1A89CA2A0037157D /* MobileCoreServices.framework */,
 				B003718C1A89CA1C0037157D /* Security.framework */,
-				B003718A1A89CA110037157D /* StoreKit.framework */,
 				B00371881A89CA070037157D /* SystemConfiguration.framework */,
 				B00371861A89C9F70037157D /* libz.dylib */,
 				B00371841A89C9ED0037157D /* libsqlite3.dylib */,
@@ -241,6 +240,8 @@
 				B003719B1A89CE8F0037157D /* JoinViewController.m */,
 				C940F1441A8C43D700D7B2C0 /* CustomCell.h */,
 				C940F1451A8C43D700D7B2C0 /* CustomCell.m */,
+				C9BBB8B41A90051400D70D47 /* ParseSession.h */,
+				C9BBB8B51A90051400D70D47 /* ParseSession.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -302,6 +303,12 @@
 				TargetAttributes = {
 					B003714A1A89C8860037157D = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = DPC69RZ76Z;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					B00371631A89C8860037157D = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -358,6 +365,7 @@
 				B00371991A89CE830037157D /* CreateViewController.m in Sources */,
 				B00371571A89C8860037157D /* RootViewController.m in Sources */,
 				C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */,
+				C9BBB8B61A90051400D70D47 /* ParseSession.m in Sources */,
 				B003719C1A89CE8F0037157D /* JoinViewController.m in Sources */,
 				B00371541A89C8860037157D /* AppDelegate.m in Sources */,
 				B00371511A89C8860037157D /* main.m in Sources */,
@@ -487,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -501,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

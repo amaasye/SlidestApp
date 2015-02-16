@@ -19,7 +19,6 @@
 
         [self.delegate downloadingShouldEnd];
         [self checkFileType:chooser.name];
-//        self.passcode = self.passcodeTextField.text;
     }];
 }
 
@@ -27,21 +26,17 @@
     if ([name hasSuffix:@"pdf"]) {
         [self.delegate fileIsPDF:YES withName:name];
         self.name = name;
-       // [self saveFileLocally];
     }
     else {
         [self.delegate fileIsPDF:NO withName:@"File type is not supported"];
     }
 }
 
-- (void)saveFileLocally {
-    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    documentsURL = [documentsURL URLByAppendingPathComponent:@"current.pdf"];
 
-    [self.dataFromDropbox writeToURL:documentsURL atomically:YES];
-}
 
 - (void)pushDataToParse:(NSString *)passcode {
+
+    self.passcode = passcode;
 
     self.slideshow = [PFObject objectWithClassName:@"Slideshow"];
     PFFile *file = [PFFile fileWithData:self.dataFromDropbox contentType:@"pdf"];
@@ -53,27 +48,15 @@
     }];
     
 }
--(void)deleteFileWithName:(NSString*)name{
+-(void)deleteFile{
 
-//    NSString *path;
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"downloads"];
-//    path = [path stringByAppendingPathComponent:@"current.pdf"];
-//    NSError *error;
-//
-//
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
-//    {
-//        if (![[NSFileManager defaultManager] removeItemAtPath:path error:&error])
-//        {
-//            NSLog(@"Delete file error: %@", error);
-//        }
-//    }
     self.dataFromDropbox = nil;
+    self.passcode = nil;
     [self.slideshow deleteInBackground];
 }
 
 -(void)parseQuery:(NSString *)passcode {
+    self.passcode = passcode;
     PFQuery *query = [PFQuery queryWithClassName:@"Slideshow"];
     [query whereKey:@"passcode" equalTo:passcode];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -86,10 +69,6 @@
                 PFFile *pdf = [object objectForKey:@"pdf"];
                 [pdf getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     self.dataFromDropbox = data;
-//                    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-//                    documentsURL = [documentsURL URLByAppendingPathComponent:@"current.pdf"];
-//
-//                    [self.dataFromDropbox writeToURL:documentsURL atomically:YES];
                     [self.delegate segueToSlideshow];
                 }];
             }

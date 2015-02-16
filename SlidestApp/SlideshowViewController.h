@@ -11,5 +11,6 @@
 
 @interface SlideshowViewController : UIViewController
 @property DataHandler *dataHandler;
+@property BOOL presenter;
 
 @end

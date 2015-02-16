@@ -31,8 +31,12 @@
 
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"ToSlideshow"]){
+
     SlideshowViewController *vc = [segue destinationViewController];
     vc.dataHandler = self.dataHandler;
+    vc.presenter = YES;
+    }
 }
 
 @end

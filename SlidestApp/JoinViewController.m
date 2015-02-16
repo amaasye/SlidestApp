@@ -32,9 +32,14 @@
     [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"slideshowVCfromJoinVC"]){
+
     SlideshowViewController *svc = [segue destinationViewController];
     svc.dataHandler = self.datahandler;
-
+    }
+}
+-(IBAction)unwindToJoinVC:(UIStoryboardSegue *)sender{
+    [self.datahandler deleteFile];
 }
 
 

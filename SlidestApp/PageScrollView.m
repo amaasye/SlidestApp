@@ -32,7 +32,7 @@
 -(void)drawInContext:(CGContextRef)context {
     // PDF page drawing expects a Lower-Left coordinate system, so we flip the coordinate system
     // before we start drawing.
-    CGContextTranslateCTM(UIGraphicsGetCurrentContext(), 0.0, self.frame.size.height);
+    CGContextTranslateCTM(UIGraphicsGetCurrentContext(), 0.0, self.frame.size.height-5);
     CGContextScaleCTM(context, 1, -1);
 
     // Grab the first PDF page
