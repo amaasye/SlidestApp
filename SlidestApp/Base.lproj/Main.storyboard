@@ -177,6 +177,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-ql-2PB">
+                                <rect key="frame" x="184" y="271" width="233" height="78"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="P5q-Sh-4SU"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="dropboxglyph">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onUploadButtonTapped:" destination="oET-gY-IPk" eventType="touchUpInside" id="FDT-9y-7ki"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="passcode for your audience" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y3C-kA-M0V">
                                 <rect key="frame" x="200" y="181" width="200" height="30"/>
                                 <constraints>
@@ -186,21 +201,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jle-xD-1Fc">
-                                <rect key="frame" x="200" y="271" width="200" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="N4c-FP-gbd"/>
-                                    <constraint firstAttribute="height" constant="42" id="kkQ-08-WFT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <state key="normal" title="Get file from Dropbox">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onUploadButtonTapped:" destination="oET-gY-IPk" eventType="touchUpInside" id="Nul-au-3Bf"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a PDF file only" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27x-5a-SIY">
                                 <rect key="frame" x="175" y="136" width="250" height="18"/>
                                 <constraints>
@@ -261,14 +261,27 @@
                                     <segue destination="CvJ-LE-Ye6" kind="unwind" unwindAction="unwind:" id="tHg-VD-fbC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get File from Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Z3-Zer">
+                                <rect key="frame" x="200" y="200" width="200" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="CXn-pa-SuB"/>
+                                    <constraint firstAttribute="width" constant="200" id="Y8l-xP-Wdg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IKt-ql-2PB" firstAttribute="top" secondItem="Tsz-Z3-Zer" secondAttribute="bottom" constant="29" id="7lv-oL-Wzh"/>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="39" id="A96-95-qz9"/>
                             <constraint firstAttribute="centerX" secondItem="iHy-VT-AKG" secondAttribute="centerX" id="Hgh-tC-4uZ"/>
+                            <constraint firstItem="wZk-NY-nJg" firstAttribute="top" secondItem="IKt-ql-2PB" secondAttribute="bottom" constant="251" id="MAj-xF-b4r"/>
                             <constraint firstAttribute="centerX" secondItem="Ux1-oa-j5Y" secondAttribute="centerX" id="MoH-gG-RQs"/>
                             <constraint firstAttribute="centerY" secondItem="iHy-VT-AKG" secondAttribute="centerY" constant="42.5" id="SMm-34-Pce"/>
+                            <constraint firstItem="Tsz-Z3-Zer" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="46" id="Tvj-Bm-gyx"/>
                             <constraint firstAttribute="centerX" secondItem="27x-5a-SIY" secondAttribute="centerX" id="Ykj-Xf-cCh"/>
                             <constraint firstItem="27x-5a-SIY" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="136" id="ZkH-p4-Pvb"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" id="bBE-RM-3VH"/>
@@ -276,18 +289,19 @@
                             <constraint firstItem="xip-23-CH0" firstAttribute="top" secondItem="y3C-kA-M0V" secondAttribute="bottom" constant="26" id="fdl-rN-gzl"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="40" id="hnv-R5-fJU"/>
                             <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="27" id="jQc-gM-p4K"/>
-                            <constraint firstItem="jle-xD-1Fc" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="32" id="pWF-Qi-Zoi"/>
-                            <constraint firstAttribute="centerX" secondItem="jle-xD-1Fc" secondAttribute="centerX" id="pjm-ch-pzw"/>
+                            <constraint firstItem="IKt-ql-2PB" firstAttribute="centerX" secondItem="Ux1-oa-j5Y" secondAttribute="centerX" id="ovz-GP-lUw"/>
+                            <constraint firstAttribute="centerX" secondItem="Tsz-Z3-Zer" secondAttribute="centerX" id="w3Y-sF-2rB"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="getFileFromDropboxLabel" destination="Tsz-Z3-Zer" id="elr-Yb-KZu"/>
                         <outlet property="horizontalLine" destination="xip-23-CH0" id="njh-ir-Mkk"/>
                         <outlet property="passcodeTextField" destination="y3C-kA-M0V" id="eus-j0-gkr"/>
                         <outlet property="reminderLabel" destination="27x-5a-SIY" id="IDb-8d-fjg"/>
                         <outlet property="spinner" destination="iHy-VT-AKG" id="r9a-19-icD"/>
                         <outlet property="startButton" destination="Ux1-oa-j5Y" id="9ra-T6-MPq"/>
-                        <outlet property="uploadFromDropboxButton" destination="jle-xD-1Fc" id="nwc-eH-YvT"/>
+                        <outlet property="uploadFromDropboxButton" destination="IKt-ql-2PB" id="dVP-HR-3kG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8d-oB-Wv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -484,6 +498,9 @@
             <point key="canvasLocation" x="1984" y="-97"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dropboxglyph" width="102" height="96"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J1g-SV-h5b"/>
     </inferredMetricsTieBreakers>

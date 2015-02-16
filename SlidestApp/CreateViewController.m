@@ -16,8 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
 @property (weak, nonatomic) IBOutlet UILabel *reminderLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
-@property (weak, nonatomic) IBOutlet UIButton *endButton;
-
+@property (weak, nonatomic) IBOutlet UILabel *getFileFromDropboxLabel;
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
@@ -37,8 +36,7 @@
     self.startButton.hidden = YES;
     self.horizontalLine.hidden = YES;
     self.spinner.hidden = YES;
-    self.endButton.hidden = YES;
-    
+
     // Do any additional setup after loading the view.
 }
 
@@ -74,8 +72,8 @@
         [self.reminderLabel sizeToFit];
         self.passcodeTextField.hidden = NO;
         self.uploadFromDropboxButton.hidden = YES;
+        self.getFileFromDropboxLabel.hidden = YES;
         self.startButton.hidden = NO;
-        self.endButton.hidden = NO;
         self.horizontalLine.hidden = NO;
       //  [self pushDataToParse];
     } else {
