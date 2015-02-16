@@ -29,4 +29,5 @@
 - (void)pushDataToParse:(NSString *)passcode;
 -(void)deleteFile;
 -(void)parseQuery:(NSString *)passcode;
+
 @end

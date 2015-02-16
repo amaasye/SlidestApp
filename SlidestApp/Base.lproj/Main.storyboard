@@ -177,14 +177,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-ql-2PB">
-                                <rect key="frame" x="184" y="271" width="233" height="78"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-ql-2PB">
+                                <rect key="frame" x="249" y="253" width="102" height="96"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="233" id="P5q-Sh-4SU"/>
+                                    <constraint firstAttribute="width" constant="102" id="P5q-Sh-4SU"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="dropboxglyph">
+                                <state key="normal" backgroundImage="dropboxglyph">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -261,8 +261,8 @@
                                     <segue destination="CvJ-LE-Ye6" kind="unwind" unwindAction="unwind:" id="tHg-VD-fbC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get File from Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Z3-Zer">
-                                <rect key="frame" x="200" y="200" width="200" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Get File from Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Z3-Zer">
+                                <rect key="frame" x="200" y="200" width="200" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="CXn-pa-SuB"/>
                                     <constraint firstAttribute="width" constant="200" id="Y8l-xP-Wdg"/>
