@@ -84,7 +84,7 @@
 
 - (IBAction)onStartButtonTapped:(UIButton *)sender {
 //    self.passcode = self.passcodeTextField.text;
-    [self.dataHandler pushDataToParse:self.passcodeTextField.text];
+    [self.dataHandler pushDataToDataBase:self.passcodeTextField.text];
 }
 
 

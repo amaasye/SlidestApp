@@ -34,9 +34,27 @@
 
 
 
-- (void)pushDataToParse:(NSString *)passcode {
+- (void)pushDataToDataBase:(NSString *)passcode {
 
     self.passcode = passcode;
+    self.pdfDataRef = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
+    NSString *pdfData = [self.dataFromDropbox base64EncodedStringWithOptions:0];
+    //NSData *data = [[NSData alloc] initWithBase64EncodedString:stringForm options:0];
+
+
+    NSDictionary *slideshow = @{
+                                @"name": self.name,
+                                @"data": pdfData,
+                                @"passcode": self.passcode,
+                                @"currentPage": [NSNumber numberWithInt:0],
+                                };
+
+    Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: @"Slideshows"];
+    NSDictionary *slideshows = @{
+                            @"slideshow": slideshow,
+                            };
+    [slideshowRef setValue: slideshows];
+
 
 
 }
@@ -46,7 +64,7 @@
     self.passcode = nil;
 }
 
--(void)parseQuery:(NSString *)passcode {
+-(void)pullFromDataBase:(NSString *)passcode {
     self.passcode = passcode;
     [self.delegate segueToSlideshow];
 

@@ -24,7 +24,7 @@
 
 }
 - (IBAction)onGoButtonTapped:(UIButton *)sender {
-    [self.datahandler parseQuery:self.passcodeTextField.text];
+    [self.datahandler pullFromDataBase:self.passcodeTextField.text];
 }
 
 - (void)segueToSlideshow {

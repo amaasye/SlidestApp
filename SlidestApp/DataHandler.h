@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <DBChooser/DBChooser.h>
+#import <Firebase/Firebase.h>
 
 @protocol DataHandlerDelegate
 @optional
@@ -23,9 +24,10 @@
 @property NSString *name;
 @property id<DataHandlerDelegate> delegate;
 @property NSData *dataFromDropbox;
+@property Firebase *pdfDataRef;
 - (void)downloadPDF:(DBChooserResult *)chooser;
-- (void)pushDataToParse:(NSString *)passcode;
+- (void)pushDataToDataBase:(NSString *)passcode;
 -(void)deleteFile;
--(void)parseQuery:(NSString *)passcode;
+-(void)pullFromDataBase:(NSString *)passcode;
 
 @end
