@@ -7,7 +7,6 @@
 //
 
 #import "JoinViewController.h"
-#import <Parse/Parse.h>
 #import "SlideshowViewController.h"
 
 @interface JoinViewController () <DataHandlerDelegate>

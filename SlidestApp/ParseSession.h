@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Parse/Parse.h> 
 @protocol ParseSessionDelegate
 @optional
 -(void)updateCollecionViewPage:(int)pageNr;
 @end
 
 @interface ParseSession : NSObject
-@property PFObject *page;
 @property id<ParseSessionDelegate>delegate;
 -(void)startConnectivity:(NSString*)passcode;
 -(void)updatePageWithNr:(int)pageNr;

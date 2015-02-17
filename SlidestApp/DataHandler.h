@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <DBChooser/DBChooser.h>
-#import <Parse/Parse.h>
 
 @protocol DataHandlerDelegate
 @optional
@@ -21,7 +20,6 @@
 @end
 @interface DataHandler : NSObject
 @property NSString *passcode;
-@property PFObject *slideshow;
 @property NSString *name;
 @property id<DataHandlerDelegate> delegate;
 @property NSData *dataFromDropbox;

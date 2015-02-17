@@ -8,7 +8,6 @@
 
 #import "CreateViewController.h"
 #import <DBChooser/DBChooser.h>
-#import <Parse/Parse.h>
 #import "DataHandler.h"
 #import "SessionStatusViewController.h"
 
@@ -20,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-@property PFObject *slideshow;
 @property DataHandler *dataHandler;
 
 @end
