@@ -49,7 +49,7 @@
                                 @"currentPage": [NSNumber numberWithInt:0],
                                 };
 
-    Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: @"Slideshows"];
+    Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];
     NSDictionary *slideshows = @{
                             @"slideshow": slideshow,
                             };
@@ -66,7 +66,19 @@
 
 -(void)pullFromDataBase:(NSString *)passcode {
     self.passcode = passcode;
-    [self.delegate segueToSlideshow];
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/slideshow",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+
+    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@", snapshot.value[@"name"]);
+        NSLog(@"%@",snapshot.value[@"passcode"]);
+        self.dataFromDropbox = [[NSData alloc] initWithBase64EncodedString:snapshot.value[@"data"] options:0];
+        
+        [self.delegate segueToSlideshow];
+
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
 
 
 }
