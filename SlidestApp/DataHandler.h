@@ -19,7 +19,7 @@
 
 
 @end
-@interface DataHandler : NSObject
+@interface DataHandler : NSObject <UIAlertViewDelegate>
 @property NSString *passcode;
 @property PFObject *slideshow;
 @property NSString *name;
@@ -29,5 +29,5 @@
 - (void)pushDataToParse:(NSString *)passcode;
 -(void)deleteFile;
 -(void)parseQuery:(NSString *)passcode;
-
+-(void)connectionProblem;
 @end

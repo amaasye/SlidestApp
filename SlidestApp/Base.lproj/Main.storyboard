@@ -177,7 +177,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-ql-2PB">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-ql-2PB">
                                 <rect key="frame" x="249" y="253" width="102" height="96"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -261,12 +261,8 @@
                                     <segue destination="CvJ-LE-Ye6" kind="unwind" unwindAction="unwind:" id="tHg-VD-fbC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Get File from Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Z3-Zer">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get File from Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Z3-Zer">
                                 <rect key="frame" x="200" y="200" width="200" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="CXn-pa-SuB"/>
-                                    <constraint firstAttribute="width" constant="200" id="Y8l-xP-Wdg"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -274,14 +270,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IKt-ql-2PB" firstAttribute="top" secondItem="Tsz-Z3-Zer" secondAttribute="bottom" constant="29" id="7lv-oL-Wzh"/>
+                            <constraint firstItem="xip-23-CH0" firstAttribute="top" secondItem="Tsz-Z3-Zer" secondAttribute="bottom" constant="13" id="1vD-jx-gtE"/>
+                            <constraint firstItem="Tsz-Z3-Zer" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="46" id="2mM-Bx-3U8"/>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="top" secondItem="xip-23-CH0" secondAttribute="bottom" constant="39" id="A96-95-qz9"/>
                             <constraint firstAttribute="centerX" secondItem="iHy-VT-AKG" secondAttribute="centerX" id="Hgh-tC-4uZ"/>
                             <constraint firstItem="wZk-NY-nJg" firstAttribute="top" secondItem="IKt-ql-2PB" secondAttribute="bottom" constant="251" id="MAj-xF-b4r"/>
+                            <constraint firstItem="Tsz-Z3-Zer" firstAttribute="leading" secondItem="y3C-kA-M0V" secondAttribute="leading" id="Mag-Gu-JBe"/>
                             <constraint firstAttribute="centerX" secondItem="Ux1-oa-j5Y" secondAttribute="centerX" id="MoH-gG-RQs"/>
+                            <constraint firstItem="Tsz-Z3-Zer" firstAttribute="trailing" secondItem="y3C-kA-M0V" secondAttribute="trailing" id="Oj0-uc-0Ol"/>
                             <constraint firstAttribute="centerY" secondItem="iHy-VT-AKG" secondAttribute="centerY" constant="42.5" id="SMm-34-Pce"/>
-                            <constraint firstItem="Tsz-Z3-Zer" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="46" id="Tvj-Bm-gyx"/>
                             <constraint firstAttribute="centerX" secondItem="27x-5a-SIY" secondAttribute="centerX" id="Ykj-Xf-cCh"/>
                             <constraint firstItem="27x-5a-SIY" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="136" id="ZkH-p4-Pvb"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" id="bBE-RM-3VH"/>
@@ -290,7 +288,6 @@
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="40" id="hnv-R5-fJU"/>
                             <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="27" id="jQc-gM-p4K"/>
                             <constraint firstItem="IKt-ql-2PB" firstAttribute="centerX" secondItem="Ux1-oa-j5Y" secondAttribute="centerX" id="ovz-GP-lUw"/>
-                            <constraint firstAttribute="centerX" secondItem="Tsz-Z3-Zer" secondAttribute="centerX" id="w3Y-sF-2rB"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

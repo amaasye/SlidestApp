@@ -15,10 +15,14 @@
     [self.delegate downloadingShouldStart];
     NSURLRequest *request = [NSURLRequest requestWithURL:chooser.link];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if  (!connectionError) {
         self.dataFromDropbox = data;
-
         [self.delegate downloadingShouldEnd];
         [self checkFileType:chooser.name];
+        }
+        else {
+            [self connectionProblem];
+        }
     }];
 }
 
@@ -35,7 +39,7 @@
 
 
 - (void)pushDataToParse:(NSString *)passcode {
-
+    
     self.passcode = passcode;
 
     self.slideshow = [PFObject objectWithClassName:@"Slideshow"];
@@ -45,6 +49,9 @@
     self.slideshow[@"passcode"] = passcode;
     [self.slideshow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Saved! %@", error);
+        if (error) {
+            [self connectionProblem];
+        }
     }];
     
 }
@@ -75,9 +82,21 @@
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
+            [self connectionProblem];
         }
     }];
 
+}
+
+-(void)connectionProblem {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Please check your network connection." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+
+    }
 }
 
 @end
