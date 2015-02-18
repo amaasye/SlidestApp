@@ -354,28 +354,41 @@
                                     <outlet property="delegate" destination="ljp-N3-uLQ" id="jWp-5w-fdn"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-zc-qwM">
-                                <rect key="frame" x="16" y="550" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-oD-UWw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="XFo-0B-xNe"/>
-                                    <constraint firstAttribute="height" constant="30" id="uou-pE-XYF"/>
+                                    <constraint firstAttribute="height" constant="40" id="TEE-Vi-bko"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-zc-qwM">
+                                <rect key="frame" x="16" y="5" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YRf-yR-3uC"/>
+                                    <constraint firstAttribute="width" constant="46" id="g1z-HK-kgx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KKg-dP-0jT" kind="unwind" unwindAction="unwindToSessionStatusViewController:" id="PkC-iP-NGw"/>
+                                    <segue destination="KKg-dP-0jT" kind="unwind" unwindAction="unwind:" id="ePt-GH-XsH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K7o-zc-qwM" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" id="N7d-JB-jlW"/>
                             <constraint firstItem="ux5-6h-f0A" firstAttribute="top" secondItem="6RR-WU-4HJ" secondAttribute="bottom" id="auJ-Zm-TM7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h6z-oD-UWw" secondAttribute="trailing" constant="-16" id="b1g-YY-MEx"/>
+                            <constraint firstItem="h6z-oD-UWw" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="foL-w4-GKE"/>
                             <constraint firstItem="6RR-WU-4HJ" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-16" id="gPC-5t-g54"/>
-                            <constraint firstItem="ux5-6h-f0A" firstAttribute="top" secondItem="K7o-zc-qwM" secondAttribute="bottom" constant="20" id="lYm-iB-Nv2"/>
+                            <constraint firstItem="h6z-oD-UWw" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-16" id="ibF-Jh-LaM"/>
+                            <constraint firstItem="K7o-zc-qwM" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" id="q7j-jb-lKx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6RR-WU-4HJ" secondAttribute="trailing" constant="-16" id="r23-sk-sGk"/>
+                            <constraint firstItem="K7o-zc-qwM" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="5" id="rPw-VD-FDI"/>
                             <constraint firstItem="6RR-WU-4HJ" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="tnD-bg-n98"/>
                         </constraints>
                     </view>
@@ -386,7 +399,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29l-Mt-rwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KKg-dP-0jT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="434"/>
+            <point key="canvasLocation" x="2717" y="455"/>
         </scene>
         <!--Session Status View Controller-->
         <scene sceneID="Wog-GP-t4y">
@@ -508,6 +521,6 @@
         <image name="dropboxglyph" width="102" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J1g-SV-h5b"/>
+        <segue reference="rmN-YJ-vnx"/>
     </inferredMetricsTieBreakers>
 </document>
