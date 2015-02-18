@@ -94,9 +94,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-
-    }
+        [alertView dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 @end
