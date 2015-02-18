@@ -9,25 +9,19 @@
 #import "SlideshowViewController.h"
 #import "PageScrollView.h"
 #import "CustomCell.h"
-#import "ParseSession.h"
 
-@interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, ParseSessionDelegate>
+@interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, DataHandlerDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property CGPDFDocumentRef pdf;
 @property int numberOfPages;
 @property int currentPageNr;
-@property ParseSession *session;
 @end
 
 @implementation SlideshowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.session = [ParseSession new];
-    self.session.delegate = self;
-    if (self.presenter) {
-        [self.session startConnectivity:self.dataHandler.passcode];
-    }
+    self.dataHandler.delegate = self;
     self.currentPageNr = 0;
     [self openPdf];
 
@@ -44,23 +38,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    if (self.presenter ==NO) {
-        [NSTimer scheduledTimerWithTimeInterval:.5f
-                                         target:self selector:@selector(askForPageNr) userInfo:nil repeats:YES];
     }
-}
--(void)askForPageNr{
-    [self.session getPageWithPasscode:self.dataHandler.passcode];
-}
--(void)updateCollecionViewPage:(int)pageNr{
-   // if (self.currentPageNr != pageNr) {
-        self.currentPageNr = pageNr;
 
+- (void)updatePage:(int)pageNr{
+        self.currentPageNr = pageNr;
 
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPageNr  inSection:0]
                                 atScrollPosition:UICollectionViewScrollPositionNone
                                         animated:YES];
-   // }
 
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -68,7 +53,7 @@
     for (UICollectionViewCell *cell in [self.collectionView visibleCells]) {
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
         if (self.presenter) {
-            [self.session updatePageWithNr:(int)indexPath.row];
+            [self.dataHandler setPage:(int)indexPath.row];
         }
         self.currentPageNr = (int)indexPath.row;
 

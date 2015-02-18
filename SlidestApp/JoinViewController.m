@@ -27,8 +27,9 @@
     [self.datahandler pullFromDataBase:self.passcodeTextField.text];
 }
 
-- (void)segueToSlideshow {
+- (void)dataDownloaded {
     [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
+
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"slideshowVCfromJoinVC"]){
@@ -38,7 +39,7 @@
     }
 }
 -(IBAction)unwindToJoinVC:(UIStoryboardSegue *)sender{
-    [self.datahandler deleteFile];
+    //[self.datahandler deleteFile];
 }
 
 

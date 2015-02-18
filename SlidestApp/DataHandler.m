@@ -55,6 +55,45 @@
                             };
     [slideshowRef setValue: slideshows];
 
+}
+- (void)setPage:(int)pageNr{
+    
+    NSDictionary *slideshow = @{
+                                @"currentPage": [NSNumber numberWithInt:pageNr],
+                                };
+
+    Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];
+    NSDictionary *slideshows = @{
+                                 @"slideshow": slideshow,
+                                 };
+    [slideshowRef updateChildValues: slideshows];
+
+}
+
+-(void)pullFromDataBase:(NSString *)passcode {
+
+    self.passcode = passcode;
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/slideshow",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+
+    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+
+        if ((snapshot.exists) && (self.dataFromDropbox == nil)) {
+
+            NSLog(@"%@", snapshot.value[@"name"]);
+            NSLog(@"%@",snapshot.value[@"passcode"]);
+            self.dataFromDropbox = [[NSData alloc] initWithBase64EncodedString:snapshot.value[@"data"] options:0];
+        
+            [self.delegate dataDownloaded];
+        }
+        else if ((snapshot.exists) && (self.dataFromDropbox != nil)) {
+            [self.delegate updatePage:[snapshot.value[@"currentPage"] intValue]];
+
+        }
+
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
 
 
 }
@@ -63,24 +102,4 @@
     self.dataFromDropbox = nil;
     self.passcode = nil;
 }
-
--(void)pullFromDataBase:(NSString *)passcode {
-    self.passcode = passcode;
-    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/slideshow",self.passcode];
-    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
-
-    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"%@", snapshot.value[@"name"]);
-        NSLog(@"%@",snapshot.value[@"passcode"]);
-        self.dataFromDropbox = [[NSData alloc] initWithBase64EncodedString:snapshot.value[@"data"] options:0];
-        
-        [self.delegate segueToSlideshow];
-
-    } withCancelBlock:^(NSError *error) {
-        NSLog(@"%@", error.description);
-    }];
-
-
-}
-
 @end

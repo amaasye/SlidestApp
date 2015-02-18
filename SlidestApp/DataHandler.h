@@ -15,7 +15,8 @@
 - (void)downloadingShouldStart;
 - (void)downloadingShouldEnd;
 - (void)fileIsPDF:(BOOL)isPDF withName:(NSString *)name;
-- (void)segueToSlideshow;
+- (void)dataDownloaded;
+- (void)updatePage:(int)pageNr;
 
 
 @end
@@ -29,5 +30,6 @@
 - (void)pushDataToDataBase:(NSString *)passcode;
 -(void)deleteFile;
 -(void)pullFromDataBase:(NSString *)passcode;
+- (void)setPage:(int)pageNr;
 
 @end

@@ -32,7 +32,7 @@
     self.passcodeTextField.hidden = YES;
     self.reminderLabel.hidden = YES;
     self.startButton.hidden = YES;
-    self.horizontalLine.hidden = YES;
+    self.horizontalLine.hidden = NO;
     self.spinner.hidden = YES;
 
     // Do any additional setup after loading the view.
@@ -53,6 +53,7 @@
 
 
 - (void)downloadingShouldStart {
+    self.uploadFromDropboxButton.hidden = YES;
     self.spinner.hidden = NO;
     [self.spinner startAnimating];
 }
