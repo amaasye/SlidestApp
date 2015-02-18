@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataHandler.h"
 
 @interface RootViewController : UIViewController
+@property DataHandler *datahandler;
 
 
 @end

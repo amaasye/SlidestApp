@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -40,7 +40,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tJo-2W-8cF" kind="show" id="Muj-hX-vNj"/>
+                                    <action selector="onJoinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u0n-h9-V5l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-17-MWe">
@@ -51,11 +51,35 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="Create SlideShow">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="oET-gY-IPk" kind="show" id="c2i-vD-Hgl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter passcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bH-UJ6">
+                                <rect key="frame" x="200" y="189" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Edb-pP-pYB"/>
+                                    <constraint firstAttribute="width" constant="200" id="i6p-HA-7ES"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-Yu-EvU">
+                                <rect key="frame" x="283" y="304" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G6B-1g-lMx"/>
+                                    <constraint firstAttribute="width" constant="34" id="WQA-Oc-TXR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onGoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZk-nG-yLY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,7 +89,11 @@
                             <constraint firstItem="d8N-tv-vhL" firstAttribute="top" secondItem="sQm-U1-4ef" secondAttribute="bottom" constant="42" id="757-pV-3Of"/>
                             <constraint firstAttribute="centerY" secondItem="sQm-U1-4ef" secondAttribute="centerY" id="Ddn-Cb-D9C"/>
                             <constraint firstAttribute="centerX" secondItem="Po4-17-MWe" secondAttribute="centerX" id="Ghv-kA-HZI"/>
+                            <constraint firstItem="sQm-U1-4ef" firstAttribute="top" secondItem="2Cb-bH-UJ6" secondAttribute="bottom" constant="40" id="IZy-ff-Y3T"/>
+                            <constraint firstItem="dhH-Yu-EvU" firstAttribute="top" secondItem="sQm-U1-4ef" secondAttribute="bottom" constant="43" id="Lfo-aB-PYf"/>
                             <constraint firstAttribute="centerX" secondItem="sQm-U1-4ef" secondAttribute="centerX" id="Otc-pQ-CF6"/>
+                            <constraint firstAttribute="centerX" secondItem="dhH-Yu-EvU" secondAttribute="centerX" id="pG6-sR-3ca"/>
+                            <constraint firstAttribute="centerX" secondItem="2Cb-bH-UJ6" secondAttribute="centerX" id="rcq-v4-WeF"/>
                             <constraint firstAttribute="centerX" secondItem="d8N-tv-vhL" secondAttribute="centerX" id="svC-i5-dHP"/>
                             <constraint firstAttribute="centerY" secondItem="sQm-U1-4ef" secondAttribute="centerY" constant="40" id="x32-Hb-iTX"/>
                         </constraints>
@@ -75,95 +103,18 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="createSlideshowButton" destination="Po4-17-MWe" id="5KF-aU-WLL"/>
+                        <outlet property="goButton" destination="dhH-Yu-EvU" id="Cfb-He-SMu"/>
+                        <outlet property="horizontalLine" destination="sQm-U1-4ef" id="FT7-He-l53"/>
+                        <outlet property="joinOneButton" destination="d8N-tv-vhL" id="BDt-70-isf"/>
+                        <outlet property="passcodeTextField" destination="2Cb-bH-UJ6" id="lin-bF-weB"/>
+                        <segue destination="ljp-N3-uLQ" kind="presentation" identifier="slideshowVCfromJoinVC" id="FBc-qq-C0s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="441" y="240"/>
-        </scene>
-        <!--Join View Controller-->
-        <scene sceneID="y8Q-34-LUW">
-            <objects>
-                <viewController id="tJo-2W-8cF" customClass="JoinViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OtK-MP-Jrq"/>
-                        <viewControllerLayoutGuide type="bottom" id="S9F-uG-H2x"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="B2m-G9-WzX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter passcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgb-ta-vm9">
-                                <rect key="frame" x="200" y="203" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="79Q-vf-4I8"/>
-                                    <constraint firstAttribute="width" constant="200" id="fie-Em-1tx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADm-MN-2T6">
-                                <rect key="frame" x="175" y="259" width="250" height="2"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Fbp-aI-OuT"/>
-                                    <constraint firstAttribute="height" constant="2" id="isA-d8-BjD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1c-zl-bEG">
-                                <rect key="frame" x="283" y="287" width="34" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="XzT-EZ-urs"/>
-                                    <constraint firstAttribute="height" constant="30" id="jZQ-bV-KHd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
-                                <state key="normal" title="Go">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onGoButtonTapped:" destination="tJo-2W-8cF" eventType="touchUpInside" id="Kce-rJ-dba"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3G-r0-Sgq">
-                                <rect key="frame" x="16" y="40" width="65" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="kW5-O1-V4k"/>
-                                    <constraint firstAttribute="width" constant="65" id="nOc-ZA-JPV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="yFR-Ep-ZBZ" kind="unwind" unwindAction="unwind:" id="Bx8-0g-gpj"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="a1c-zl-bEG" secondAttribute="centerX" id="7wz-ni-2ah"/>
-                            <constraint firstAttribute="centerX" secondItem="ADm-MN-2T6" secondAttribute="centerX" id="BXQ-Pu-n8a"/>
-                            <constraint firstItem="x3G-r0-Sgq" firstAttribute="leading" secondItem="B2m-G9-WzX" secondAttribute="leadingMargin" id="Bsv-hz-RPp"/>
-                            <constraint firstItem="x3G-r0-Sgq" firstAttribute="top" secondItem="OtK-MP-Jrq" secondAttribute="bottom" constant="20" id="Kg6-0X-Lfa"/>
-                            <constraint firstItem="ADm-MN-2T6" firstAttribute="top" secondItem="lgb-ta-vm9" secondAttribute="bottom" constant="26" id="UXe-k5-xig"/>
-                            <constraint firstAttribute="centerY" secondItem="ADm-MN-2T6" secondAttribute="centerY" constant="40" id="YX3-Dn-Duy"/>
-                            <constraint firstItem="a1c-zl-bEG" firstAttribute="top" secondItem="ADm-MN-2T6" secondAttribute="bottom" constant="26" id="cP5-82-Sav"/>
-                            <constraint firstAttribute="centerX" secondItem="lgb-ta-vm9" secondAttribute="centerX" id="l8z-5w-3aO"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="passcodeTextField" destination="lgb-ta-vm9" id="tCt-We-fyZ"/>
-                        <segue destination="ljp-N3-uLQ" kind="presentation" identifier="slideshowVCfromJoinVC" id="rmN-YJ-vnx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mlw-1d-gDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="yFR-Ep-ZBZ" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1193" y="601"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="Skd-2P-VXx">
@@ -425,7 +376,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2717" y="455"/>
+            <point key="canvasLocation" x="1154" y="619"/>
         </scene>
         <!--Session Status View Controller-->
         <scene sceneID="Wog-GP-t4y">
@@ -547,6 +498,6 @@
         <image name="dropboxglyph" width="102" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rmN-YJ-vnx"/>
+        <segue reference="FBc-qq-C0s"/>
     </inferredMetricsTieBreakers>
 </document>

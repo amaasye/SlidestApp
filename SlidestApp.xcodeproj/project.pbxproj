@@ -26,7 +26,6 @@
 		B00371931A89CA440037157D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371921A89CA440037157D /* CFNetwork.framework */; };
 		B00371951A89CA530037157D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371941A89CA530037157D /* AudioToolbox.framework */; };
 		B00371991A89CE830037157D /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00371981A89CE830037157D /* CreateViewController.m */; };
-		B003719C1A89CE8F0037157D /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B003719B1A89CE8F0037157D /* JoinViewController.m */; };
 		B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B003719E1A89CEA40037157D /* SlideshowViewController.m */; };
 		B00371A41A8A53610037157D /* DBChooser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B00371A21A8A53610037157D /* DBChooser.bundle */; };
 		B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371A31A8A53610037157D /* DBChooser.framework */; };
@@ -34,6 +33,8 @@
 		B0196D121A93A20A0025D959 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D111A93A20A0025D959 /* Firebase.framework */; };
 		B0196D141A93A23B0025D959 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D131A93A23B0025D959 /* libicucore.dylib */; };
 		B0196D161A93A2480025D959 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D151A93A2480025D959 /* libc++.dylib */; };
+		B0196DAC1A94F7AC0025D959 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196DA71A94F7960025D959 /* pop.framework */; };
+		B0196DAD1A94F7AC0025D959 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0196DA71A94F7960025D959 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C940F1451A8C43D700D7B2C0 /* CustomCell.m */; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
 		C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B21A8E60C200D70D47 /* DataHandler.m */; };
@@ -48,7 +49,63 @@
 			remoteGlobalIDString = B003714A1A89C8860037157D;
 			remoteInfo = SlidestApp;
 		};
+		B0196DA21A94F7960025D959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC191218162FB53A00E0CC76;
+			remoteInfo = pop;
+		};
+		B0196DA41A94F7960025D959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC68857F18C7B60000C6194C;
+			remoteInfo = "pop-osx";
+		};
+		B0196DA61A94F7960025D959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0B6BE74819FFD3B900762101;
+			remoteInfo = "pop-embedded";
+		};
+		B0196DA81A94F7960025D959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
+			remoteInfo = "pop-tests";
+		};
+		B0196DAA1A94F7960025D959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC7E319918C93D6500B38170;
+			remoteInfo = "pop-tests-osx";
+		};
+		B0196DAE1A94F7AC0025D959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B6BE74719FFD3B900762101;
+			remoteInfo = "pop-embedded";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B0196DB01A94F7AC0025D959 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B0196DAD1A94F7AC0025D959 /* pop.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B003714B1A89C8860037157D /* SlidestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,8 +134,6 @@
 		B00371941A89CA530037157D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B00371971A89CE830037157D /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateViewController.h; sourceTree = "<group>"; };
 		B00371981A89CE830037157D /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateViewController.m; sourceTree = "<group>"; };
-		B003719A1A89CE8F0037157D /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
-		B003719B1A89CE8F0037157D /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
 		B003719D1A89CEA40037157D /* SlideshowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideshowViewController.h; sourceTree = "<group>"; };
 		B003719E1A89CEA40037157D /* SlideshowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideshowViewController.m; sourceTree = "<group>"; };
 		B00371A21A8A53610037157D /* DBChooser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DBChooser.bundle; sourceTree = "<group>"; };
@@ -88,6 +143,7 @@
 		B0196D111A93A20A0025D959 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		B0196D131A93A23B0025D959 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		B0196D151A93A2480025D959 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		B0196D9A1A94F7950025D959 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../../Downloads/pop-master/pop.xcodeproj"; sourceTree = "<group>"; };
 		C940F1441A8C43D700D7B2C0 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		C940F1451A8C43D700D7B2C0 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		C9B808C61A8BE7FC0044932E /* PageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageScrollView.h; sourceTree = "<group>"; };
@@ -111,6 +167,7 @@
 				B00371911A89CA380037157D /* CoreGraphics.framework in Frameworks */,
 				B003718F1A89CA2A0037157D /* MobileCoreServices.framework in Frameworks */,
 				B003718D1A89CA1C0037157D /* Security.framework in Frameworks */,
+				B0196DAC1A94F7AC0025D959 /* pop.framework in Frameworks */,
 				B00371891A89CA070037157D /* SystemConfiguration.framework in Frameworks */,
 				B00371871A89C9F70037157D /* libz.dylib in Frameworks */,
 				B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */,
@@ -134,6 +191,7 @@
 		B00371421A89C8860037157D = {
 			isa = PBXGroup;
 			children = (
+				B0196D9A1A94F7950025D959 /* pop.xcodeproj */,
 				B00371961A89CA710037157D /* Frameworks */,
 				B003714D1A89C8860037157D /* SlidestApp */,
 				B00371671A89C8860037157D /* SlidestAppTests */,
@@ -228,8 +286,6 @@
 				C9B808C71A8BE7FC0044932E /* PageScrollView.m */,
 				B003719D1A89CEA40037157D /* SlideshowViewController.h */,
 				B003719E1A89CEA40037157D /* SlideshowViewController.m */,
-				B003719A1A89CE8F0037157D /* JoinViewController.h */,
-				B003719B1A89CE8F0037157D /* JoinViewController.m */,
 				C940F1441A8C43D700D7B2C0 /* CustomCell.h */,
 				C940F1451A8C43D700D7B2C0 /* CustomCell.m */,
 				C9BBB8B41A90051400D70D47 /* ParseSession.h */,
@@ -246,6 +302,18 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
+		B0196D9B1A94F7950025D959 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0196DA31A94F7960025D959 /* libpop.a */,
+				B0196DA51A94F7960025D959 /* pop.framework */,
+				B0196DA71A94F7960025D959 /* pop.framework */,
+				B0196DA91A94F7960025D959 /* pop-tests.xctest */,
+				B0196DAB1A94F7960025D959 /* pop-tests-osx.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,10 +324,12 @@
 				B00371471A89C8860037157D /* Sources */,
 				B00371481A89C8860037157D /* Frameworks */,
 				B00371491A89C8860037157D /* Resources */,
+				B0196DB01A94F7AC0025D959 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B0196DAF1A94F7AC0025D959 /* PBXTargetDependency */,
 			);
 			name = SlidestApp;
 			productName = SlidestApp;
@@ -295,7 +365,7 @@
 				TargetAttributes = {
 					B003714A1A89C8860037157D = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = DPC69RZ76Z;
+						DevelopmentTeam = 234RZ85336;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -304,7 +374,7 @@
 					};
 					B00371631A89C8860037157D = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = DPC69RZ76Z;
+						DevelopmentTeam = 234RZ85336;
 						TestTargetID = B003714A1A89C8860037157D;
 					};
 				};
@@ -320,6 +390,12 @@
 			mainGroup = B00371421A89C8860037157D;
 			productRefGroup = B003714C1A89C8860037157D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B0196D9B1A94F7950025D959 /* Products */;
+					ProjectRef = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B003714A1A89C8860037157D /* SlidestApp */,
@@ -327,6 +403,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B0196DA31A94F7960025D959 /* libpop.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpop.a;
+			remoteRef = B0196DA21A94F7960025D959 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0196DA51A94F7960025D959 /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = B0196DA41A94F7960025D959 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0196DA71A94F7960025D959 /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = B0196DA61A94F7960025D959 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0196DA91A94F7960025D959 /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = B0196DA81A94F7960025D959 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0196DAB1A94F7960025D959 /* pop-tests-osx.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests-osx.xctest";
+			remoteRef = B0196DAA1A94F7960025D959 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B00371491A89C8860037157D /* Resources */ = {
@@ -359,7 +473,6 @@
 				B00371571A89C8860037157D /* RootViewController.m in Sources */,
 				C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */,
 				C9BBB8B61A90051400D70D47 /* ParseSession.m in Sources */,
-				B003719C1A89CE8F0037157D /* JoinViewController.m in Sources */,
 				B00371541A89C8860037157D /* AppDelegate.m in Sources */,
 				B00371511A89C8860037157D /* main.m in Sources */,
 				B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */,
@@ -383,6 +496,11 @@
 			isa = PBXTargetDependency;
 			target = B003714A1A89C8860037157D /* SlidestApp */;
 			targetProxy = B00371651A89C8860037157D /* PBXContainerItemProxy */;
+		};
+		B0196DAF1A94F7AC0025D959 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "pop-embedded";
+			targetProxy = B0196DAE1A94F7AC0025D959 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -487,6 +605,7 @@
 		B003716F1A89C8860037157D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -497,12 +616,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Debug;
 		};
 		B00371701A89C8860037157D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -513,6 +634,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Release;
 		};
