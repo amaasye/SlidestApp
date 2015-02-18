@@ -341,12 +341,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="188" height="169"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="customSize" width="188" height="169"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -354,17 +353,30 @@
                                     <outlet property="delegate" destination="ljp-N3-uLQ" id="jWp-5w-fdn"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-oD-UWw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999999999999962" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-oD-UWw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="TEE-Vi-bko"/>
+                                    <constraint firstAttribute="height" constant="50" id="TEE-Vi-bko"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0B-uI-aCW">
+                                <rect key="frame" x="538" y="10" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aWG-I7-Qoz"/>
+                                    <constraint firstAttribute="width" constant="46" id="e7F-bj-gfl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-zc-qwM">
-                                <rect key="frame" x="16" y="5" width="46" height="30"/>
+                                <rect key="frame" x="16" y="10" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YRf-yR-3uC"/>
                                     <constraint firstAttribute="width" constant="46" id="g1z-HK-kgx"/>
@@ -380,7 +392,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="w0B-uI-aCW" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="8Tc-VS-FUF"/>
+                            <constraint firstItem="w0B-uI-aCW" firstAttribute="trailing" secondItem="H34-wT-7EA" secondAttribute="trailingMargin" id="8Tu-Vt-Cbn"/>
                             <constraint firstItem="ux5-6h-f0A" firstAttribute="top" secondItem="6RR-WU-4HJ" secondAttribute="bottom" id="auJ-Zm-TM7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h6z-oD-UWw" secondAttribute="trailing" constant="-16" id="b1g-YY-MEx"/>
                             <constraint firstItem="h6z-oD-UWw" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="foL-w4-GKE"/>
@@ -388,16 +403,27 @@
                             <constraint firstItem="h6z-oD-UWw" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-16" id="ibF-Jh-LaM"/>
                             <constraint firstItem="K7o-zc-qwM" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" id="q7j-jb-lKx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6RR-WU-4HJ" secondAttribute="trailing" constant="-16" id="r23-sk-sGk"/>
-                            <constraint firstItem="K7o-zc-qwM" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="5" id="rPw-VD-FDI"/>
+                            <constraint firstItem="K7o-zc-qwM" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="rPw-VD-FDI"/>
                             <constraint firstItem="6RR-WU-4HJ" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="tnD-bg-n98"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DtR-Cm-cXv" appends="YES" id="xoJ-wc-1fZ"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="K7o-zc-qwM" id="AMO-2p-OW6"/>
                         <outlet property="collectionView" destination="6RR-WU-4HJ" id="bFv-02-d9l"/>
+                        <outlet property="saveButton" destination="w0B-uI-aCW" id="LgB-Zg-dAt"/>
+                        <outlet property="topLabel" destination="h6z-oD-UWw" id="vXC-2S-yHI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29l-Mt-rwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KKg-dP-0jT" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="DtR-Cm-cXv">
+                    <connections>
+                        <action selector="tapped:" destination="ljp-N3-uLQ" id="dQb-ok-Clv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2717" y="455"/>
         </scene>

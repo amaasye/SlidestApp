@@ -12,6 +12,9 @@
 
 @interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, DataHandlerDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UILabel *topLabel;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
 @property CGPDFDocumentRef pdf;
 @property int numberOfPages;
 @property int currentPageNr;
@@ -21,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.topLabel.hidden = YES;
+    self.backButton.hidden = YES;
+    self.saveButton.hidden = YES;
     self.dataHandler.delegate = self;
     self.currentPageNr = 0;
     [self openPdf];
@@ -59,6 +65,7 @@
 
 
     }
+    self.topLabel.text = [NSString stringWithFormat:@"%d", self.currentPageNr+1];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.numberOfPages;
@@ -93,6 +100,19 @@
 {
     [self.collectionView reloadData];
     [self.collectionView performBatchUpdates:nil completion:nil];
+}
+- (IBAction)tapped:(UITapGestureRecognizer *)sender {
+    if (self.topLabel.hidden) {
+        self.topLabel.hidden = NO;
+        self.backButton.hidden = NO;
+        self.saveButton.hidden = NO;
+    }
+
+    else {
+        self.topLabel.hidden = YES;
+        self.backButton.hidden = YES;
+        self.saveButton.hidden = YES;
+    }
 }
 
 @end
