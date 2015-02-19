@@ -356,60 +356,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8z-DN-ldS">
-                                <rect key="frame" x="142" y="157" width="316" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Started" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8z-DN-ldS">
+                                <rect key="frame" x="0.0" y="69" width="600" height="105"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="IPI-5w-38X"/>
-                                    <constraint firstAttribute="width" constant="316" id="ox3-qK-qkc"/>
+                                    <constraint firstAttribute="height" constant="105" id="fnh-bX-6JP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-HY-Ifk">
-                                <rect key="frame" x="286" y="285" width="26" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audience" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paj-ZK-Hzz">
+                                <rect key="frame" x="0.0" y="173" width="600" height="104"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="TZ1-ki-xo6"/>
-                                    <constraint firstAttribute="width" constant="26" id="uy9-Sx-dHv"/>
+                                    <constraint firstAttribute="height" constant="104" id="vLg-17-e9M"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for Peers to Join" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia2-Ou-1yL">
-                                <rect key="frame" x="206" y="212" width="188" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="HGl-nJ-W57"/>
-                                    <constraint firstAttribute="height" constant="21" id="k96-K2-6R2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-af-rQi">
-                                <rect key="frame" x="234" y="369" width="132" height="29"/>
+                                <rect key="frame" x="0.0" y="274" width="600" height="268"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="132" id="JBm-Y4-sgC"/>
-                                    <constraint firstAttribute="height" constant="29" id="fS7-RP-g9P"/>
+                                    <constraint firstAttribute="height" constant="268" id="Ssi-Yk-IYC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                                 <state key="normal" title="Go to Slideshow">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="ljp-N3-uLQ" kind="show" identifier="ToSlideshow" id="J1g-SV-h5b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tw0-aP-eAN">
-                                <rect key="frame" x="238" y="426" width="124" height="29"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYa-Vq-ifw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="Biz-QD-Wed"/>
-                                    <constraint firstAttribute="width" constant="124" id="yjk-wU-dtg"/>
+                                    <constraint firstAttribute="height" constant="70" id="zQ7-Xz-nVh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tw0-aP-eAN">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fde-vT-pL5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
                                 <state key="normal" title="Cancel Session">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -423,35 +414,54 @@
                                     <constraint firstAttribute="height" constant="29" id="iRi-YN-bvV"/>
                                     <constraint firstAttribute="width" constant="41" id="yIk-aj-yeV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="S1X-vp-sMb" kind="unwind" unwindAction="unwindToCreateViewController:" id="pbX-8x-j7J"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-HY-Ifk">
+                                <rect key="frame" x="548" y="231" width="26" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="LWr-KQ-WZl"/>
+                                    <constraint firstAttribute="height" constant="46" id="gNJ-Kc-xEU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="a9B-af-rQi" firstAttribute="top" secondItem="Qva-HY-Ifk" secondAttribute="bottom" constant="38" id="2xR-Mk-ilZ"/>
+                            <constraint firstItem="Qva-HY-Ifk" firstAttribute="top" secondItem="T8z-DN-ldS" secondAttribute="bottom" constant="57" id="1lg-G0-i2U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gYa-Vq-ifw" secondAttribute="trailing" constant="-16" id="5WN-N1-OgA"/>
+                            <constraint firstItem="paj-ZK-Hzz" firstAttribute="top" secondItem="gYa-Vq-ifw" secondAttribute="bottom" constant="103" id="65q-dp-O9Y"/>
                             <constraint firstItem="huH-yi-6V9" firstAttribute="top" secondItem="ddG-um-tUR" secondAttribute="bottom" constant="20" id="7wV-Dx-pgV"/>
-                            <constraint firstAttribute="centerX" secondItem="tw0-aP-eAN" secondAttribute="centerX" id="BeN-Pu-Kvs"/>
-                            <constraint firstItem="Qva-HY-Ifk" firstAttribute="top" secondItem="ia2-Ou-1yL" secondAttribute="bottom" constant="52" id="Dth-uY-jx0"/>
-                            <constraint firstItem="ia2-Ou-1yL" firstAttribute="top" secondItem="T8z-DN-ldS" secondAttribute="bottom" constant="8" id="GJ7-YH-fHz"/>
-                            <constraint firstItem="T8z-DN-ldS" firstAttribute="top" secondItem="ddG-um-tUR" secondAttribute="bottom" constant="157" id="XHQ-dE-gva"/>
-                            <constraint firstItem="tw0-aP-eAN" firstAttribute="top" secondItem="a9B-af-rQi" secondAttribute="bottom" constant="28" id="eWK-g4-aIl"/>
-                            <constraint firstAttribute="centerX" secondItem="a9B-af-rQi" secondAttribute="centerX" id="gne-2x-3s2"/>
+                            <constraint firstItem="2GZ-su-Udm" firstAttribute="top" secondItem="tw0-aP-eAN" secondAttribute="bottom" id="CXb-XJ-Idi"/>
+                            <constraint firstItem="gYa-Vq-ifw" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="EuB-H8-h1D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T8z-DN-ldS" secondAttribute="trailing" constant="-16" id="HOD-0b-9Qp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="paj-ZK-Hzz" secondAttribute="trailing" constant="-16" id="HZI-9I-ZAU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qva-HY-Ifk" secondAttribute="trailing" constant="10" id="KYs-Lq-l92"/>
+                            <constraint firstItem="T8z-DN-ldS" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="L39-dj-Esy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tw0-aP-eAN" secondAttribute="trailing" constant="-16" id="LIn-mT-Joq"/>
+                            <constraint firstItem="gYa-Vq-ifw" firstAttribute="top" secondItem="ddG-um-tUR" secondAttribute="bottom" id="MNR-d3-Hvr"/>
+                            <constraint firstItem="tw0-aP-eAN" firstAttribute="top" secondItem="a9B-af-rQi" secondAttribute="bottom" constant="8" id="X1M-cF-4Nr"/>
+                            <constraint firstItem="T8z-DN-ldS" firstAttribute="top" secondItem="huH-yi-6V9" secondAttribute="bottom" constant="20" id="ZWU-aL-91R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a9B-af-rQi" secondAttribute="trailing" constant="-16" id="ehR-xR-9YY"/>
+                            <constraint firstItem="tw0-aP-eAN" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="ket-SO-83N"/>
+                            <constraint firstItem="a9B-af-rQi" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="nA1-I0-Gjg"/>
                             <constraint firstItem="huH-yi-6V9" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" id="olT-zt-27q"/>
-                            <constraint firstAttribute="centerX" secondItem="Qva-HY-Ifk" secondAttribute="centerX" constant="1" id="yFJ-8X-eg6"/>
-                            <constraint firstAttribute="centerX" secondItem="T8z-DN-ldS" secondAttribute="centerX" id="ydh-mN-trq"/>
-                            <constraint firstAttribute="centerX" secondItem="ia2-Ou-1yL" secondAttribute="centerX" id="zv6-7j-H5A"/>
+                            <constraint firstItem="paj-ZK-Hzz" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="wxK-Qy-IP2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelSlideshowButton" destination="tw0-aP-eAN" id="hJE-hr-OVh"/>
+                        <outlet property="goToSlideshowButton" destination="a9B-af-rQi" id="GYf-Da-dFH"/>
                         <outlet property="peerCounterLabel" destination="Qva-HY-Ifk" id="xsu-Oh-HNb"/>
                         <outlet property="sessionTextLabel" destination="T8z-DN-ldS" id="YJe-9w-MLM"/>
+                        <outlet property="topView" destination="gYa-Vq-ifw" id="nER-e8-Tv6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvA-4x-xFm" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,7 +11,10 @@
 #import "DataHandler.h"
 
 @interface SessionStatusViewController ()
+@property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UILabel *sessionTextLabel;
+@property (weak, nonatomic) IBOutlet UIButton *goToSlideshowButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelSlideshowButton;
 @property (weak, nonatomic) IBOutlet UILabel *peerCounterLabel;
 @end
 
@@ -19,7 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUIElements];
     
+}
+
+-(void)setUIElements {
+    self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+    self.goToSlideshowButton.backgroundColor =[UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+    self.cancelSlideshowButton.backgroundColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
 }
 
 -(IBAction)unwindToSessionStatusViewController:(UIStoryboardSegue *)sender{
