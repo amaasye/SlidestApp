@@ -36,6 +36,7 @@
     self.horizontalLine.hidden = NO;
     self.spinner.hidden = YES;
     [self setUIElements];
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 -(void)setUIElements {

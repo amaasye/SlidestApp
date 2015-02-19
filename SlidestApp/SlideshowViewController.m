@@ -31,6 +31,7 @@
     self.dataHandler.delegate = self;
     self.currentPageNr = 0;
     [self openPdf];
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 
 }
 -(void)openPdf{

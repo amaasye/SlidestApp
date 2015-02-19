@@ -11,7 +11,7 @@
 #import "POP/POP.h"
 #import "DataHandler.h"
 
-@interface RootViewController () <DataHandlerDelegate>
+@interface RootViewController () <DataHandlerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *createSlideshowButton;
 @property (weak, nonatomic) IBOutlet UIButton *joinOneButton;
@@ -23,11 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.joinOneButton.enabled = YES;
     self.datahandler = [DataHandler new];
     self.datahandler.delegate = self;
     self.passcodeTextField.hidden = YES;
     self.goButton.hidden = YES;
     [self setUIElements];
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 #pragma mark -------------------------- UI Elements and Animations --------------------------------------------------
@@ -40,6 +42,8 @@
     self.joinOneButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.joinOneButton.layer.cornerRadius = 0.f;
     self.joinOneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [self.joinOneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.joinOneButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
 
 
     self.goButton.backgroundColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
@@ -68,13 +72,20 @@
     animateGo.springSpeed = 10;
     animateGo.toValue = @(self.goButton.center.y - 64);
     [self.goButton pop_addAnimation:animateGo forKey:@"positionY"];
+
+    self.joinOneButton.enabled = NO;
+
 }
 
 #pragma mark ---------------------------------- Actions -------------------------------------------------------------
 
 - (IBAction)onJoinButtonTapped:(UIButton *)sender {
+    if (self.joinOneButton.enabled == YES) {
     [self animationsOfUIElements];
-
+    }
+    else {
+       self.joinOneButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:0.5f];
+    }
 }
 
 - (IBAction)onGoButtonTapped:(UIButton *)sender {
