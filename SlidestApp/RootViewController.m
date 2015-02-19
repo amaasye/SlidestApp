@@ -13,7 +13,6 @@
 @interface RootViewController () <DataHandlerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *createSlideshowButton;
-@property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
 @property (weak, nonatomic) IBOutlet UIButton *joinOneButton;
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 
@@ -31,20 +30,41 @@
 }
 
 -(void)setUIElements{
-    self.createSlideshowButton.backgroundColor = [UIColor colorWithRed:.44 green:.62 blue:.80 alpha:1];
-    
+    self.createSlideshowButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+    self.createSlideshowButton.layer.cornerRadius = 2.f;
+    self.joinOneButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+    self.joinOneButton.layer.cornerRadius = 2.f;
+
+    self.goButton.backgroundColor =[UIColor colorWithRed:20/255.0f green:83/255.0f blue:143/255.0f alpha:1.0f];
+    self.goButton.layer.cornerRadius = 2.f;
+
 }
 - (IBAction)onJoinButtonTapped:(UIButton *)sender {
-    POPDecayAnimation *anim = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    anim.velocity = @(1500.);
-    [self.joinOneButton pop_addAnimation:anim forKey:@"slide"];
 
-    POPDecayAnimation *anime = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    anime.velocity = @(1500.);
-    [self.createSlideshowButton pop_addAnimation:anime forKey:@"slide"];
+    POPSpringAnimation *animateJoin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    animateJoin.springBounciness = 0;
+    animateJoin.springSpeed = 10;
+    animateJoin.toValue = @(self.joinOneButton.center.y + 85);
+    [self.joinOneButton pop_addAnimation:animateJoin forKey:@"postionX"];
+
+    POPSpringAnimation *anime = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    anime.springBounciness = 0;
+    anime.springSpeed = 10;
+    anime.toValue = @(self.createSlideshowButton.center.y - 30);
+    [self.createSlideshowButton pop_addAnimation:anime forKey:@"pop"];
+
     self.passcodeTextField.hidden = NO;
     self.goButton.hidden = NO;
-    self.joinOneButton.hidden = YES;
+
+    POPSpringAnimation *animateGo = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    animateGo.springBounciness = 20;
+    animateGo.springSpeed = 10;
+    animateGo.toValue = @(self.goButton.center.y - 15);
+    [self.goButton pop_addAnimation:animateGo forKey:@"positionY"];
+
+//    self.joinOneButton.hidden = YES;
+
+
 }
 
 

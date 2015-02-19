@@ -17,38 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-U1-4ef">
-                                <rect key="frame" x="175" y="259" width="250" height="2"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="DRN-E0-JHi"/>
-                                    <constraint firstAttribute="width" constant="250" id="Dce-sI-Rtk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8N-tv-vhL">
-                                <rect key="frame" x="223" y="303" width="154" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="154" id="kbe-ra-TcT"/>
-                                    <constraint firstAttribute="height" constant="30" id="uj1-Yo-3uP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <state key="normal" title="Join one">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter passcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bH-UJ6">
+                                <rect key="frame" x="200" y="243" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-Yu-EvU">
+                                <rect key="frame" x="0.0" y="304" width="600" height="63"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onJoinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u0n-h9-V5l"/>
+                                    <action selector="onGoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZk-nG-yLY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-17-MWe">
-                                <rect key="frame" x="223" y="187" width="154" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dt5-e4-ECk"/>
-                                    <constraint firstAttribute="width" constant="154" id="fSd-RN-wH5"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-17-MWe">
+                                <rect key="frame" x="0.0" y="192" width="600" height="63"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="Create SlideShow">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,55 +44,23 @@
                                     <segue destination="oET-gY-IPk" kind="show" id="c2i-vD-Hgl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter passcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bH-UJ6">
-                                <rect key="frame" x="200" y="189" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Edb-pP-pYB"/>
-                                    <constraint firstAttribute="width" constant="200" id="i6p-HA-7ES"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-Yu-EvU">
-                                <rect key="frame" x="283" y="304" width="34" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="G6B-1g-lMx"/>
-                                    <constraint firstAttribute="width" constant="34" id="WQA-Oc-TXR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
-                                <state key="normal" title="Go">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8N-tv-vhL">
+                                <rect key="frame" x="0.0" y="263" width="600" height="63"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <state key="normal" title="Join one">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onGoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZk-nG-yLY"/>
+                                    <action selector="onJoinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u0n-h9-V5l"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="sQm-U1-4ef" firstAttribute="top" secondItem="Po4-17-MWe" secondAttribute="bottom" constant="42" id="00i-5c-JUX"/>
-                            <constraint firstItem="d8N-tv-vhL" firstAttribute="top" secondItem="sQm-U1-4ef" secondAttribute="bottom" constant="42" id="757-pV-3Of"/>
-                            <constraint firstAttribute="centerY" secondItem="sQm-U1-4ef" secondAttribute="centerY" id="Ddn-Cb-D9C"/>
-                            <constraint firstAttribute="centerX" secondItem="Po4-17-MWe" secondAttribute="centerX" id="Ghv-kA-HZI"/>
-                            <constraint firstItem="sQm-U1-4ef" firstAttribute="top" secondItem="2Cb-bH-UJ6" secondAttribute="bottom" constant="40" id="IZy-ff-Y3T"/>
-                            <constraint firstItem="dhH-Yu-EvU" firstAttribute="top" secondItem="sQm-U1-4ef" secondAttribute="bottom" constant="43" id="Lfo-aB-PYf"/>
-                            <constraint firstAttribute="centerX" secondItem="sQm-U1-4ef" secondAttribute="centerX" id="Otc-pQ-CF6"/>
-                            <constraint firstAttribute="centerX" secondItem="dhH-Yu-EvU" secondAttribute="centerX" id="pG6-sR-3ca"/>
-                            <constraint firstAttribute="centerX" secondItem="2Cb-bH-UJ6" secondAttribute="centerX" id="rcq-v4-WeF"/>
-                            <constraint firstAttribute="centerX" secondItem="d8N-tv-vhL" secondAttribute="centerX" id="svC-i5-dHP"/>
-                            <constraint firstAttribute="centerY" secondItem="sQm-U1-4ef" secondAttribute="centerY" constant="40" id="x32-Hb-iTX"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ddn-Cb-D9C"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="createSlideshowButton" destination="Po4-17-MWe" id="5KF-aU-WLL"/>
                         <outlet property="goButton" destination="dhH-Yu-EvU" id="Cfb-He-SMu"/>
-                        <outlet property="horizontalLine" destination="sQm-U1-4ef" id="FT7-He-l53"/>
                         <outlet property="joinOneButton" destination="d8N-tv-vhL" id="BDt-70-isf"/>
                         <outlet property="passcodeTextField" destination="2Cb-bH-UJ6" id="lin-bF-weB"/>
                         <segue destination="ljp-N3-uLQ" kind="presentation" identifier="slideshowVCfromJoinVC" id="FBc-qq-C0s"/>
