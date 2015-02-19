@@ -50,30 +50,33 @@
                                 };
 
     Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];
-    NSDictionary *slideshows = @{
-                            @"slideshow": slideshow,
-                            };
-    [slideshowRef setValue: slideshows];
+
+    [slideshowRef setValue:slideshow withCompletionBlock:^(NSError *error, Firebase *ref) {
+        if(!error){
+            [self.delegate dataShouldUpload];
+        }
+    }];
 
 }
 - (void)setPage:(int)pageNr{
     
+    self.pdfDataRef = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
+
+
     NSDictionary *slideshow = @{
+
                                 @"currentPage": [NSNumber numberWithInt:pageNr],
                                 };
 
     Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];
-    NSDictionary *slideshows = @{
-                                 @"slideshow": slideshow,
-                                 };
-    [slideshowRef updateChildValues: slideshows];
+    [slideshowRef updateChildValues: slideshow];
 
 }
 
 -(void)pullFromDataBase:(NSString *)passcode {
 
     self.passcode = passcode;
-    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/slideshow",self.passcode];
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
 
     [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
@@ -99,7 +102,9 @@
 }
 -(void)deleteFile{
 
-    self.dataFromDropbox = nil;
-    self.passcode = nil;
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+    [ref removeValue];
 }
+
 @end

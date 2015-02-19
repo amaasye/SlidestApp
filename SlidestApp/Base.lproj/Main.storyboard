@@ -182,7 +182,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onStartButtonTapped:" destination="oET-gY-IPk" eventType="touchUpInside" id="gQN-GZ-1SV"/>
-                                    <segue destination="ZE8-Vg-1wb" kind="show" identifier="toSession" id="bry-Um-8n6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -225,6 +224,7 @@
                         <outlet property="startButton" destination="Ux1-oa-j5Y" id="9ra-T6-MPq"/>
                         <outlet property="topView" destination="fdV-To-RfM" id="Qud-42-wZb"/>
                         <outlet property="uploadFromDropboxButton" destination="IKt-ql-2PB" id="dVP-HR-3kG"/>
+                        <segue destination="ZE8-Vg-1wb" kind="presentation" identifier="toSession" id="Z2o-KK-pe9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8d-oB-Wv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,7 +244,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6RR-WU-4HJ">
+                            <collectionView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6RR-WU-4HJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="r9n-Pk-O8s">
@@ -272,7 +272,7 @@
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999999999999962" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-oD-UWw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="TEE-Vi-bko"/>
                                 </constraints>
@@ -304,7 +304,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KKg-dP-0jT" kind="unwind" unwindAction="unwind:" id="ePt-GH-XsH"/>
+                                    <segue destination="KKg-dP-0jT" kind="unwind" unwindAction="unwind:" id="gs6-Ao-jOM"/>
                                 </connections>
                             </button>
                         </subviews>

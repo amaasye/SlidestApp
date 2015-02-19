@@ -73,20 +73,19 @@
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CustomCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
-    CGRect frame =  CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    CGRect frame =  CGRectMake(0, 0, collectionView.frame.size.width, collectionView.frame.size.height);
     PageScrollView *page = [[PageScrollView alloc] initWithFrame:frame];
     [page displayPdf:self.pdf];
     page.backgroundColor = [UIColor whiteColor];
     page.pageNr = (int) indexPath.row;
     cell.pageView = page;
 
-
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
-  sizeForItemAtIndexPath:(NSIndexPath *)indexPathß
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Adjust cell size for orientation
 
@@ -95,7 +94,7 @@
     if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
         return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
     }
-    return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+    return CGSizeMake(self.collectionView.frame.size.width, self.collectionView.frame.size.height);
 }
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {

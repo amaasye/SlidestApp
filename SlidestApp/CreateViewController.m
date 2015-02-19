@@ -11,7 +11,7 @@
 #import "DataHandler.h"
 #import "SessionStatusViewController.h"
 
-@interface CreateViewController () <DataHandlerDelegate>
+@interface CreateViewController () <DataHandlerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
 @property (weak, nonatomic) IBOutlet UILabel *reminderLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
@@ -68,6 +68,13 @@
     self.spinner.hidesWhenStopped = YES;
 }
 
+-(void)dataShouldUpload{
+    [self.spinner stopAnimating];
+    self.startButton.hidden = NO;
+    [self performSegueWithIdentifier:@"toSession" sender:self];
+
+
+}
 
 - (void)fileIsPDF:(BOOL)isPDF withName:(NSString *)name {
     if (isPDF) {
@@ -79,9 +86,9 @@
         self.getFileFromDropboxLabel.hidden = YES;
         self.startButton.hidden = NO;
         self.horizontalLine.hidden = NO;
-      //  [self pushDataToParse];
+
     } else {
-        //if the file is not a pdf, users are asked to only upload pdf files
+
         self.reminderLabel.text = name;
         self.reminderLabel.hidden = NO;
         self.horizontalLine.hidden = NO;
@@ -89,8 +96,12 @@
 }
 
 - (IBAction)onStartButtonTapped:(UIButton *)sender {
-//    self.passcode = self.passcodeTextField.text;
+
+    self.startButton.hidden = YES;
+    self.spinner.hidden = NO;
+    [self.spinner startAnimating];
     [self.dataHandler pushDataToDataBase:self.passcodeTextField.text];
+    [self.passcodeTextField resignFirstResponder];
 }
 
 

@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "SlideshowViewController.h"
 #import "POP/POP.h"
+#import "DataHandler.h"
 
 @interface RootViewController () <DataHandlerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;

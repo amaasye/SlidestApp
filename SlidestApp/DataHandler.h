@@ -14,6 +14,7 @@
 @optional
 - (void)downloadingShouldStart;
 - (void)downloadingShouldEnd;
+- (void)dataShouldUpload;
 - (void)fileIsPDF:(BOOL)isPDF withName:(NSString *)name;
 - (void)dataDownloaded;
 - (void)updatePage:(int)pageNr;
