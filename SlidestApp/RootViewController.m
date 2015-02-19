@@ -7,8 +7,8 @@
 //
 
 #import "RootViewController.h"
-
-@interface RootViewController ()
+#import "DataHandler.h"
+@interface RootViewController () <DataHandlerDelegate>
 
 @end
 
