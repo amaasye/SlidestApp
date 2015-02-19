@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UILabel *horizontalLine;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIView *topView;
 @property DataHandler *dataHandler;
 
 @end
@@ -34,6 +35,8 @@
     self.startButton.hidden = YES;
     self.horizontalLine.hidden = NO;
     self.spinner.hidden = YES;
+    self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+
 
     // Do any additional setup after loading the view.
 }
