@@ -29,6 +29,8 @@
     [self setUIElements];
 }
 
+#pragma mark -------------------------- UI Elements and Animations --------------------------------------------------
+
 -(void)setUIElements{
     self.createSlideshowButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.createSlideshowButton.layer.cornerRadius = 0.f;
@@ -39,14 +41,9 @@
     self.joinOneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 
 
-    self.goButton.backgroundColor =[UIColor colorWithRed:20/255.0f green:83/255.0f blue:143/255.0f alpha:1.0f];
+    self.goButton.backgroundColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
     self.goButton.layer.cornerRadius = 0.f;
     self.goButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-}
-
-- (IBAction)onJoinButtonTapped:(UIButton *)sender {
-    [self animationsOfUIElements];
-
 }
 
 -(void)animationsOfUIElements {
@@ -72,9 +69,18 @@
     [self.goButton pop_addAnimation:animateGo forKey:@"positionY"];
 }
 
+#pragma mark ---------------------------------- Actions -------------------------------------------------------------
+
+- (IBAction)onJoinButtonTapped:(UIButton *)sender {
+    [self animationsOfUIElements];
+
+}
+
 - (IBAction)onGoButtonTapped:(UIButton *)sender {
     [self.datahandler pullFromDataBase:self.passcodeTextField.text];
 }
+
+#pragma mark ---------------------------------- Data ----------------------------------------------------------------
 
 - (void)dataDownloaded {
     [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
@@ -89,14 +95,8 @@
     }
 }
 
-
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
-//    //should delete the file from local storage
-//    if ([segue.sourceViewController isKindOfClass:[JoinViewController class]]) {
-//        JoinViewController *joinVC = segue.sourceViewController;
-//        joinVC.object = self.object;
-//        [self.object unpin];
-//    }
+
 }
 
 

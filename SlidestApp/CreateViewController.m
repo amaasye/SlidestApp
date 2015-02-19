@@ -35,12 +35,14 @@
     self.startButton.hidden = YES;
     self.horizontalLine.hidden = NO;
     self.spinner.hidden = YES;
-    self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
-
-
-    // Do any additional setup after loading the view.
+    [self setUIElements];
 }
 
+-(void)setUIElements {
+    self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+    self.horizontalLine.backgroundColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
+    self.getFileFromDropboxLabel.textColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
+}
 - (IBAction)onUploadButtonTapped:(UIButton *)sender {
     [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypeDirect
                                     fromViewController:self completion:^(NSArray *results)
