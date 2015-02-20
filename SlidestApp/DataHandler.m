@@ -9,7 +9,7 @@
 #import "DataHandler.h"
 
 
-@implementation DataHandler
+@implementation DataHandler 
 
 - (void)downloadPDF:(DBChooserResult *)chooser {
     [self.delegate downloadingShouldStart];
@@ -55,6 +55,9 @@
         if(!error){
             [self.delegate dataShouldUpload];
         }
+        else {
+            [self connectionProblem];
+        }
     }];
 
 }
@@ -95,6 +98,7 @@
         }
 
     } withCancelBlock:^(NSError *error) {
+        [self connectionProblem];
         NSLog(@"%@", error.description);
     }];
 
@@ -107,4 +111,13 @@
     [ref removeValue];
 }
 
+
+-(void)connectionProblem {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Please check your network connection." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [alertView dismissWithClickedButtonIndex:0 animated:YES];
+}
 @end

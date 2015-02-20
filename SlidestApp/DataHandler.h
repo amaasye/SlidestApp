@@ -21,7 +21,7 @@
 
 
 @end
-@interface DataHandler : NSObject
+@interface DataHandler : NSObject <UIAlertViewDelegate>
 @property NSString *passcode;
 @property NSString *name;
 @property id<DataHandlerDelegate> delegate;
