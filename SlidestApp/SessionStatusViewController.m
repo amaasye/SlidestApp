@@ -30,7 +30,9 @@
 -(void)setUIElements {
     self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.goToSlideshowButton.backgroundColor =[UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
+    self.goToSlideshowButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     self.cancelSlideshowButton.backgroundColor =[UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+    self.cancelSlideshowButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 }
 
 -(IBAction)unwindToSessionStatusViewController:(UIStoryboardSegue *)sender{

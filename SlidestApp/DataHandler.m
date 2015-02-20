@@ -15,10 +15,15 @@
     [self.delegate downloadingShouldStart];
     NSURLRequest *request = [NSURLRequest requestWithURL:chooser.link];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (!connectionError) {
         self.dataFromDropbox = data;
 
         [self.delegate downloadingShouldEnd];
         [self checkFileType:chooser.name];
+        }
+        else {
+            [self connectionProblem:@"There was an error in completing this request"];
+        }
     }];
 }
 
@@ -56,7 +61,7 @@
             [self.delegate dataShouldUpload];
         }
         else {
-            [self connectionProblem];
+            [self connectionProblem:@"There was a problem in completing this request"];
         }
     }];
 
@@ -98,7 +103,7 @@
         }
 
     } withCancelBlock:^(NSError *error) {
-        [self connectionProblem];
+        [self connectionProblem:@"There was a problem in completing this request"];
         NSLog(@"%@", error.description);
     }];
 
@@ -112,8 +117,8 @@
 }
 
 
--(void)connectionProblem {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Please check your network connection." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+-(void)connectionProblem:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alert show];
 }
 

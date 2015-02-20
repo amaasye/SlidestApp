@@ -10,7 +10,6 @@
 #import <DBChooser/DBChooser.h>
 #import "DataHandler.h"
 #import "SessionStatusViewController.h"
-#import "POP/POP.h"
 
 
 @interface CreateViewController () <DataHandlerDelegate, UITextFieldDelegate>
@@ -43,12 +42,8 @@
 -(void)setUIElements {
     self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.getSlideshowLabel.textColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
-
 }
 
--(void)animateUIElements {
-
-}
 
 - (IBAction)onUploadButtonTapped:(UIButton *)sender {
     [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypeDirect
@@ -124,4 +119,7 @@
     }
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [alertView dismissWithClickedButtonIndex:0 animated:YES];
+}
 @end

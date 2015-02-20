@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.topLabel.hidden = YES;
-    self.topLabel.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:0.80f];
+    self.topLabel.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.backButton.hidden = YES;
     self.saveButton.hidden = YES;
     self.dataHandler.delegate = self;
