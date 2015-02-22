@@ -30,7 +30,8 @@
     [super viewDidLoad];
     self.datahandler = [DataHandler new];
     self.datahandler.delegate = self;
-    self.pop.delegate = self;
+    self.passcodeTextField.delegate = self;
+    self.anime.delegate = self;
     [self setUIElements];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
@@ -82,11 +83,11 @@
     NSLog(@"%@", point);
 
 
-    POPSpringAnimation *anime = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    anime.springBounciness = 0;
-    anime.springSpeed = 2;
-    anime.toValue = @(self.createSlideshowButton.center.y - 30);
-    [self.createSlideshowButton pop_addAnimation:anime forKey:@"pop"];
+    self.anime = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    self.anime.springBounciness = 0;
+    self.anime.springSpeed = 2;
+    self.anime.toValue = @(self.createSlideshowButton.center.y - 30);
+    [self.createSlideshowButton pop_addAnimation:self.anime forKey:@"pop"];
 
     self.passcodeTextField.hidden = NO;
     self.goButton.hidden = NO;
@@ -127,9 +128,10 @@
     NSLog(@"%@", point);
 }
 
-//- (void)pop_animationDidStop:(POPAnimation *)anim finished:(BOOL)finished {
-//    NSLog(@"Hi");
-//}
+- (void)pop_animationDidStop:(POPSpringAnimation *)anim finished:(BOOL)finished {
+    anim = self.anime;
+    NSLog(@"Hi");
+}
 
 #pragma mark ---------------------------------- Data ----------------------------------------------
 
