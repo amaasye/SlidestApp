@@ -92,7 +92,7 @@
                         <outlet property="createSlideshowButton" destination="Po4-17-MWe" id="5KF-aU-WLL"/>
                         <outlet property="goButton" destination="dhH-Yu-EvU" id="Cfb-He-SMu"/>
                         <outlet property="joinOneButton" destination="d8N-tv-vhL" id="BDt-70-isf"/>
-                        <outlet property="passcodeTextField" destination="2Cb-bH-UJ6" id="lin-bF-weB"/>
+                        <outlet property="passcodeTextField" destination="2Cb-bH-UJ6" id="OsT-oe-8fC"/>
                         <segue destination="ljp-N3-uLQ" kind="show" identifier="slideshowVCfromJoinVC" id="Dor-dl-EaV"/>
                     </connections>
                 </viewController>
@@ -491,6 +491,6 @@
         <image name="dropboxglyph" width="102" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iQv-Xk-1Gr"/>
+        <segue reference="Dor-dl-EaV"/>
     </inferredMetricsTieBreakers>
 </document>

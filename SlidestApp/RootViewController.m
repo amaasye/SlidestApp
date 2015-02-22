@@ -12,6 +12,7 @@
 #import "DataHandler.h"
 
 @interface RootViewController () <DataHandlerDelegate, UITextFieldDelegate, POPAnimationDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *createSlideshowButton;
 @property (weak, nonatomic) IBOutlet UIButton *joinOneButton;
@@ -127,6 +128,10 @@
     NSValue *point = [NSValue valueWithCGPoint:self.joinOneButton.center];
     NSLog(@"%@", point);
 }
+
+//-(void)textFieldDidEndEditing:(UITextField *)textField {
+//    [self.datahandler pullFromDataBase:self.passcodeTextField.text];
+//}
 
 - (void)pop_animationDidStop:(POPSpringAnimation *)anim finished:(BOOL)finished {
     anim = self.anime;
