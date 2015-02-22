@@ -28,39 +28,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.joinOneButton.enabled = YES;
     self.datahandler = [DataHandler new];
     self.datahandler.delegate = self;
     self.pop.delegate = self;
-    self.passcodeTextField.hidden = YES;
-    self.goButton.hidden = YES;
     [self setUIElements];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 
-
-#pragma mark -------------------------- UI Elements and Animations ---------------------------------------
+#pragma mark -- UI Elements and Animations --
 
 -(void)setUIElements{
     self.createSlideshowButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.createSlideshowButton.layer.cornerRadius = 0.f;
     self.createSlideshowButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 
-
+    self.joinOneButton.enabled = YES;
     self.joinOneButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.joinOneButton.layer.cornerRadius = 0.f;
     self.joinOneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.joinOneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.joinOneButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+//    self.joinButtonCenter = self.joinOneButton.center;
+//    NSValue *point = [NSValue valueWithCGPoint:self.joinButtonCenter];
+//    NSLog(@"%@", point);
 
 
     self.goButton.backgroundColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
     self.goButton.layer.cornerRadius = 0.f;
     self.goButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    self.goButton.hidden = YES;
+
+    self.passcodeTextField.hidden = YES;
+    self.passcodeTextField.text = @"";
+}
+
+-(void)elementsAfterAnimation {
+    self.joinOneButton.center = self.joinButtonCenter;
 }
 
 -(void)animationsOfUIElements {
+
     POPSpringAnimation *animateJoin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     animateJoin.springBounciness = 0;
     animateJoin.springSpeed = 2;
@@ -91,11 +99,10 @@
 
     self.joinOneButton.enabled = NO;
 
+    [self elementsAfterAnimation];
 }
 
-
-
-#pragma mark ---------------------------------- Actions ------------------------------------------
+#pragma mark -- Actions --
 
 - (IBAction)onJoinButtonTapped:(UIButton *)sender {
     if (self.joinOneButton.enabled == YES) {
@@ -111,6 +118,7 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self elementsAfterAnimation];
     self.passcodeTextField = textField;
     //trying to fix the automatic resetting of the animation when in textfield
     self.joinOneButton.center = self.joinButtonCenter;
@@ -119,9 +127,9 @@
     NSLog(@"%@", point);
 }
 
-- (void)pop_animationDidStop:(POPAnimation *)anim finished:(BOOL)finished {
-    NSLog(@"Hi");
-}
+//- (void)pop_animationDidStop:(POPAnimation *)anim finished:(BOOL)finished {
+//    NSLog(@"Hi");
+//}
 
 #pragma mark ---------------------------------- Data ----------------------------------------------
 
@@ -139,6 +147,9 @@
 }
 
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
+    self.joinOneButton.enabled = YES;
+    [self setUIElements];
+    [self.joinOneButton pop_removeAnimationForKey:@"positionX"];
 
 }
 
