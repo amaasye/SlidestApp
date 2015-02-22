@@ -133,7 +133,7 @@
     NSLog(@"Hi");
 }
 
-#pragma mark ---------------------------------- Data ----------------------------------------------
+#pragma mark -- Data --
 
 - (void)dataDownloaded {
     [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
@@ -151,7 +151,6 @@
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
     self.joinOneButton.enabled = YES;
     [self setUIElements];
-    [self.joinOneButton pop_removeAnimationForKey:@"positionX"];
 
 }
 

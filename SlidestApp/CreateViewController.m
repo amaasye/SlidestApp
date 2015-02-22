@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property DataHandler *dataHandler;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end
 
@@ -41,6 +42,7 @@
     self.reminderLabel.hidden = YES;
     self.startButton.hidden = YES;
     self.spinner.hidden = YES;
+    self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.getSlideshowLabel.textColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
     self.startButton.backgroundColor =[UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
@@ -50,7 +52,7 @@
 -(void)animateButton {
     POPSpringAnimation *animate = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     animate.springBounciness = 0;
-    animate.springSpeed = 25;
+    animate.springSpeed = 15;
     animate.toValue = @(self.startButton.center.y - 215);
     [self.startButton pop_addAnimation:animate forKey:@"pop"];
 }

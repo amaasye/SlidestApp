@@ -163,10 +163,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT0-fP-8f0">
-                                <rect key="frame" x="16" y="10" width="41" height="29"/>
+                                <rect key="frame" x="10" y="0.0" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="XWT-g2-Y45"/>
-                                    <constraint firstAttribute="width" constant="41" id="cID-ql-XrP"/>
+                                    <constraint firstAttribute="height" constant="50" id="XWT-g2-Y45"/>
+                                    <constraint firstAttribute="width" constant="100" id="cID-ql-XrP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                 <state key="normal" title="Back">
@@ -204,11 +204,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
-                            <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" id="EUd-y1-V1T"/>
+                            <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-6" id="EUd-y1-V1T"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-16" id="Hcq-zB-e8L"/>
                             <constraint firstAttribute="centerX" secondItem="iHy-VT-AKG" secondAttribute="centerX" constant="-0.5" id="Hgh-tC-4uZ"/>
                             <constraint firstAttribute="centerY" secondItem="IKt-ql-2PB" secondAttribute="centerY" constant="-15" id="Jhh-9J-TrJ"/>
-                            <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="10" id="KtN-4c-p28"/>
+                            <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" id="KtN-4c-p28"/>
                             <constraint firstItem="wZk-NY-nJg" firstAttribute="top" secondItem="IKt-ql-2PB" secondAttribute="bottom" constant="251" id="MAj-xF-b4r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ux1-oa-j5Y" secondAttribute="trailing" constant="-16" id="OeS-KL-MlW"/>
                             <constraint firstItem="Tsz-Z3-Zer" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-16" id="OqZ-qf-UYe"/>
@@ -232,6 +232,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="MT0-fP-8f0" id="Dz2-XQ-xMe"/>
                         <outlet property="getSlideshowLabel" destination="Tsz-Z3-Zer" id="R5L-hy-rlR"/>
                         <outlet property="passcodeTextField" destination="y3C-kA-M0V" id="eus-j0-gkr"/>
                         <outlet property="reminderLabel" destination="27x-5a-SIY" id="IDb-8d-fjg"/>
@@ -296,10 +297,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0B-uI-aCW">
-                                <rect key="frame" x="538" y="10" width="46" height="30"/>
+                                <rect key="frame" x="490" y="0.0" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="aWG-I7-Qoz"/>
-                                    <constraint firstAttribute="width" constant="46" id="e7F-bj-gfl"/>
+                                    <constraint firstAttribute="height" constant="50" id="aWG-I7-Qoz"/>
+                                    <constraint firstAttribute="width" constant="100" id="e7F-bj-gfl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                 <state key="normal" title="Save">
@@ -308,10 +309,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-zc-qwM">
-                                <rect key="frame" x="16" y="10" width="46" height="30"/>
+                                <rect key="frame" x="10" y="0.0" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="YRf-yR-3uC"/>
-                                    <constraint firstAttribute="width" constant="46" id="g1z-HK-kgx"/>
+                                    <constraint firstAttribute="height" constant="50" id="YRf-yR-3uC"/>
+                                    <constraint firstAttribute="width" constant="100" id="g1z-HK-kgx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                 <state key="normal" title="Back">
@@ -326,16 +327,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="w0B-uI-aCW" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="8Tc-VS-FUF"/>
-                            <constraint firstItem="w0B-uI-aCW" firstAttribute="trailing" secondItem="H34-wT-7EA" secondAttribute="trailingMargin" id="8Tu-Vt-Cbn"/>
+                            <constraint firstItem="w0B-uI-aCW" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="8Tc-VS-FUF"/>
+                            <constraint firstItem="w0B-uI-aCW" firstAttribute="trailing" secondItem="H34-wT-7EA" secondAttribute="trailingMargin" constant="6" id="8Tu-Vt-Cbn"/>
                             <constraint firstItem="ux5-6h-f0A" firstAttribute="top" secondItem="6RR-WU-4HJ" secondAttribute="bottom" id="auJ-Zm-TM7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h6z-oD-UWw" secondAttribute="trailing" constant="-16" id="b1g-YY-MEx"/>
                             <constraint firstItem="h6z-oD-UWw" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="foL-w4-GKE"/>
                             <constraint firstItem="6RR-WU-4HJ" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-16" id="gPC-5t-g54"/>
                             <constraint firstItem="h6z-oD-UWw" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-16" id="ibF-Jh-LaM"/>
-                            <constraint firstItem="K7o-zc-qwM" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" id="q7j-jb-lKx"/>
+                            <constraint firstItem="K7o-zc-qwM" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-6" id="q7j-jb-lKx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6RR-WU-4HJ" secondAttribute="trailing" constant="-16" id="r23-sk-sGk"/>
-                            <constraint firstItem="K7o-zc-qwM" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="rPw-VD-FDI"/>
+                            <constraint firstItem="K7o-zc-qwM" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="rPw-VD-FDI"/>
                             <constraint firstItem="6RR-WU-4HJ" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="tnD-bg-n98"/>
                         </constraints>
                         <connections>
@@ -391,7 +392,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ljp-N3-uLQ" kind="show" identifier="toSlideshow" id="iQv-Xk-1Gr"/>
+                                    <segue destination="ljp-N3-uLQ" kind="show" identifier="ToSlideshow" id="iQv-Xk-1Gr"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYa-Vq-ifw">
@@ -417,10 +418,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huH-yi-6V9">
-                                <rect key="frame" x="16" y="20" width="41" height="29"/>
+                                <rect key="frame" x="10" y="0.0" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="iRi-YN-bvV"/>
-                                    <constraint firstAttribute="width" constant="41" id="yIk-aj-yeV"/>
+                                    <constraint firstAttribute="height" constant="50" id="iRi-YN-bvV"/>
+                                    <constraint firstAttribute="width" constant="100" id="yIk-aj-yeV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                 <state key="normal" title="Back">
@@ -455,7 +456,7 @@
                             <constraint firstItem="T8z-DN-ldS" firstAttribute="top" secondItem="gYa-Vq-ifw" secondAttribute="bottom" constant="139" id="1zO-mP-6EP"/>
                             <constraint firstItem="Qva-HY-Ifk" firstAttribute="top" secondItem="paj-ZK-Hzz" secondAttribute="bottom" constant="8" id="4UM-oA-a2r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gYa-Vq-ifw" secondAttribute="trailing" constant="-16" id="5WN-N1-OgA"/>
-                            <constraint firstItem="huH-yi-6V9" firstAttribute="top" secondItem="ddG-um-tUR" secondAttribute="bottom" constant="20" id="7wV-Dx-pgV"/>
+                            <constraint firstItem="huH-yi-6V9" firstAttribute="top" secondItem="ddG-um-tUR" secondAttribute="bottom" id="7wV-Dx-pgV"/>
                             <constraint firstItem="a9B-af-rQi" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="8OB-kF-Gvh"/>
                             <constraint firstItem="2GZ-su-Udm" firstAttribute="top" secondItem="tw0-aP-eAN" secondAttribute="bottom" id="CXb-XJ-Idi"/>
                             <constraint firstItem="gYa-Vq-ifw" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="EuB-H8-h1D"/>
@@ -467,11 +468,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="a9B-af-rQi" secondAttribute="trailing" constant="-16" id="bcc-dc-Hxd"/>
                             <constraint firstItem="tw0-aP-eAN" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-16" id="ket-SO-83N"/>
                             <constraint firstAttribute="centerX" secondItem="T8z-DN-ldS" secondAttribute="centerX" id="o7K-jz-4IP"/>
-                            <constraint firstItem="huH-yi-6V9" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" id="olT-zt-27q"/>
+                            <constraint firstItem="huH-yi-6V9" firstAttribute="leading" secondItem="UHj-C7-31p" secondAttribute="leadingMargin" constant="-6" id="olT-zt-27q"/>
                             <constraint firstAttribute="centerX" secondItem="paj-ZK-Hzz" secondAttribute="centerX" id="z9W-Uw-2hq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="huH-yi-6V9" id="lTz-4l-0rt"/>
                         <outlet property="cancelSlideshowButton" destination="tw0-aP-eAN" id="hJE-hr-OVh"/>
                         <outlet property="goToSlideshowButton" destination="a9B-af-rQi" id="GYf-Da-dFH"/>
                         <outlet property="peerCounterLabel" destination="Qva-HY-Ifk" id="xsu-Oh-HNb"/>

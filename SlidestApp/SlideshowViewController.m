@@ -24,16 +24,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataHandler.delegate = self;
+    self.currentPageNr = 0;
+    [self setUIElements];
+    [self openPdf];
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+}
+
+-(void)setUIElements {
+    self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.saveButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     self.topLabel.hidden = YES;
     self.topLabel.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.backButton.hidden = YES;
     self.saveButton.hidden = YES;
-    self.dataHandler.delegate = self;
-    self.currentPageNr = 0;
-    [self openPdf];
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-
 }
+
 -(void)openPdf{
 
     CFDataRef myPDFData = (__bridge CFDataRef)self.dataHandler.dataFromDropbox;
