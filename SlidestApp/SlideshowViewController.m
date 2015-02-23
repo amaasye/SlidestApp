@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataHandler.delegate = self;
     self.currentPageNr = 0;
     [self setUIElements];
     [self openPdf];
@@ -54,6 +53,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
+    self.dataHandler.delegate = self;
     }
 
 - (void)updatePage:(int)pageNr{

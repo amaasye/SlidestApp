@@ -33,9 +33,12 @@
     [super viewDidLoad];
     self.dataHandler = [DataHandler new];
     self.passcodeTextField.delegate = self;
-    self.dataHandler.delegate = self;
     [self setUIElements];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    self.dataHandler.delegate = self;
+
 }
 
 #pragma mark -- UI and Animations

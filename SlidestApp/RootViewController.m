@@ -32,11 +32,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.datahandler = [DataHandler new];
-    self.datahandler.delegate = self;
     self.passcodeTextField.delegate = self;
     self.anime.delegate = self;
     [self setUIElements];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    self.datahandler.delegate = self;
 }
 
 
@@ -153,7 +156,8 @@
     else if ([[segue identifier] isEqualToString:@"slideshowVCfromJoinVC"]){
 //        ((CustomSegue *)segue).originatingPoint = self.goButton.center;
         SlideshowViewController *svc = [segue destinationViewController];
-        svc.dataHandler = self.datahandler;
+                   svc.dataHandler = self.datahandler;
+
     }
 }
 
