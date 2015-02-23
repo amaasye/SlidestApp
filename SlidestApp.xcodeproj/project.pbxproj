@@ -38,7 +38,6 @@
 		C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C940F1451A8C43D700D7B2C0 /* CustomCell.m */; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
 		C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B21A8E60C200D70D47 /* DataHandler.m */; };
-		C9BBB8B61A90051400D70D47 /* ParseSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B51A90051400D70D47 /* ParseSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,8 +149,6 @@
 		C9B808C71A8BE7FC0044932E /* PageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageScrollView.m; sourceTree = "<group>"; };
 		C9BBB8B11A8E60C200D70D47 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
 		C9BBB8B21A8E60C200D70D47 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
-		C9BBB8B41A90051400D70D47 /* ParseSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseSession.h; sourceTree = "<group>"; };
-		C9BBB8B51A90051400D70D47 /* ParseSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseSession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,8 +285,6 @@
 				B003719E1A89CEA40037157D /* SlideshowViewController.m */,
 				C940F1441A8C43D700D7B2C0 /* CustomCell.h */,
 				C940F1451A8C43D700D7B2C0 /* CustomCell.m */,
-				C9BBB8B41A90051400D70D47 /* ParseSession.h */,
-				C9BBB8B51A90051400D70D47 /* ParseSession.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -472,7 +467,6 @@
 				B00371991A89CE830037157D /* CreateViewController.m in Sources */,
 				B00371571A89C8860037157D /* RootViewController.m in Sources */,
 				C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */,
-				C9BBB8B61A90051400D70D47 /* ParseSession.m in Sources */,
 				B00371541A89C8860037157D /* AppDelegate.m in Sources */,
 				B00371511A89C8860037157D /* main.m in Sources */,
 				B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */,

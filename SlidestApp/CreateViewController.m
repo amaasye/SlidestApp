@@ -65,8 +65,6 @@
 }
 
 
-
-
 - (IBAction)onUploadButtonTapped:(UIButton *)sender {
     [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypeDirect
                                     fromViewController:self completion:^(NSArray *results)
@@ -96,13 +94,16 @@
 -(void)dataShouldUpload{
     [self.spinner stopAnimating];
     [self performSegueWithIdentifier:@"toSession" sender:self];
-
-
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.startButton.hidden = NO;
     [self animateButton];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+
 }
 
 - (void)fileIsPDF:(BOOL)isPDF withName:(NSString *)name {
@@ -117,15 +118,7 @@
         self.getSlideshowLabel.hidden = YES;
         self.startButton.hidden = NO;
 
-//        if ([self.passcodeTextField.text isEqualToString:@""]) {
-//            self.startButton.enabled = NO;
-//        }
-//        else {
-//            self.startButton.enabled = YES;
-//        }
-
     } else {
-
         self.reminderLabel.text = name;
         self.reminderLabel.hidden = NO;
         self.uploadFromDropboxButton.hidden = NO;
@@ -133,8 +126,6 @@
 }
 
 - (IBAction)onStartButtonTapped:(UIButton *)sender {
-
-    self.startButton.hidden = YES;
     self.spinner.hidden = NO;
     [self.spinner startAnimating];
     [self.dataHandler pushDataToDataBase:self.passcodeTextField.text];
