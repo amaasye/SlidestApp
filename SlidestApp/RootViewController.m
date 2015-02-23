@@ -74,7 +74,7 @@
     animateJoin.springSpeed = 2;
     animateJoin.toValue = @(self.joinOneButton.center.y + 82);
     animateJoin.removedOnCompletion = YES;
-    [self.joinOneButton pop_addAnimation:animateJoin forKey:@"postionX"];
+    [self.joinOneButton pop_addAnimation:animateJoin forKey:@"postionY"];
 
     //trying to fix the automatic resetting of the animation when in textfield
     self.joinButtonCenter = self.joinOneButton.center;
@@ -86,7 +86,7 @@
     self.anime.springBounciness = 0;
     self.anime.springSpeed = 2;
     self.anime.toValue = @(self.createSlideshowButton.center.y - 30);
-    [self.createSlideshowButton pop_addAnimation:self.anime forKey:@"pop"];
+    [self.createSlideshowButton pop_addAnimation:self.anime forKey:@"positionY"];
 
     self.passcodeTextField.hidden = NO;
     self.goButton.hidden = NO;
