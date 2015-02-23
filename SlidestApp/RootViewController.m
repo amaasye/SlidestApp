@@ -36,6 +36,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     self.datahandler.delegate = self;
+    [self animationOnReturningToVC];
 }
 
 #pragma mark -- UI Elements and Animations 
@@ -60,7 +61,9 @@
     self.passcodeTextField.text = @"";
 }
 
--(void)elementsAfterAnimation {
+-(void)setUIElementsAfterReturnAnimation {
+    self.joinOneButton.hidden = NO;
+    self.joinOneButton.enabled = YES;
 }
 
 -(void)animationsOfUIElements {
@@ -74,6 +77,7 @@
     joinAnimation.removedOnCompletion = YES;
     [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
     self.joinOneButton.enabled = NO;
+    self.joinOneButton.hidden = YES;
 
     //animation for createButton
     POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
@@ -101,7 +105,6 @@
     [self.passcodeTextField pop_addAnimation:animatePasscodeTextField forKey:@"positionY"];
     self.passcodeTextField.hidden = NO;
 
-    [self elementsAfterAnimation];
 }
 
 -(void)animationOnReturningToVC {
@@ -113,7 +116,7 @@
     joinAnimation.delegate = self;
     joinAnimation.removedOnCompletion = YES;
     [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
-    self.joinOneButton.enabled = NO;
+
 
     //animation for createButton
     POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
@@ -122,6 +125,7 @@
     createAnimation.toValue = @(76);
     createAnimation.removedOnCompletion = YES;
     [self.createConstrain pop_addAnimation:createAnimation forKey:@"createButtonAnime"];
+    [self setUIElementsAfterReturnAnimation];
 }
 
 #pragma mark -- Actions --
@@ -166,6 +170,7 @@
 }
 
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
+    [self.passcodeTextField endEditing:YES];
     [self animationOnReturningToVC];
     [self resignFirstResponder];
     [self setUIElements];
