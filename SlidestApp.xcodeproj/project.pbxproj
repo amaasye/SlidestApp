@@ -30,8 +30,6 @@
 		B00371A41A8A53610037157D /* DBChooser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B00371A21A8A53610037157D /* DBChooser.bundle */; };
 		B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371A31A8A53610037157D /* DBChooser.framework */; };
 		B00371A81A8BA2C60037157D /* SessionStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00371A71A8BA2C60037157D /* SessionStatusViewController.m */; };
-		B00FA4721A9ABAF80048906C /* CustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA4711A9ABAF80048906C /* CustomSegue.m */; };
-		B00FA4751A9AC1650048906C /* CustomUnwindSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA4741A9AC1650048906C /* CustomUnwindSegue.m */; };
 		B0196D121A93A20A0025D959 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D111A93A20A0025D959 /* Firebase.framework */; };
 		B0196D141A93A23B0025D959 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D131A93A23B0025D959 /* libicucore.dylib */; };
 		B0196D161A93A2480025D959 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D151A93A2480025D959 /* libc++.dylib */; };
@@ -142,10 +140,6 @@
 		B00371A31A8A53610037157D /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
 		B00371A61A8BA2C60037157D /* SessionStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionStatusViewController.h; sourceTree = "<group>"; };
 		B00371A71A8BA2C60037157D /* SessionStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionStatusViewController.m; sourceTree = "<group>"; };
-		B00FA4701A9ABAF80048906C /* CustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegue.h; sourceTree = "<group>"; };
-		B00FA4711A9ABAF80048906C /* CustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegue.m; sourceTree = "<group>"; };
-		B00FA4731A9AC1650048906C /* CustomUnwindSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUnwindSegue.h; sourceTree = "<group>"; };
-		B00FA4741A9AC1650048906C /* CustomUnwindSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUnwindSegue.m; sourceTree = "<group>"; };
 		B0196D111A93A20A0025D959 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		B0196D131A93A23B0025D959 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		B0196D151A93A2480025D959 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -304,10 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				B00371581A89C8860037157D /* Main.storyboard */,
-				B00FA4701A9ABAF80048906C /* CustomSegue.h */,
-				B00FA4711A9ABAF80048906C /* CustomSegue.m */,
-				B00FA4731A9AC1650048906C /* CustomUnwindSegue.h */,
-				B00FA4741A9AC1650048906C /* CustomUnwindSegue.m */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -484,12 +474,10 @@
 				C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */,
 				C9BBB8B61A90051400D70D47 /* ParseSession.m in Sources */,
 				B00371541A89C8860037157D /* AppDelegate.m in Sources */,
-				B00FA4721A9ABAF80048906C /* CustomSegue.m in Sources */,
 				B00371511A89C8860037157D /* main.m in Sources */,
 				B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */,
 				B00371A81A8BA2C60037157D /* SessionStatusViewController.m in Sources */,
 				C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */,
-				B00FA4751A9AC1650048906C /* CustomUnwindSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

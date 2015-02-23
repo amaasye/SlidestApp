@@ -98,8 +98,6 @@
 {
     // Adjust cell size for orientation
 
-
-    
     if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
         return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
     }
