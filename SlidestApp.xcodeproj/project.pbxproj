@@ -35,8 +35,8 @@
 		B0196D121A93A20A0025D959 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D111A93A20A0025D959 /* Firebase.framework */; };
 		B0196D141A93A23B0025D959 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D131A93A23B0025D959 /* libicucore.dylib */; };
 		B0196D161A93A2480025D959 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D151A93A2480025D959 /* libc++.dylib */; };
-		B0196DAC1A94F7AC0025D959 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196DA71A94F7960025D959 /* pop.framework */; };
-		B0196DAD1A94F7AC0025D959 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0196DA71A94F7960025D959 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C91154381A9B8E89006C2501 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91154331A9B8E7E006C2501 /* pop.framework */; };
+		C91154391A9B8E89006C2501 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91154331A9B8E7E006C2501 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C940F1451A8C43D700D7B2C0 /* CustomCell.m */; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
 		C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B21A8E60C200D70D47 /* DataHandler.m */; };
@@ -51,44 +51,44 @@
 			remoteGlobalIDString = B003714A1A89C8860037157D;
 			remoteInfo = SlidestApp;
 		};
-		B0196DA21A94F7960025D959 /* PBXContainerItemProxy */ = {
+		C911542E1A9B8E7E006C2501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			containerPortal = C91154261A9B8E7D006C2501 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EC191218162FB53A00E0CC76;
 			remoteInfo = pop;
 		};
-		B0196DA41A94F7960025D959 /* PBXContainerItemProxy */ = {
+		C91154301A9B8E7E006C2501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			containerPortal = C91154261A9B8E7D006C2501 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EC68857F18C7B60000C6194C;
 			remoteInfo = "pop-osx";
 		};
-		B0196DA61A94F7960025D959 /* PBXContainerItemProxy */ = {
+		C91154321A9B8E7E006C2501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			containerPortal = C91154261A9B8E7D006C2501 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0B6BE74819FFD3B900762101;
 			remoteInfo = "pop-embedded";
 		};
-		B0196DA81A94F7960025D959 /* PBXContainerItemProxy */ = {
+		C91154341A9B8E7E006C2501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			containerPortal = C91154261A9B8E7D006C2501 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
 			remoteInfo = "pop-tests";
 		};
-		B0196DAA1A94F7960025D959 /* PBXContainerItemProxy */ = {
+		C91154361A9B8E7E006C2501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			containerPortal = C91154261A9B8E7D006C2501 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EC7E319918C93D6500B38170;
 			remoteInfo = "pop-tests-osx";
 		};
-		B0196DAE1A94F7AC0025D959 /* PBXContainerItemProxy */ = {
+		C911543A1A9B8E89006C2501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+			containerPortal = C91154261A9B8E7D006C2501 /* pop.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 0B6BE74719FFD3B900762101;
 			remoteInfo = "pop-embedded";
@@ -102,7 +102,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B0196DAD1A94F7AC0025D959 /* pop.framework in Embed Frameworks */,
+				C91154391A9B8E89006C2501 /* pop.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +149,7 @@
 		B0196D111A93A20A0025D959 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		B0196D131A93A23B0025D959 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		B0196D151A93A2480025D959 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		B0196D9A1A94F7950025D959 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../../Downloads/pop-master/pop.xcodeproj"; sourceTree = "<group>"; };
+		C91154261A9B8E7D006C2501 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../Downloads/pop-master/pop.xcodeproj"; sourceTree = "<group>"; };
 		C940F1441A8C43D700D7B2C0 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		C940F1451A8C43D700D7B2C0 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		C9B808C61A8BE7FC0044932E /* PageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageScrollView.h; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				B00371911A89CA380037157D /* CoreGraphics.framework in Frameworks */,
 				B003718F1A89CA2A0037157D /* MobileCoreServices.framework in Frameworks */,
 				B003718D1A89CA1C0037157D /* Security.framework in Frameworks */,
-				B0196DAC1A94F7AC0025D959 /* pop.framework in Frameworks */,
+				C91154381A9B8E89006C2501 /* pop.framework in Frameworks */,
 				B00371891A89CA070037157D /* SystemConfiguration.framework in Frameworks */,
 				B00371871A89C9F70037157D /* libz.dylib in Frameworks */,
 				B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */,
@@ -197,7 +197,7 @@
 		B00371421A89C8860037157D = {
 			isa = PBXGroup;
 			children = (
-				B0196D9A1A94F7950025D959 /* pop.xcodeproj */,
+				C91154261A9B8E7D006C2501 /* pop.xcodeproj */,
 				B00371961A89CA710037157D /* Frameworks */,
 				B003714D1A89C8860037157D /* SlidestApp */,
 				B00371671A89C8860037157D /* SlidestAppTests */,
@@ -312,14 +312,14 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
-		B0196D9B1A94F7950025D959 /* Products */ = {
+		C91154271A9B8E7D006C2501 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0196DA31A94F7960025D959 /* libpop.a */,
-				B0196DA51A94F7960025D959 /* pop.framework */,
-				B0196DA71A94F7960025D959 /* pop.framework */,
-				B0196DA91A94F7960025D959 /* pop-tests.xctest */,
-				B0196DAB1A94F7960025D959 /* pop-tests-osx.xctest */,
+				C911542F1A9B8E7E006C2501 /* libpop.a */,
+				C91154311A9B8E7E006C2501 /* pop.framework */,
+				C91154331A9B8E7E006C2501 /* pop.framework */,
+				C91154351A9B8E7E006C2501 /* pop-tests.xctest */,
+				C91154371A9B8E7E006C2501 /* pop-tests-osx.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B0196DAF1A94F7AC0025D959 /* PBXTargetDependency */,
+				C911543B1A9B8E89006C2501 /* PBXTargetDependency */,
 			);
 			name = SlidestApp;
 			productName = SlidestApp;
@@ -402,8 +402,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B0196D9B1A94F7950025D959 /* Products */;
-					ProjectRef = B0196D9A1A94F7950025D959 /* pop.xcodeproj */;
+					ProductGroup = C91154271A9B8E7D006C2501 /* Products */;
+					ProjectRef = C91154261A9B8E7D006C2501 /* pop.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -415,39 +415,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B0196DA31A94F7960025D959 /* libpop.a */ = {
+		C911542F1A9B8E7E006C2501 /* libpop.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libpop.a;
-			remoteRef = B0196DA21A94F7960025D959 /* PBXContainerItemProxy */;
+			remoteRef = C911542E1A9B8E7E006C2501 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B0196DA51A94F7960025D959 /* pop.framework */ = {
+		C91154311A9B8E7E006C2501 /* pop.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = pop.framework;
-			remoteRef = B0196DA41A94F7960025D959 /* PBXContainerItemProxy */;
+			remoteRef = C91154301A9B8E7E006C2501 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B0196DA71A94F7960025D959 /* pop.framework */ = {
+		C91154331A9B8E7E006C2501 /* pop.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = pop.framework;
-			remoteRef = B0196DA61A94F7960025D959 /* PBXContainerItemProxy */;
+			remoteRef = C91154321A9B8E7E006C2501 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B0196DA91A94F7960025D959 /* pop-tests.xctest */ = {
+		C91154351A9B8E7E006C2501 /* pop-tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "pop-tests.xctest";
-			remoteRef = B0196DA81A94F7960025D959 /* PBXContainerItemProxy */;
+			remoteRef = C91154341A9B8E7E006C2501 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B0196DAB1A94F7960025D959 /* pop-tests-osx.xctest */ = {
+		C91154371A9B8E7E006C2501 /* pop-tests-osx.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "pop-tests-osx.xctest";
-			remoteRef = B0196DAA1A94F7960025D959 /* PBXContainerItemProxy */;
+			remoteRef = C91154361A9B8E7E006C2501 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -509,10 +509,10 @@
 			target = B003714A1A89C8860037157D /* SlidestApp */;
 			targetProxy = B00371651A89C8860037157D /* PBXContainerItemProxy */;
 		};
-		B0196DAF1A94F7AC0025D959 /* PBXTargetDependency */ = {
+		C911543B1A9B8E89006C2501 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "pop-embedded";
-			targetProxy = B0196DAE1A94F7AC0025D959 /* PBXContainerItemProxy */;
+			targetProxy = C911543A1A9B8E89006C2501 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
