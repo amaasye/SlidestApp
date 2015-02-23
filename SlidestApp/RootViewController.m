@@ -23,6 +23,9 @@
 @property CGPoint createButtonCenter;
 @property POPSpringAnimation *anime;
 @property POPAnimation *pop;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *joinConstraint;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *createConstrain;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *goConstraint;
 
 @end
 
@@ -32,7 +35,6 @@
     [super viewDidLoad];
     self.datahandler = [DataHandler new];
     self.passcodeTextField.delegate = self;
-    self.anime.delegate = self;
     [self setUIElements];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
@@ -72,38 +74,39 @@
 
 -(void)animationsOfUIElements {
 
-    POPSpringAnimation *animateJoin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    animateJoin.springBounciness = 0;
-    animateJoin.springSpeed = 2;
-    animateJoin.toValue = @(self.joinOneButton.center.y + 82);
-    animateJoin.removedOnCompletion = YES;
-    [self.joinOneButton pop_addAnimation:animateJoin forKey:@"postionY"];
+    //animation for JoinButton
+    POPSpringAnimation *joinAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
+    joinAnimation.springSpeed = 20.0f;
+    joinAnimation.springBounciness = 15.0f;
+    joinAnimation.toValue = @(-20);
+    joinAnimation.delegate = self;
+    joinAnimation.removedOnCompletion = YES;
+    [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
 
-    //trying to fix the automatic resetting of the animation when in textfield
-    self.joinButtonCenter = self.joinOneButton.center;
-    NSValue *point = [NSValue valueWithCGPoint:self.joinButtonCenter];
-    NSLog(@"%@", point);
+    //annimation for  Button create
+    POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
+    createAnimation.springSpeed = 20.0f;
+    createAnimation.springBounciness = 15.0f;
+    createAnimation.toValue = @(100);
+    createAnimation.removedOnCompletion = YES;
+    [self.createConstrain pop_addAnimation:createAnimation forKey:@"createButtonAnime"];
 
-
-    self.anime = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    self.anime.springBounciness = 0;
-    self.anime.springSpeed = 2;
-    self.anime.toValue = @(self.createSlideshowButton.center.y - 30);
-    [self.createSlideshowButton pop_addAnimation:self.anime forKey:@"positionY"];
 
     self.passcodeTextField.hidden = NO;
     self.goButton.hidden = NO;
 
-    POPSpringAnimation *animateGo = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    animateGo.springBounciness = 10;
-    animateGo.springSpeed = 10;
-    animateGo.toValue = @(self.goButton.center.y - 64);
-    [self.goButton pop_addAnimation:animateGo forKey:@"positionY"];
+    POPSpringAnimation *goAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
+    goAnimation.springSpeed = 20.0f;
+    goAnimation.springBounciness = 15.0f;
+    goAnimation.toValue = @(-80);
+    goAnimation.removedOnCompletion = YES;
+    [self.goConstraint pop_addAnimation:goAnimation forKey:@"createButtonAnime"];
 
     POPSpringAnimation *animatePasscodeTextField = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     animatePasscodeTextField.springBounciness = 0;
     animatePasscodeTextField.springSpeed = 2;
     animatePasscodeTextField.toValue = @(self.passcodeTextField.center.y - 0);
+    animatePasscodeTextField.removedOnCompletion = YES;
     [self.passcodeTextField pop_addAnimation:animatePasscodeTextField forKey:@"positionY"];
 
     self.joinOneButton.enabled = NO;
@@ -141,9 +144,8 @@
 //}
 
 - (void)pop_animationDidStop:(POPSpringAnimation *)anim finished:(BOOL)finished {
-    anim = self.anime;
-    NSLog(@"Hi");
-}
+
+   }
 
 #pragma mark -- Data and Segues --
 
