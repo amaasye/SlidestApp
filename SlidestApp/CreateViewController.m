@@ -11,6 +11,8 @@
 #import "DataHandler.h"
 #import "SessionStatusViewController.h"
 #import "POP/POP.h"
+#import "CustomSegue.h"
+#import "CustomUnwindSegue.h"
 
 @interface CreateViewController () <DataHandlerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
@@ -36,6 +38,7 @@
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
+#pragma mark -- UI and Animations
 
 -(void)setUIElements {
     self.passcodeTextField.hidden = YES;
@@ -70,6 +73,7 @@
      }];
 }
 
+#pragma mark -- Data
 
 - (void)downloadingShouldStart {
     self.uploadFromDropboxButton.hidden = YES;
@@ -99,7 +103,7 @@
         self.reminderLabel.text = name;
         self.reminderLabel.hidden = NO;
         self.reminderLabel.numberOfLines = 0;
-//        [self.reminderLabel sizeToFit];
+        [self.reminderLabel sizeToFit];
         [self.reminderLabel setLineBreakMode:NSLineBreakByWordWrapping];
         self.passcodeTextField.hidden = NO;
         self.uploadFromDropboxButton.hidden = YES;
@@ -123,18 +127,31 @@
     [self.passcodeTextField resignFirstResponder];
 }
 
+#pragma mark -- Segues
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"toSession"]){
+        ((CustomSegue *)segue).originatingPoint = self.passcodeTextField.center;
+
+        SessionStatusViewController *vc = [segue destinationViewController];
+        vc.dataHandler = self.dataHandler;
+    }
+}
+
+- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
+    // Instantiate a new CustomUnwindSegue
+    CustomUnwindSegue *segue = [[CustomUnwindSegue alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
+    // Set the target point for the animation to the center of the button in this VC
+    segue.targetPoint = self.passcodeTextField.center;
+    return segue;
+}
 
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
     [self.dataHandler deleteFile];
-    }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"toSession"]){
-
-    SessionStatusViewController *vc = [segue destinationViewController];
-    vc.dataHandler = self.dataHandler;
-    }
 }
+
+
+#pragma mark -- Alerts
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [alertView dismissWithClickedButtonIndex:0 animated:YES];

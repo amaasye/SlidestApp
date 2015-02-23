@@ -54,7 +54,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oET-gY-IPk" kind="show" identifier="toCreateVC" id="Pc2-mf-9Gx"/>
+                                    <segue destination="oET-gY-IPk" kind="custom" identifier="toCreateVC" customClass="CustomSegue" id="Pc2-mf-9Gx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-Yu-EvU">
@@ -93,7 +93,7 @@
                         <outlet property="goButton" destination="dhH-Yu-EvU" id="Cfb-He-SMu"/>
                         <outlet property="joinOneButton" destination="d8N-tv-vhL" id="BDt-70-isf"/>
                         <outlet property="passcodeTextField" destination="2Cb-bH-UJ6" id="OsT-oe-8fC"/>
-                        <segue destination="ljp-N3-uLQ" kind="show" identifier="slideshowVCfromJoinVC" id="Dor-dl-EaV"/>
+                        <segue destination="ljp-N3-uLQ" kind="custom" identifier="slideshowVCfromJoinVC" customClass="CustomSegue" id="Dor-dl-EaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,10 +138,9 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a PDF file only" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27x-5a-SIY">
-                                <rect key="frame" x="175" y="142" width="250" height="18"/>
+                                <rect key="frame" x="16" y="125" width="568" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="ffD-oC-XE4"/>
-                                    <constraint firstAttribute="width" constant="250" id="ufE-JA-F4D"/>
+                                    <constraint firstAttribute="height" constant="50" id="tXR-fz-EdA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -204,6 +203,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="8Xh-da-gvH"/>
+                            <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="35" id="DON-GQ-tGf"/>
+                            <constraint firstItem="27x-5a-SIY" firstAttribute="top" secondItem="MT0-fP-8f0" secondAttribute="bottom" constant="75" id="DSe-83-Yr8"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-6" id="EUd-y1-V1T"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-16" id="Hcq-zB-e8L"/>
                             <constraint firstAttribute="centerX" secondItem="iHy-VT-AKG" secondAttribute="centerX" constant="-0.5" id="Hgh-tC-4uZ"/>
@@ -213,12 +214,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ux1-oa-j5Y" secondAttribute="trailing" constant="-16" id="OeS-KL-MlW"/>
                             <constraint firstItem="Tsz-Z3-Zer" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-16" id="OqZ-qf-UYe"/>
                             <constraint firstAttribute="centerY" secondItem="iHy-VT-AKG" secondAttribute="centerY" constant="-20.5" id="SMm-34-Pce"/>
+                            <constraint firstItem="27x-5a-SIY" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" id="SPS-H0-q5h"/>
                             <constraint firstItem="wZk-NY-nJg" firstAttribute="top" secondItem="Ux1-oa-j5Y" secondAttribute="bottom" id="V3m-tm-JIA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fdV-To-RfM" secondAttribute="trailing" constant="-16" id="VvZ-Vt-8ea"/>
-                            <constraint firstAttribute="centerX" secondItem="27x-5a-SIY" secondAttribute="centerX" id="Ykj-Xf-cCh"/>
-                            <constraint firstItem="27x-5a-SIY" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" constant="142" id="ZkH-p4-Pvb"/>
                             <constraint firstItem="fdV-To-RfM" firstAttribute="top" secondItem="h0V-Jb-bac" secondAttribute="bottom" id="bNm-bM-9Yd"/>
-                            <constraint firstItem="y3C-kA-M0V" firstAttribute="top" secondItem="27x-5a-SIY" secondAttribute="bottom" constant="50" id="jQc-gM-p4K"/>
+                            <constraint firstItem="27x-5a-SIY" firstAttribute="centerX" secondItem="y3C-kA-M0V" secondAttribute="centerX" id="lUH-5A-3ue"/>
                             <constraint firstAttribute="centerX" secondItem="IKt-ql-2PB" secondAttribute="centerX" id="mBO-ST-g9R"/>
                             <constraint firstItem="Tsz-Z3-Zer" firstAttribute="top" secondItem="fdV-To-RfM" secondAttribute="bottom" constant="102" id="pwq-FQ-sXf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tsz-Z3-Zer" secondAttribute="trailing" constant="-16" id="rhP-qF-fkK"/>
@@ -240,7 +240,7 @@
                         <outlet property="startButton" destination="Ux1-oa-j5Y" id="9ra-T6-MPq"/>
                         <outlet property="topView" destination="fdV-To-RfM" id="Qud-42-wZb"/>
                         <outlet property="uploadFromDropboxButton" destination="IKt-ql-2PB" id="dVP-HR-3kG"/>
-                        <segue destination="ZE8-Vg-1wb" kind="show" identifier="toSession" id="6eA-Gq-6cK"/>
+                        <segue destination="ZE8-Vg-1wb" kind="custom" identifier="toSession" customClass="CustomSegue" id="6eA-Gq-6cK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8d-oB-Wv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,7 +392,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ljp-N3-uLQ" kind="show" identifier="ToSlideshow" id="iQv-Xk-1Gr"/>
+                                    <segue destination="ljp-N3-uLQ" kind="custom" identifier="ToSlideshow" customClass="CustomSegue" id="iQv-Xk-1Gr"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYa-Vq-ifw">
@@ -491,6 +491,6 @@
         <image name="dropboxglyph" width="102" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dor-dl-EaV"/>
+        <segue reference="iQv-Xk-1Gr"/>
     </inferredMetricsTieBreakers>
 </document>
