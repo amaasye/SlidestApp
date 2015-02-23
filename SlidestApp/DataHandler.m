@@ -52,6 +52,7 @@
                                 @"data": pdfData,
                                 @"passcode": self.passcode,
                                 @"currentPage": [NSNumber numberWithInt:0],
+                                @"audience": [NSNumber numberWithInt:0],
                                 };
 
     Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];

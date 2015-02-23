@@ -41,6 +41,7 @@
 
 
 - (IBAction)onEndSessionButtonTapped:(UIButton *)sender {
+    [self.dataHandler deleteFile];
 
 }
 
