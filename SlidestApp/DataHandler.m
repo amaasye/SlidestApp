@@ -84,6 +84,8 @@
 -(void)pullFromDataBase:(NSString *)passcode {
 
     self.passcode = passcode;
+    self.dataFromDropbox = nil;
+    NSLog(@"%@", passcode);
     NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
 
