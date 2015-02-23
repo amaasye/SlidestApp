@@ -11,8 +11,7 @@
 #import "DataHandler.h"
 #import "SessionStatusViewController.h"
 #import "POP/POP.h"
-//#import "CustomSegue.h"
-//#import "CustomUnwindSegue.h"
+
 
 @interface CreateViewController () <DataHandlerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
@@ -51,6 +50,7 @@
     self.getSlideshowLabel.textColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
     self.startButton.backgroundColor =[UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
     self.startButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+
 }
 
 -(void)animateButton {
@@ -111,6 +111,13 @@
         self.getSlideshowLabel.hidden = YES;
         self.startButton.hidden = NO;
 
+//        if ([self.passcodeTextField.text isEqualToString:@""]) {
+//            self.startButton.enabled = NO;
+//        }
+//        else {
+//            self.startButton.enabled = YES;
+//        }
+
     } else {
 
         self.reminderLabel.text = name;
@@ -132,20 +139,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"toSession"]){
-//        ((CustomSegue *)segue).originatingPoint = self.passcodeTextField.center;
 
         SessionStatusViewController *vc = [segue destinationViewController];
         vc.dataHandler = self.dataHandler;
     }
 }
-
-//- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
-//    // Instantiate a new CustomUnwindSegue
-//    CustomUnwindSegue *segue = [[CustomUnwindSegue alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
-//    // Set the target point for the animation to the center of the button in this VC
-//    segue.targetPoint = self.passcodeTextField.center;
-//    return segue;
-//}
 
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
     [self.dataHandler deleteFile];

@@ -9,8 +9,7 @@
 #import "SessionStatusViewController.h"
 #import "SlideshowViewController.h"
 #import "DataHandler.h"
-//#import "CustomSegue.h"
-//#import "CustomUnwindSegue.h"
+
 
 @interface SessionStatusViewController ()
 @property (weak, nonatomic) IBOutlet UIView *topView;

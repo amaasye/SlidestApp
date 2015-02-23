@@ -10,8 +10,7 @@
 #import "SlideshowViewController.h"
 #import "POP/POP.h"
 #import "DataHandler.h"
-//#import "CustomSegue.h"
-//#import "CustomUnwindSegue.h"
+
 
 @interface RootViewController () <DataHandlerDelegate, UITextFieldDelegate, POPAnimationDelegate>
 
@@ -98,6 +97,12 @@
     animateGo.toValue = @(self.goButton.center.y - 64);
     [self.goButton pop_addAnimation:animateGo forKey:@"positionY"];
 
+    POPSpringAnimation *animatePasscodeTextField = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    animatePasscodeTextField.springBounciness = 0;
+    animatePasscodeTextField.springSpeed = 2;
+    animatePasscodeTextField.toValue = @(self.passcodeTextField.center.y - 0);
+    [self.passcodeTextField pop_addAnimation:animatePasscodeTextField forKey:@"positionY"];
+
     self.joinOneButton.enabled = NO;
 
     [self elementsAfterAnimation];
@@ -147,24 +152,13 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
     if([[segue identifier] isEqualToString:@"toCreate"]) {
-        // Set the start point for the animation to center of the button for the animation
-//        ((CustomSegue *)segue).originatingPoint = self.createSlideshowButton.center;
     }
     else if ([[segue identifier] isEqualToString:@"slideshowVCfromJoinVC"]){
-//        ((CustomSegue *)segue).originatingPoint = self.goButton.center;
         SlideshowViewController *svc = [segue destinationViewController];
         svc.dataHandler = self.datahandler;
     }
 }
 
-//logic for custom unwind segue
-//- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
-//    // Instantiate a new CustomUnwindSegue
-//    CustomUnwindSegue *segue = [[CustomUnwindSegue alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
-//    // Set the target point for the animation to the center of the button in this VC
-//    segue.targetPoint = self.createSlideshowButton.center;
-//    return segue;
-//}
 
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
     self.joinOneButton.enabled = YES;
