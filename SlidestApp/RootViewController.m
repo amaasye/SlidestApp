@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *createSlideshowButton;
 @property (weak, nonatomic) IBOutlet UIButton *joinOneButton;
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property CGPoint joinButtonCenter;
 @property CGPoint goButtonCenter;
 @property CGPoint createButtonCenter;
@@ -43,6 +44,7 @@
 
 -(void)setUIElements{
     self.navigationController.navigationBar.hidden = YES;
+    self.spinner.hidden = YES;
     self.createSlideshowButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.createSlideshowButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 
@@ -120,6 +122,8 @@
 }
 
 - (IBAction)onGoButtonTapped:(UIButton *)sender {
+    self.spinner.hidden = NO;
+    [self.spinner startAnimating];
     [self.datahandler pullFromDataBase:self.passcodeTextField.text];
 }
 

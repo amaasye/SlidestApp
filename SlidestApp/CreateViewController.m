@@ -48,6 +48,9 @@
     self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.getSlideshowLabel.textColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
+    self.getSlideshowLabel.numberOfLines = 0;
+    [self.getSlideshowLabel sizeToFit];
+    [self.getSlideshowLabel setLineBreakMode:NSLineBreakByWordWrapping];
     self.startButton.backgroundColor =[UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
     self.startButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 
@@ -60,6 +63,9 @@
     animate.toValue = @(self.startButton.center.y - 215);
     [self.startButton pop_addAnimation:animate forKey:@"pop"];
 }
+
+
+
 
 - (IBAction)onUploadButtonTapped:(UIButton *)sender {
     [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypeDirect
