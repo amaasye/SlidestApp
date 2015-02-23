@@ -11,8 +11,8 @@
 #import "DataHandler.h"
 #import "SessionStatusViewController.h"
 #import "POP/POP.h"
-#import "CustomSegue.h"
-#import "CustomUnwindSegue.h"
+//#import "CustomSegue.h"
+//#import "CustomUnwindSegue.h"
 
 @interface CreateViewController () <DataHandlerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *uploadFromDropboxButton;
@@ -41,6 +41,7 @@
 #pragma mark -- UI and Animations
 
 -(void)setUIElements {
+    self.navigationController.navigationBar.hidden = YES;
     self.passcodeTextField.hidden = YES;
     self.reminderLabel.hidden = YES;
     self.startButton.hidden = YES;
@@ -131,20 +132,20 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"toSession"]){
-        ((CustomSegue *)segue).originatingPoint = self.passcodeTextField.center;
+//        ((CustomSegue *)segue).originatingPoint = self.passcodeTextField.center;
 
         SessionStatusViewController *vc = [segue destinationViewController];
         vc.dataHandler = self.dataHandler;
     }
 }
 
-- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
-    // Instantiate a new CustomUnwindSegue
-    CustomUnwindSegue *segue = [[CustomUnwindSegue alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
-    // Set the target point for the animation to the center of the button in this VC
-    segue.targetPoint = self.passcodeTextField.center;
-    return segue;
-}
+//- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
+//    // Instantiate a new CustomUnwindSegue
+//    CustomUnwindSegue *segue = [[CustomUnwindSegue alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
+//    // Set the target point for the animation to the center of the button in this VC
+//    segue.targetPoint = self.passcodeTextField.center;
+//    return segue;
+//}
 
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
     [self.dataHandler deleteFile];

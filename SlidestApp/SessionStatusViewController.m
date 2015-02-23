@@ -9,8 +9,8 @@
 #import "SessionStatusViewController.h"
 #import "SlideshowViewController.h"
 #import "DataHandler.h"
-#import "CustomSegue.h"
-#import "CustomUnwindSegue.h"
+//#import "CustomSegue.h"
+//#import "CustomUnwindSegue.h"
 
 @interface SessionStatusViewController ()
 @property (weak, nonatomic) IBOutlet UIView *topView;
@@ -31,6 +31,7 @@
 }
 
 -(void)setUIElements {
+    self.navigationController.navigationBar.hidden = YES;
     self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
     self.goToSlideshowButton.backgroundColor =[UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
@@ -46,20 +47,20 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"ToSlideshow"]){
-        ((CustomSegue *)segue).originatingPoint = self.goToSlideshowButton.center;
+//        ((CustomSegue *)segue).originatingPoint = self.goToSlideshowButton.center;
         SlideshowViewController *vc = [segue destinationViewController];
         vc.dataHandler = self.dataHandler;
         vc.presenter = YES;
     }
 }
 
-- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
-    // Instantiate a new CustomUnwindSegue
-    CustomUnwindSegue *segue = [[CustomUnwindSegue alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
-    // Set the target point for the animation to the center of the button in this VC
-    segue.targetPoint = self.goToSlideshowButton.center;
-    return segue;
-}
+//- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
+//    // Instantiate a new CustomUnwindSegue
+//    CustomUnwindSegue *segue = [[CustomUnwindSegue alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
+//    // Set the target point for the animation to the center of the button in this VC
+//    segue.targetPoint = self.goToSlideshowButton.center;
+//    return segue;
+//}
 
 -(IBAction)unwindToSessionStatusViewController:(UIStoryboardSegue *)sender{
 

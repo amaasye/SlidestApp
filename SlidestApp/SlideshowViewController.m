@@ -32,6 +32,8 @@
 }
 
 -(void)setUIElements {
+    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
     self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.saveButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     self.topLabel.hidden = YES;
