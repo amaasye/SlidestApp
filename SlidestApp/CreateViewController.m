@@ -39,6 +39,9 @@
     self.dataHandler.delegate = self;
 
 }
+-(BOOL)shouldAutorotate{
+    return NO;
+}
 
 #pragma mark -- UI and Animations
 
@@ -146,7 +149,7 @@
 }
 
 -(IBAction)unwindToCreateViewController:(UIStoryboardSegue *)sender{
-    [self.dataHandler deleteFile];
+   /// [self.dataHandler deleteFile];
 }
 
 

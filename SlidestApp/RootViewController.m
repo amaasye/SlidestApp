@@ -31,8 +31,17 @@
     self.datahandler = [DataHandler new];
     self.passcodeTextField.delegate = self;
     [self setUIElements];
+
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
+
+-(BOOL)shouldAutorotate{
+    return NO;
+}
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     self.datahandler.delegate = self;
@@ -152,6 +161,8 @@
 #pragma mark -- Data and Segues --
 
 - (void)dataDownloaded {
+    [self.spinner stopAnimating];
+    self.spinner.hidden=YES;
     [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
 }
 

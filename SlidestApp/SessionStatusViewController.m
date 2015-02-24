@@ -11,7 +11,7 @@
 #import "DataHandler.h"
 
 
-@interface SessionStatusViewController ()
+@interface SessionStatusViewController ()<DataHandlerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UILabel *sessionTextLabel;
 @property (weak, nonatomic) IBOutlet UIButton *goToSlideshowButton;
@@ -26,7 +26,19 @@
     [super viewDidLoad];
     [self setUIElements];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-    
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    self.dataHandler.delegate = self;
+    [self.dataHandler listenAudienceNr];
+
+}
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
+-(void)updateAudienceNr:(int)nr{
+    self.peerCounterLabel.text = [NSString stringWithFormat:@"%d", nr];
 }
 
 -(void)setUIElements {
@@ -51,6 +63,13 @@
         vc.dataHandler = self.dataHandler;
         vc.presenter = YES;
     }
+}
+-(BOOL)shouldAutorotate{
+    return NO;
+}
+
+- (void)updatePage:(int)pageNr{
+
 }
 
 

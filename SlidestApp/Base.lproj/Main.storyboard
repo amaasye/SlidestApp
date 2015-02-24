@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hkb-uZ-Zeq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hkb-uZ-Zeq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8N-tv-vhL">
-                                <rect key="frame" x="0.0" y="273" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="263" width="600" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="VpK-ME-Gwl"/>
                                 </constraints>
@@ -75,10 +75,26 @@
                                 <rect key="frame" x="290" y="290" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLY-9d-yPx">
+                                <rect key="frame" x="16" y="550" width="43" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="sJy-Kp-Uph"/>
+                                    <constraint firstAttribute="width" constant="43" id="wxk-kF-T1P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <state key="normal" title="INFO">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uyT-1Z-1AP" kind="show" id="2df-yY-Qfx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Po4-17-MWe" secondAttribute="centerY" constant="76" id="7sY-ai-uLp"/>
+                            <constraint firstItem="dLY-9d-yPx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Baz-cG-XoJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dLY-9d-yPx" secondAttribute="bottom" constant="28" id="Bt1-bZ-Qxm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Po4-17-MWe" secondAttribute="trailing" constant="-16" id="Dtd-Gu-RxE"/>
                             <constraint firstItem="YaI-2i-Ovn" firstAttribute="top" secondItem="2Cb-bH-UJ6" secondAttribute="bottom" constant="17" id="Inl-Dy-HDb"/>
                             <constraint firstItem="d8N-tv-vhL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="MqN-nK-DtY"/>
@@ -88,7 +104,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="d8N-tv-vhL" secondAttribute="trailing" constant="-16" id="Toh-R8-Ibc"/>
                             <constraint firstAttribute="centerY" secondItem="dhH-Yu-EvU" secondAttribute="centerY" constant="-78" id="VJG-bG-LpA"/>
                             <constraint firstItem="2Cb-bH-UJ6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YSL-7L-8VB"/>
-                            <constraint firstAttribute="centerY" secondItem="d8N-tv-vhL" secondAttribute="centerY" constant="-5" id="d6r-6q-aaa"/>
+                            <constraint firstAttribute="centerY" secondItem="d8N-tv-vhL" secondAttribute="centerY" constant="5" id="d6r-6q-aaa"/>
+                            <constraint firstAttribute="centerY" secondItem="YaI-2i-Ovn" secondAttribute="centerY" constant="-8.5" id="o0Q-gU-6yA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dhH-Yu-EvU" secondAttribute="trailing" constant="-16" id="whc-tG-Q0I"/>
                             <constraint firstItem="Po4-17-MWe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="xrz-QU-UrW"/>
                             <constraint firstItem="dhH-Yu-EvU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="yhz-AA-z1F"/>
@@ -110,6 +127,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1146" y="276"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LcH-hZ-jaw">
+            <objects>
+                <viewController id="uyT-1Z-1AP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="khv-aA-UeZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tTB-8O-2Vt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KXg-EK-QU6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mobilemakers-3" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-gk-BQT">
+                                <rect key="frame" x="313" y="20" width="200" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p09-Y7-5zY">
+                                <rect key="frame" x="0.0" y="241" width="600" height="76"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2q-cW-Xbc">
+                                <rect key="frame" x="122" y="241" width="75" height="75"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mateusz Pis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1y-Ga-ES9">
+                                <rect key="frame" x="205" y="244" width="87" height="21"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVt-x3-dOc">
+                                <rect key="frame" x="0.0" y="332" width="600" height="76"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-qi-4mZ">
+                                <rect key="frame" x="122" y="332" width="75" height="75"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mateusz Pis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkz-EW-hv2">
+                                <rect key="frame" x="205" y="335" width="87" height="21"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWG-mn-ptZ">
+                                <rect key="frame" x="0.0" y="425" width="600" height="76"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgV-1K-Lc3">
+                                <rect key="frame" x="122" y="425" width="75" height="75"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mateusz Pis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehV-w5-pCw">
+                                <rect key="frame" x="205" y="428" width="87" height="21"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="V4a-gA-EIk">
+                                <rect key="frame" x="52" y="35" width="253" height="185"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Slideo is the most awsome and slickest  iOS chunk of bites on nowdays marker where it comes to share slides. Im talking about REAL TiME slide share. Where your audience needs meet brutal "why we didnt buy this f**** projector yet" this where Slideo comes to action. Share your presentation slide by slide just by swipe of your iFinger.  "Share and control" Joseph Stalin</string>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3L-bV-VwK">
+                                <rect key="frame" x="16" y="8" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sAT-zz-kZS" kind="unwind" unwindAction="unwind:" id="ojW-y1-6vs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJ2-ih-Mhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sAT-zz-kZS" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1146" y="975"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="Skd-2P-VXx">
@@ -297,7 +406,7 @@
                                     <outlet property="delegate" destination="ljp-N3-uLQ" id="jWp-5w-fdn"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-oD-UWw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-oD-UWw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -331,7 +440,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KKg-dP-0jT" kind="unwind" unwindAction="unwind:" id="gs6-Ao-jOM"/>
+                                    <action selector="goBack:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="aOF-Q1-pJc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -354,6 +463,7 @@
                             <outletCollection property="gestureRecognizers" destination="DtR-Cm-cXv" appends="YES" id="xoJ-wc-1fZ"/>
                         </connections>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="K7o-zc-qwM" id="AMO-2p-OW6"/>
                         <outlet property="collectionView" destination="6RR-WU-4HJ" id="bFv-02-d9l"/>
@@ -362,7 +472,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29l-Mt-rwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="KKg-dP-0jT" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="DtR-Cm-cXv">
                     <connections>
                         <action selector="tapped:" destination="ljp-N3-uLQ" id="dQb-ok-Clv"/>
@@ -494,12 +603,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvA-4x-xFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S1X-vp-sMb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2686" y="-103"/>
+            <point key="canvasLocation" x="2685" y="-38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HLe-0r-8Ci">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hkb-uZ-Zeq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hkb-uZ-Zeq" customClass="NavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cPe-aJ-OYB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -517,6 +626,7 @@
     </scenes>
     <resources>
         <image name="dropboxglyph" width="102" height="96"/>
+        <image name="mobilemakers-3" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Dor-dl-EaV"/>

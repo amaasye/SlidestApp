@@ -24,13 +24,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.currentPageNr = 0;
     [self setUIElements];
     [self openPdf];
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+
+    //[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    
 }
 
 -(void)setUIElements {
+
     self.navigationController.navigationBar.hidden = YES;
     self.navigationController.navigationBar.hidden = YES;
     self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -54,10 +58,19 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     self.dataHandler.delegate = self;
+
+    if (!self.presenter) {
+        [self.dataHandler checkAudienceNumber];
+        [self.dataHandler checkPage];
+
     }
 
+   }
+
 - (void)updatePage:(int)pageNr{
-        self.currentPageNr = pageNr;
+    
+    self.currentPageNr = pageNr;
+    self.topLabel.text = [NSString stringWithFormat:@"%d",pageNr +1];
 
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPageNr  inSection:0]
                                 atScrollPosition:UICollectionViewScrollPositionNone
@@ -81,6 +94,7 @@
     return self.numberOfPages;
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+
     CustomCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"PageCell" forIndexPath:indexPath];
     CGRect frame =  CGRectMake(0, 0, collectionView.frame.size.width, collectionView.frame.size.height);
     PageScrollView *page = [[PageScrollView alloc] initWithFrame:frame];
@@ -121,5 +135,12 @@
         self.saveButton.hidden = YES;
     }
 }
+-(void)updateAudienceNr:(int)nr{
+    
+}
+
+- (IBAction)goBack:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    }
 
 @end

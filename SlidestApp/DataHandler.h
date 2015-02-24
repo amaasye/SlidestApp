@@ -18,6 +18,7 @@
 - (void)fileIsPDF:(BOOL)isPDF withName:(NSString *)name;
 - (void)dataDownloaded;
 - (void)updatePage:(int)pageNr;
+-(void)updateAudienceNr:(int)nr;
 
 
 @end
@@ -32,5 +33,10 @@
 -(void)deleteFile;
 -(void)pullFromDataBase:(NSString *)passcode;
 - (void)setPage:(int)pageNr;
+-(void)checkPage;
+-(void)checkAudienceNumber;
+-(void)listenAudienceNr;
+
+
 
 @end
