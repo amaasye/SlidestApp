@@ -53,7 +53,9 @@
     self.spinner.hidden = YES;
     self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.topView.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
-    self.getSlideshowLabel.textColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
+//    self.getSlideshowLabel.backgroundColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
+    self.getSlideshowLabel.backgroundColor = [UIColor grayColor];
+    self.getSlideshowLabel.textColor = [UIColor whiteColor];
     self.getSlideshowLabel.numberOfLines = 0;
     [self.getSlideshowLabel sizeToFit];
     [self.getSlideshowLabel setLineBreakMode:NSLineBreakByWordWrapping];

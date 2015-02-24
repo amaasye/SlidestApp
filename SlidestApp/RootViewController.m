@@ -10,7 +10,7 @@
 #import "SlideshowViewController.h"
 #import "POP/POP.h"
 #import "DataHandler.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 @interface RootViewController () <DataHandlerDelegate, UITextFieldDelegate, POPAnimationDelegate>
 
@@ -45,6 +45,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     self.datahandler.delegate = self;
+    [self animationOnReturningToVC];
 }
 
 #pragma mark -- UI Elements and Animations 
@@ -67,9 +68,13 @@
 
     self.passcodeTextField.hidden = YES;
     self.passcodeTextField.text = @"";
+    self.passcodeTextField.layer.borderWidth = 1.0f;
+    self.passcodeTextField.layer.borderColor = [[UIColor whiteColor] CGColor];
 }
 
--(void)elementsAfterAnimation {
+-(void)setUIElementsAfterReturnAnimation {
+    self.joinOneButton.hidden = NO;
+    self.joinOneButton.enabled = YES;
 }
 
 -(void)animationsOfUIElements {
@@ -83,6 +88,7 @@
     joinAnimation.removedOnCompletion = YES;
     [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
     self.joinOneButton.enabled = NO;
+    self.joinOneButton.hidden = YES;
 
     //animation for createButton
     POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
@@ -110,7 +116,6 @@
     [self.passcodeTextField pop_addAnimation:animatePasscodeTextField forKey:@"positionY"];
     self.passcodeTextField.hidden = NO;
 
-    [self elementsAfterAnimation];
 }
 
 -(void)animationOnReturningToVC {
@@ -122,15 +127,15 @@
     joinAnimation.delegate = self;
     joinAnimation.removedOnCompletion = YES;
     [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
-    self.joinOneButton.enabled = NO;
 
     //animation for createButton
     POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
     createAnimation.springSpeed = 20.0f;
     createAnimation.springBounciness = 5.0f;
-    createAnimation.toValue = @(76);
+    createAnimation.toValue = @(85);
     createAnimation.removedOnCompletion = YES;
     [self.createConstrain pop_addAnimation:createAnimation forKey:@"createButtonAnime"];
+    [self setUIElementsAfterReturnAnimation];
 }
 
 #pragma mark -- Actions --
@@ -177,8 +182,9 @@
 }
 
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
+    [self.passcodeTextField endEditing:YES];
     [self animationOnReturningToVC];
-    [self resignFirstResponder];
+    [self.passcodeTextField resignFirstResponder];
     [self setUIElements];
 }
 
