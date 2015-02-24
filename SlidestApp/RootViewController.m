@@ -117,7 +117,6 @@
     joinAnimation.removedOnCompletion = YES;
     [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
 
-
     //animation for createButton
     POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
     createAnimation.springSpeed = 20.0f;
@@ -172,7 +171,7 @@
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
     [self.passcodeTextField endEditing:YES];
     [self animationOnReturningToVC];
-    [self resignFirstResponder];
+    [self.passcodeTextField resignFirstResponder];
     [self setUIElements];
 }
 
