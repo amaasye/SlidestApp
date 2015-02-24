@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8N-tv-vhL">
-                                <rect key="frame" x="0.0" y="263" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="285" width="600" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="VpK-ME-Gwl"/>
+                                    <constraint firstAttribute="height" constant="75" id="VpK-ME-Gwl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="Join one">
@@ -31,22 +31,23 @@
                                     <action selector="onJoinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u0n-h9-V5l"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter passcode" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bH-UJ6">
-                                <rect key="frame" x="16" y="243" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="enter passcode" textAlignment="right" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bH-UJ6">
+                                <rect key="frame" x="0.0" y="237" width="600" height="45"/>
                                 <color key="tintColor" red="0.0" green="0.4941176471" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="g23-hK-dDs"/>
+                                    <constraint firstAttribute="height" constant="45" id="g23-hK-dDs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="EZt-AC-hDd"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-17-MWe">
-                                <rect key="frame" x="0.0" y="192" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="162" width="600" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="r79-Sf-wgG"/>
+                                    <constraint firstAttribute="height" constant="75" id="r79-Sf-wgG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="Create SlideShow">
@@ -58,9 +59,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-Yu-EvU">
-                                <rect key="frame" x="0.0" y="346" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="346" width="600" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="od8-j0-Bkr"/>
+                                    <constraint firstAttribute="height" constant="75" id="od8-j0-Bkr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                                 <state key="normal" title="Go">
@@ -78,17 +79,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Po4-17-MWe" secondAttribute="centerY" constant="76" id="7sY-ai-uLp"/>
+                            <constraint firstAttribute="centerY" secondItem="Po4-17-MWe" secondAttribute="centerY" constant="100" id="7sY-ai-uLp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Po4-17-MWe" secondAttribute="trailing" constant="-16" id="Dtd-Gu-RxE"/>
-                            <constraint firstItem="YaI-2i-Ovn" firstAttribute="top" secondItem="2Cb-bH-UJ6" secondAttribute="bottom" constant="33" id="Inl-Dy-HDb"/>
+                            <constraint firstItem="YaI-2i-Ovn" firstAttribute="top" secondItem="2Cb-bH-UJ6" secondAttribute="bottom" constant="24" id="Inl-Dy-HDb"/>
                             <constraint firstItem="d8N-tv-vhL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="MqN-nK-DtY"/>
-                            <constraint firstAttribute="centerY" secondItem="2Cb-bH-UJ6" secondAttribute="centerY" constant="42" id="PTd-ov-Ib8"/>
-                            <constraint firstItem="2Cb-bH-UJ6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Pm6-qs-Sbw"/>
+                            <constraint firstAttribute="centerY" secondItem="2Cb-bH-UJ6" secondAttribute="centerY" constant="40.5" id="PTd-ov-Ib8"/>
+                            <constraint firstItem="2Cb-bH-UJ6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="16" id="Pm6-qs-Sbw"/>
                             <constraint firstAttribute="centerX" secondItem="YaI-2i-Ovn" secondAttribute="centerX" constant="-8.5" id="SH2-8M-vXx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d8N-tv-vhL" secondAttribute="trailing" constant="-16" id="Toh-R8-Ibc"/>
-                            <constraint firstAttribute="centerY" secondItem="dhH-Yu-EvU" secondAttribute="centerY" constant="-78" id="VJG-bG-LpA"/>
-                            <constraint firstItem="2Cb-bH-UJ6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YSL-7L-8VB"/>
-                            <constraint firstAttribute="centerY" secondItem="d8N-tv-vhL" secondAttribute="centerY" constant="5" id="d6r-6q-aaa"/>
+                            <constraint firstAttribute="centerY" secondItem="dhH-Yu-EvU" secondAttribute="centerY" constant="-83.5" id="VJG-bG-LpA"/>
+                            <constraint firstItem="2Cb-bH-UJ6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="YSL-7L-8VB"/>
+                            <constraint firstAttribute="centerY" secondItem="d8N-tv-vhL" secondAttribute="centerY" constant="-22" id="d6r-6q-aaa"/>
                             <constraint firstAttribute="centerY" secondItem="YaI-2i-Ovn" secondAttribute="centerY" constant="-24.5" id="o0Q-gU-6yA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dhH-Yu-EvU" secondAttribute="trailing" constant="-16" id="whc-tG-Q0I"/>
                             <constraint firstItem="Po4-17-MWe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="xrz-QU-UrW"/>
@@ -520,6 +521,6 @@
         <image name="dropboxglyph" width="102" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iQv-Xk-1Gr"/>
+        <segue reference="Dor-dl-EaV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,7 @@
 #import "SlideshowViewController.h"
 #import "POP/POP.h"
 #import "DataHandler.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 @interface RootViewController () <DataHandlerDelegate, UITextFieldDelegate, POPAnimationDelegate>
 
@@ -59,6 +59,8 @@
 
     self.passcodeTextField.hidden = YES;
     self.passcodeTextField.text = @"";
+    self.passcodeTextField.layer.borderWidth = 1.0f;
+    self.passcodeTextField.layer.borderColor = [[UIColor whiteColor] CGColor];
 }
 
 -(void)setUIElementsAfterReturnAnimation {
@@ -121,7 +123,7 @@
     POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
     createAnimation.springSpeed = 20.0f;
     createAnimation.springBounciness = 5.0f;
-    createAnimation.toValue = @(76);
+    createAnimation.toValue = @(85);
     createAnimation.removedOnCompletion = YES;
     [self.createConstrain pop_addAnimation:createAnimation forKey:@"createButtonAnime"];
     [self setUIElementsAfterReturnAnimation];
