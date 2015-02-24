@@ -30,6 +30,8 @@
     [super viewDidLoad];
     self.datahandler = [DataHandler new];
     self.passcodeTextField.delegate = self;
+    self.goButton.enabled = NO;
+
     [self setUIElements];
 
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
@@ -45,6 +47,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     self.datahandler.delegate = self;
+
     [self animationOnReturningToVC];
 }
 
@@ -181,13 +184,24 @@
     }
 }
 
+
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
     [self.passcodeTextField endEditing:YES];
     [self animationOnReturningToVC];
     [self.passcodeTextField resignFirstResponder];
     [self setUIElements];
 }
+- (IBAction)textfieldChangedValue:(UITextField *)sender forEvent:(UIEvent *)event {
+    if (sender.text.length > 0) {
+        self.goButton.enabled = YES;
+    }
+    else if (sender.text.length == 0) {
+        self.goButton.enabled = NO;
+    }
+}
 
+- (void)updatePage:(int)pageNr{
 
+}
 
 @end

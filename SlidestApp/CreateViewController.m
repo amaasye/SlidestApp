@@ -37,6 +37,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     self.dataHandler.delegate = self;
+    self.startButton.enabled = NO;
 
 }
 -(BOOL)shouldAutorotate{
@@ -108,6 +109,21 @@
     self.startButton.hidden = NO;
     [self animateButton];
 }
+- (IBAction)editingDidChanged:(UITextField*)sender {
+
+    if (sender.text.length > 0) {
+        self.startButton.enabled = YES;
+    }
+    else if (sender.text.length == 0) {
+        self.startButton.enabled = NO;
+    }
+
+    
+}
+
+
+
+
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
