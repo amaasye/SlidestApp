@@ -34,14 +34,18 @@
 
     [self setUIElements];
 
-    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 -(BOOL)shouldAutorotate{
     return NO;
 }
+
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
     return UIInterfaceOrientationPortrait;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 -(void)viewDidAppear:(BOOL)animated{

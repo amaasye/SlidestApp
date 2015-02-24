@@ -99,6 +99,10 @@
         
             [self.delegate dataDownloaded];
         }
+        else{
+
+        }
+
 
     } withCancelBlock:^(NSError *error) {
         [self connectionProblem:@"There was a problem in completing this request"];

@@ -29,8 +29,10 @@
     [self setUIElements];
     [self openPdf];
 
-    //[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    
+    // HACK to force iPhone to revisit interface orientation configuration
+    UIViewController *vc = [UIViewController new];
+    [self presentViewController:vc animated:NO completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void)setUIElements {
