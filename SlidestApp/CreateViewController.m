@@ -44,6 +44,13 @@
     return NO;
 }
 
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 #pragma mark -- UI and Animations
 
 -(void)setUIElements {
@@ -108,6 +115,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.startButton.hidden = NO;
     [self animateButton];
+    [self updateViewConstraints];
 }
 - (IBAction)editingDidChanged:(UITextField*)sender {
 
@@ -118,7 +126,6 @@
         self.startButton.enabled = NO;
     }
 
-    
 }
 
 

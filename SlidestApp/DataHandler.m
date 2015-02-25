@@ -28,22 +28,21 @@
 }
 
 - (void)checkFileType:(NSString *)name {
-    if ([name hasSuffix:@"pdf"]) {
+    if ([name hasSuffix:@"pdf"] && (self.dataFromDropbox.length <= 10485760)) {
         [self.delegate fileIsPDF:YES withName:name];
         self.name = name;
     }
     else {
-        [self.delegate fileIsPDF:NO withName:@"File type is not supported"];
+        [self.delegate fileIsPDF:NO withName:@"File type is not supported or file is more than 7 MB"];
     }
 }
-
-
 
 - (void)pushDataToDataBase:(NSString *)passcode {
 
     self.passcode = passcode;
     self.pdfDataRef = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
     NSString *pdfData = [self.dataFromDropbox base64EncodedStringWithOptions:0];
+    NSLog(@"%lu", (unsigned long)self.dataFromDropbox.length);
     //NSData *data = [[NSData alloc] initWithBase64EncodedString:stringForm options:0];
 
 
@@ -61,10 +60,12 @@
         if(!error){
             [self.delegate dataShouldUpload];
         }
-        else {
+        else  {
             [self connectionProblem:@"There was a problem in completing this request"];
         }
     }];
+
+
 
 }
 - (void)setPage:(int)pageNr{
@@ -99,7 +100,12 @@
         
             [self.delegate dataDownloaded];
         }
+        else if (!snapshot.exists){
+            [self.delegate wrongPasscode];
+            
+        }
         else{
+            [self connectionProblem:@"Connection Propblem. Please Retry"];
 
         }
 
@@ -124,7 +130,11 @@
 
     NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
-    [ref removeValue];
+    [ref removeValueWithCompletionBlock:^(NSError *error, Firebase *ref) {
+        if (error) {
+            [self connectionProblem:@"Connection Problem. Please Retry"];
+        }
+    }];
     self.dataFromDropbox = nil;
     self.passcode = nil;
 }

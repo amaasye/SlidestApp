@@ -31,7 +31,7 @@
                                     <action selector="onJoinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u0n-h9-V5l"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="enter passcode" textAlignment="right" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bH-UJ6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="enter passcode" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bH-UJ6">
                                 <rect key="frame" x="0.0" y="237" width="600" height="45"/>
                                 <color key="tintColor" red="0.0" green="0.4941176471" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -59,10 +59,6 @@
                                     <segue destination="oET-gY-IPk" kind="show" identifier="toCreateVC" id="Pc2-mf-9Gx"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YaI-2i-Ovn">
-                                <rect key="frame" x="290" y="306" width="37" height="37"/>
-                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLY-9d-yPx">
                                 <rect key="frame" x="16" y="558" width="43" height="22"/>
                                 <constraints>
@@ -94,6 +90,10 @@
                                     <action selector="onGoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZk-nG-yLY"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YaI-2i-Ovn">
+                                <rect key="frame" x="290" y="306" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -148,13 +148,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mobilemakers-3" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-gk-BQT">
                                 <rect key="frame" x="313" y="20" width="200" height="200"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p09-Y7-5zY">
-                                <rect key="frame" x="0.0" y="241" width="600" height="76"/>
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2q-cW-Xbc">
                                 <rect key="frame" x="122" y="241" width="75" height="75"/>
                             </imageView>
@@ -214,6 +207,13 @@
                                     <segue destination="sAT-zz-kZS" kind="unwind" unwindAction="unwind:" id="ojW-y1-6vs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p09-Y7-5zY">
+                                <rect key="frame" x="0.0" y="241" width="600" height="76"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -339,6 +339,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-6" id="4ba-rh-RLP"/>
+                            <constraint firstItem="Ux1-oa-j5Y" firstAttribute="bottom" secondItem="ToK-X2-o84" secondAttribute="bottomMargin" id="5Zg-HB-1gb"/>
                             <constraint firstItem="y3C-kA-M0V" firstAttribute="trailing" secondItem="ToK-X2-o84" secondAttribute="trailingMargin" id="FVE-mr-NuM"/>
                             <constraint firstItem="MT0-fP-8f0" firstAttribute="top" secondItem="ToK-X2-o84" secondAttribute="topMargin" id="FuY-m6-q6j"/>
                             <constraint firstItem="Ux1-oa-j5Y" firstAttribute="leading" secondItem="ToK-X2-o84" secondAttribute="leadingMargin" constant="-16" id="Hcq-zB-e8L"/>
@@ -365,6 +366,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="MAj-xF-b4r"/>
+                                <exclude reference="V3m-tm-JIA"/>
                             </mask>
                         </variation>
                     </view>
@@ -445,6 +447,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="uzf-hj-3wU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-zc-qwM">
                                 <rect key="frame" x="10" y="0.0" width="100" height="50"/>
@@ -647,6 +652,6 @@
         <image name="mobilemakers-3" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dor-dl-EaV"/>
+        <segue reference="iQv-Xk-1Gr"/>
     </inferredMetricsTieBreakers>
 </document>

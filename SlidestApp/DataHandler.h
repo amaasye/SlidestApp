@@ -19,6 +19,7 @@
 - (void)dataDownloaded;
 - (void)updatePage:(int)pageNr;
 -(void)updateAudienceNr:(int)nr;
+-(void)wrongPasscode;
 
 
 @end

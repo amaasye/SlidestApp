@@ -162,13 +162,9 @@
     [self.datahandler pullFromDataBase:self.passcodeTextField.text];
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
 
-}
 
-- (void)pop_animationDidStop:(POPSpringAnimation *)anim finished:(BOOL)finished {
 
-}
 
 #pragma mark -- Data and Segues --
 
@@ -176,6 +172,11 @@
     [self.spinner stopAnimating];
     self.spinner.hidden=YES;
     [self performSegueWithIdentifier:@"slideshowVCfromJoinVC" sender:self];
+}
+-(void)wrongPasscode{
+    [self.spinner stopAnimating];
+    self.spinner.hidden = YES;
+    self.passcodeTextField.text = @"Wrong Passcode";
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

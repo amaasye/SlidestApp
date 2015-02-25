@@ -10,7 +10,7 @@
 #import "PageScrollView.h"
 #import "CustomCell.h"
 
-@interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, DataHandlerDelegate>
+@interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, DataHandlerDelegate, UIDocumentInteractionControllerDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UILabel *topLabel;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
@@ -30,9 +30,9 @@
     [self openPdf];
 
     // HACK to force iPhone to revisit interface orientation configuration
-    UIViewController *vc = [UIViewController new];
-    [self presentViewController:vc animated:NO completion:nil];
-    [self dismissViewControllerAnimated:NO completion:nil];
+   // UIViewController *vc = [UIViewController new];
+    //[self presentViewController:vc animated:NO completion:nil];
+    //[self dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void)setUIElements {
@@ -123,6 +123,16 @@
 {
     [self.collectionView reloadData];
     [self.collectionView performBatchUpdates:nil completion:nil];
+}
+- (IBAction)saveButtonTapped:(id)sender {
+
+    NSString *pdfPath = [NSString string];
+
+   UIDocumentInteractionController *controller = [UIDocumentInteractionController  interactionControllerWithURL:[NSURL fileURLWithPath:pdfPath]];
+    controller.delegate = self;
+
+    CGRect rect = CGRectMake(0, 0, 300, 300);
+    [controller presentOptionsMenuFromRect:rect inView:self.view animated:YES];
 }
 - (IBAction)tapped:(UITapGestureRecognizer *)sender {
     if (self.topLabel.hidden) {

@@ -17,16 +17,8 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-//    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectoryPath = [searchPaths objectAtIndex:0];
-//    NSString *tempPath = [documentsDirectoryPath stringByAppendingPathComponent:@"pdf.pdf"];
-//
-//    //Display PDF
-//    if (pdf == nil) {
-//        CFURLRef pdfURL = CFURLCreateWithFileSystemPath (NULL, (CFStringRef)tempPath, kCFURLPOSIXPathStyle, FALSE);
-//        pdf = CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithURL(pdfURL));
        [self drawInContext:UIGraphicsGetCurrentContext()];
-    //}
+    
 
 }
 -(void)drawInContext:(CGContextRef)context {
