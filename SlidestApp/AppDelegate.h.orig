@@ -1,0 +1,21 @@
+//
+//  AppDelegate.h
+//  SlidestApp
+//
+//  Created by Syed Amaanullah on 2/9/15.
+<<<<<<< HEAD
+//  Copyright (c) 2015 Mateusz Pis, Syed Amaanullah and David Miller. All rights reserved.
+=======
+//  Copyright (c) 2015 Mateusz Pis & Syed Amaanullah. All rights reserved.
+>>>>>>> 1967de8feff43cdeee160d4e07d3fe763e3f350c
+//
+
+#import <UIKit/UIKit.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
+
+@end
+
