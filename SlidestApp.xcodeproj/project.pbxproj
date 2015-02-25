@@ -12,7 +12,6 @@
 		B00371571A89C8860037157D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00371561A89C8860037157D /* RootViewController.m */; };
 		B003715A1A89C8860037157D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00371581A89C8860037157D /* Main.storyboard */; };
 		B003715C1A89C8860037157D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B003715B1A89C8860037157D /* Images.xcassets */; };
-		B003715F1A89C8860037157D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B003715D1A89C8860037157D /* LaunchScreen.xib */; };
 		B003716B1A89C8860037157D /* SlidestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B003716A1A89C8860037157D /* SlidestAppTests.m */; };
 		B003717F1A89C9C20037157D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B003717E1A89C9C20037157D /* QuartzCore.framework */; };
 		B00371811A89C9CE0037157D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00371801A89C9CE0037157D /* ImageIO.framework */; };
@@ -33,6 +32,7 @@
 		B0196D121A93A20A0025D959 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D111A93A20A0025D959 /* Firebase.framework */; };
 		B0196D141A93A23B0025D959 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D131A93A23B0025D959 /* libicucore.dylib */; };
 		B0196D161A93A2480025D959 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D151A93A2480025D959 /* libc++.dylib */; };
+		B041C8FC1A9E693400164544 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B041C8FB1A9E693400164544 /* LaunchScreen.xib */; };
 		B067372E1A9D153F00EDA4F4 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06737291A9D153500EDA4F4 /* pop.framework */; };
 		B067372F1A9D153F00EDA4F4 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B06737291A9D153500EDA4F4 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C90999B31A9CE1A9003A1E12 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90999B21A9CE1A9003A1E12 /* NavigationController.m */; };
@@ -117,7 +117,6 @@
 		B00371561A89C8860037157D /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		B00371591A89C8860037157D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B003715B1A89C8860037157D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B003715E1A89C8860037157D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B00371641A89C8860037157D /* SlidestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00371691A89C8860037157D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B003716A1A89C8860037157D /* SlidestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlidestAppTests.m; sourceTree = "<group>"; };
@@ -143,6 +142,7 @@
 		B0196D111A93A20A0025D959 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		B0196D131A93A23B0025D959 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		B0196D151A93A2480025D959 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		B041C8FB1A9E693400164544 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		B067371C1A9D153400EDA4F4 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../../Downloads/pop-master 2/pop.xcodeproj"; sourceTree = "<group>"; };
 		C90999B11A9CE1A9003A1E12 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		C90999B21A9CE1A9003A1E12 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
@@ -216,7 +216,6 @@
 				B00371A01A89CEAA0037157D /* View Controllers */,
 				B00371A11A89CEE20037157D /* Storyboard */,
 				B003715B1A89C8860037157D /* Images.xcassets */,
-				B003715D1A89C8860037157D /* LaunchScreen.xib */,
 				B003714E1A89C8860037157D /* Supporting Files */,
 			);
 			path = SlidestApp;
@@ -298,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				B00371581A89C8860037157D /* Main.storyboard */,
+				B041C8FB1A9E693400164544 /* LaunchScreen.xib */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -448,8 +448,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B003715A1A89C8860037157D /* Main.storyboard in Resources */,
+				B041C8FC1A9E693400164544 /* LaunchScreen.xib in Resources */,
 				B00371A41A8A53610037157D /* DBChooser.bundle in Resources */,
-				B003715F1A89C8860037157D /* LaunchScreen.xib in Resources */,
 				B003715C1A89C8860037157D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,14 +511,6 @@
 				B00371591A89C8860037157D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B003715D1A89C8860037157D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B003715E1A89C8860037157D /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
