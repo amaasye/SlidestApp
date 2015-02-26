@@ -42,7 +42,7 @@
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [self animateDropboxButton];
+//    [self animateTopAndBottom];
     self.dataHandler.delegate = self;
     self.startButton.enabled = NO;
 
@@ -90,7 +90,7 @@
     self.startButton.hidden = NO;
 }
 
--(void)animateButton {
+-(void)animateStartButton {
     POPSpringAnimation *animate = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     animate.springBounciness = 0;
     animate.springSpeed = 15;
@@ -98,18 +98,29 @@
     [self.startButton pop_addAnimation:animate forKey:@"pop"];
 }
 
--(void)animateDropboxButton {
-    POPSpringAnimation *animateDropbox = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    animateDropbox.springBounciness = 0;
-    animateDropbox.springSpeed = 15;
-    animateDropbox.toValue = @(self.uploadFromDropboxButton.center.y - 215);
-    [self.uploadFromDropboxButton pop_addAnimation:animateDropbox forKey:@"pop"];
+-(void)animateTopAndBottom {
+    POPSpringAnimation *animateTopView = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    animateTopView.springBounciness = 0;
+    animateTopView.springSpeed = 15;
+    animateTopView.toValue = @(self.topView.center.y - 265);
+    [self.topView pop_addAnimation:animateTopView forKey:@"pop"];
+
+    POPSpringAnimation *animateTopLabel = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    animateTopLabel.springBounciness = 0;
+    animateTopLabel.springSpeed = 15;
+    animateTopLabel.toValue = @(self.topViewLabel.center.y - 265);
+    [self.topViewLabel pop_addAnimation:animateTopLabel forKey:@"pop"];
+
+    POPSpringAnimation *animateBottom = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    animateBottom.springBounciness = 0;
+    animateBottom.springSpeed = 15;
+    animateBottom.toValue = @(self.uploadFromDropboxButton.center.y + 235);
+    [self.uploadFromDropboxButton pop_addAnimation:animateBottom forKey:@"pop"];
 }
 
 -(void)animateDropboxLogo {
     POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-    //    opacityAnimation.beginTime = CACurrentMediaTime() + .2;
-    opacityAnimation.duration = 4.0;
+    opacityAnimation.duration = 7.0;
     opacityAnimation.fromValue = @(0);
     opacityAnimation.toValue = @(1);
     [self.logoImageView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
@@ -155,7 +166,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.startButton.hidden = NO;
-    [self animateButton];
+    [self animateStartButton];
 }
 - (IBAction)editingDidChanged:(UITextField*)sender {
     if (sender.text.length > 0) {
