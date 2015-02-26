@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIView *horizontalLine;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 @end
 
@@ -37,6 +38,7 @@
     self.dataHandler = [DataHandler new];
     self.passcodeTextField.delegate = self;
     [self setUIElements];
+    [self animateDropboxLogo];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -76,6 +78,7 @@
     self.backgroundView.hidden = NO;
     self.horizontalLine.hidden = NO;
     self.topViewLabel.hidden = NO;
+    self.logoImageView.hidden = YES;
     self.topViewLabel.text = @"Presentation is Ready";
     [self.reminderLabel sizeToFit];
     [self.reminderLabel setLineBreakMode:NSLineBreakByWordWrapping];
@@ -91,18 +94,11 @@
     POPSpringAnimation *animate = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     animate.springBounciness = 0;
     animate.springSpeed = 15;
-    animate.toValue = @(self.startButton.center.y - 245);
+    animate.toValue = @(self.startButton.center.y - 255);//245
     [self.startButton pop_addAnimation:animate forKey:@"pop"];
 }
 
 -(void)animateDropboxButton {
-    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-//    opacityAnimation.beginTime = CACurrentMediaTime() + .2;
-    opacityAnimation.duration = 2.0;
-    opacityAnimation.fromValue = @(0);
-    opacityAnimation.toValue = @(1);
-    [self.uploadFromDropboxButton.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
-
     POPSpringAnimation *animateDropbox = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     animateDropbox.springBounciness = 0;
     animateDropbox.springSpeed = 15;
@@ -110,7 +106,23 @@
     [self.uploadFromDropboxButton pop_addAnimation:animateDropbox forKey:@"pop"];
 }
 
+-(void)animateDropboxLogo {
+    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+    //    opacityAnimation.beginTime = CACurrentMediaTime() + .2;
+    opacityAnimation.duration = 4.0;
+    opacityAnimation.fromValue = @(0);
+    opacityAnimation.toValue = @(1);
+    [self.logoImageView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+}
+
 - (IBAction)onUploadButtonTapped:(UIButton *)sender {
+    [self openDropboxChooser];
+}
+- (IBAction)onLogoTapped:(UITapGestureRecognizer *)sender {
+    [self openDropboxChooser];
+}
+
+-(void)openDropboxChooser {
     [[DBChooser defaultChooser] openChooserForLinkType:DBChooserLinkTypeDirect
                                     fromViewController:self completion:^(NSArray *results)
      {
@@ -153,7 +165,6 @@
         self.startButton.enabled = NO;
     }
 }
-
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
