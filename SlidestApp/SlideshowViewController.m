@@ -140,6 +140,17 @@
 -(void)updateAudienceNr:(int)nr{
     
 }
+-(BOOL)shouldAutorotate{
+    return YES;
+}
+
+//-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+//    return UIInterfaceOrientationPortrait;
+//}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
 
 - (IBAction)goBack:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
