@@ -9,6 +9,7 @@
 #import "SessionStatusViewController.h"
 #import "SlideshowViewController.h"
 #import "DataHandler.h"
+#import "POP/POP.h"
 
 
 @interface SessionStatusViewController ()<DataHandlerDelegate>
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelSlideshowButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIView *greenLine;
 @property (weak, nonatomic) IBOutlet UILabel *peerCounterLabel;
 @end
 
@@ -26,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUIElements];
+    [self animateGreenLine];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 
 }
@@ -56,10 +59,16 @@
     self.cancelSlideshowButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 }
 
+-(void)animateGreenLine {
+    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+    opacityAnimation.duration = 3.0;
+    opacityAnimation.fromValue = @(0);
+    opacityAnimation.toValue = @(1);
+    [self.greenLine.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+}
 
 - (IBAction)onEndSessionButtonTapped:(UIButton *)sender {
     [self.dataHandler deleteFile];
-
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

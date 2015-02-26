@@ -129,7 +129,6 @@
     animatePasscodeTextField.removedOnCompletion = YES;
     [self.passcodeTextField pop_addAnimation:animatePasscodeTextField forKey:@"positionY"];
     self.passcodeTextField.hidden = NO;
-    self.logoImageView.hidden = YES;
 
 }
 
