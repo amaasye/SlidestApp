@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -14,17 +14,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slideowhite" translatesAutoresizingMaskIntoConstraints="NO" id="HZo-9j-cIB">
-                            <rect key="frame" x="170" y="91" width="140" height="122"/>
+                            <rect key="frame" x="127" y="160" width="227" height="159"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="140" id="FXf-rv-7Zp"/>
-                                <constraint firstAttribute="height" constant="122" id="KBw-op-8aD"/>
+                                <constraint firstAttribute="height" constant="159" id="Qzs-lw-bOA"/>
+                                <constraint firstAttribute="width" constant="227" id="vXJ-s8-I2h"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="HZo-9j-cIB" firstAttribute="top" secondItem="KAs-yT-gtY" secondAttribute="top" constant="91" id="MLG-pf-u0s"/>
-                        <constraint firstAttribute="centerX" secondItem="HZo-9j-cIB" secondAttribute="centerX" id="sgG-Wo-l7H"/>
+                        <constraint firstAttribute="centerY" secondItem="HZo-9j-cIB" secondAttribute="centerY" id="4Gj-2z-mWV"/>
+                        <constraint firstAttribute="centerX" secondItem="HZo-9j-cIB" secondAttribute="centerX" id="WIG-dL-zXp"/>
                     </constraints>
                 </view>
             </subviews>

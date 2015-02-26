@@ -97,7 +97,7 @@
                                     <action selector="onGoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZk-nG-yLY"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SlideoS" translatesAutoresizingMaskIntoConstraints="NO" id="UyC-1n-9sS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SlideoS" translatesAutoresizingMaskIntoConstraints="NO" id="UyC-1n-9sS">
                                 <rect key="frame" x="271" y="20" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="0Sb-l6-EmK"/>
@@ -231,28 +231,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eef-ZV-iXk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dave" translatesAutoresizingMaskIntoConstraints="NO" id="eef-ZV-iXk">
                                 <rect key="frame" x="31" y="526" width="63" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="CaZ-GJ-Sb5"/>
                                     <constraint firstAttribute="height" constant="59" id="GJJ-QT-mmV"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-q3-Jyi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="syedamaanullah copy 2" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-q3-Jyi">
                                 <rect key="frame" x="32" y="431" width="63" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="AMj-GO-L2q"/>
                                     <constraint firstAttribute="height" constant="59" id="Z9N-3E-agC"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Jh-6T-mlP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matt" translatesAutoresizingMaskIntoConstraints="NO" id="1Jh-6T-mlP">
                                 <rect key="frame" x="32" y="340" width="63" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="iyY-UL-qkC"/>
                                     <constraint firstAttribute="width" constant="63" id="olY-ET-Fed"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dave" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1y-Ga-ES9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dave Miller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1y-Ga-ES9">
                                 <rect key="frame" x="113" y="519" width="471" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="5pp-s3-FQI"/>
@@ -261,25 +261,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUT-SE-4Mp">
-                                <rect key="frame" x="113" y="543" width="471" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUT-SE-4Mp">
+                                <rect key="frame" x="113" y="543" width="530" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Xes-lS-SR4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <string key="text">User experience, WatchKit, brand identity, project managment
+</string>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G54-cD-oWq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G54-cD-oWq">
                                 <rect key="frame" x="113" y="564" width="471" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="xxa-UQ-Wk5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <string key="text">Versatile combo of tech prowess and entrepreneurial management skills
+
+</string>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Syed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk9-qf-Mqz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Syed Amaanullah" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk9-qf-Mqz">
                                 <rect key="frame" x="113" y="426" width="471" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Lcw-Hk-IM2"/>
@@ -288,21 +293,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qV-8D-En2">
-                                <rect key="frame" x="113" y="450" width="471" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Xma-jf-BTc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqa-k7-zHG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="custom animations, embedding external frameworks and APIs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqa-k7-zHG">
                                 <rect key="frame" x="113" y="471" width="471" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="emw-bd-PY4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -315,21 +311,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-rg-OAu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application concept creator, lead developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-rg-OAu">
                                 <rect key="frame" x="113" y="359" width="471" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="m2h-WM-Jbe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuj-WS-KtB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pdf rendering, real-time communication session management" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuj-WS-KtB">
                                 <rect key="frame" x="113" y="380" width="471" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="UYW-ov-hkB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App life cycle design, user interface, data structure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qV-8D-En2">
+                                <rect key="frame" x="113" y="450" width="471" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Xma-jf-BTc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -360,7 +365,7 @@
                             <constraint firstItem="G54-cD-oWq" firstAttribute="leading" secondItem="eef-ZV-iXk" secondAttribute="trailing" constant="19" id="PPR-TA-zIq"/>
                             <constraint firstItem="bWG-mn-ptZ" firstAttribute="top" secondItem="Ch8-q3-Jyi" secondAttribute="bottom" constant="26" id="Qkf-2L-NX5"/>
                             <constraint firstItem="oqa-k7-zHG" firstAttribute="leading" secondItem="Ch8-q3-Jyi" secondAttribute="trailing" constant="18" id="R7t-hJ-qTY"/>
-                            <constraint firstItem="dUT-SE-4Mp" firstAttribute="trailing" secondItem="KXg-EK-QU6" secondAttribute="trailingMargin" id="RAi-Sf-vcg"/>
+                            <constraint firstItem="dUT-SE-4Mp" firstAttribute="trailing" secondItem="KXg-EK-QU6" secondAttribute="trailingMargin" constant="59" id="RAi-Sf-vcg"/>
                             <constraint firstItem="bWG-mn-ptZ" firstAttribute="leading" secondItem="KXg-EK-QU6" secondAttribute="leadingMargin" constant="-16" id="SFl-3K-R3O"/>
                             <constraint firstItem="G54-cD-oWq" firstAttribute="trailing" secondItem="KXg-EK-QU6" secondAttribute="trailingMargin" id="SU0-gc-T6p"/>
                             <constraint firstItem="q3L-bV-VwK" firstAttribute="leading" secondItem="KXg-EK-QU6" secondAttribute="leadingMargin" constant="-6" id="UBi-AN-usT"/>
@@ -420,7 +425,7 @@
                         <subviews>
                             <view alpha="0.24999999999999967" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6We-Hq-WH2" userLabel="BackgroundView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.1450980392" green="0.4549019608" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a PDF file only" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27x-5a-SIY">
                                 <rect key="frame" x="16" y="126" width="568" height="50"/>
@@ -727,7 +732,7 @@
                         <subviews>
                             <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jtf-js-UOA" userLabel="BackgroundView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.1450980392" green="0.4549019608" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presentation Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZo-lj-zdV">
                                 <rect key="frame" x="16" y="66" width="568" height="50"/>
@@ -917,8 +922,11 @@
     <resources>
         <image name="SlideoS" width="346" height="282"/>
         <image name="audience" width="980" height="999"/>
+        <image name="dave" width="120" height="151"/>
         <image name="dropboxglyph" width="102" height="96"/>
+        <image name="matt" width="271" height="335"/>
         <image name="mobilemakers-3" width="300" height="300"/>
+        <image name="syedamaanullah copy 2" width="100" height="135"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Dor-dl-EaV"/>

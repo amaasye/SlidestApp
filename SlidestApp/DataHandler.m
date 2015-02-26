@@ -131,7 +131,11 @@
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
 
     [ref observeEventType:FEventTypeValue andPreviousSiblingKeyWithBlock:^(FDataSnapshot *snapshot, NSString *prevKey) {
+        if(self.dataFromDropbox != nil){
+
+
         [self.delegate  updateAudienceNr:[snapshot.value[@"audienceNr"] intValue]];
+        }
     }];
 
 }

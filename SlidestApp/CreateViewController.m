@@ -94,7 +94,7 @@
     POPSpringAnimation *animate = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     animate.springBounciness = 0;
     animate.springSpeed = 15;
-    animate.toValue = @(self.startButton.center.y - 255);//245
+    animate.toValue = @(self.startButton.center.y - 265);//245
     [self.startButton pop_addAnimation:animate forKey:@"pop"];
 }
 
