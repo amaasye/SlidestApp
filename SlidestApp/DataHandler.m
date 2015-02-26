@@ -103,7 +103,6 @@
 
         }
 
-
     } withCancelBlock:^(NSError *error) {
         [self connectionProblem:@"There was a problem in completing this request"];
         NSLog(@"%@", error.description);
@@ -114,7 +113,6 @@
 
     NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
-
     [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         [self.delegate updatePage: [snapshot.value[@"currentPage"] intValue]];
         NSLog(@"%@", snapshot.value[@"currentPage"]);
