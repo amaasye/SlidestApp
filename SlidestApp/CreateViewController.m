@@ -42,13 +42,24 @@
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 -(void)viewDidAppear:(BOOL)animated{
+    
 //    [self animateTopAndBottom];
+     [super viewDidAppear:YES];
     self.dataHandler.delegate = self;
     self.startButton.enabled = NO;
+    [self openDropboxChooser];
 
 }
 -(BOOL)shouldAutorotate{
     return NO;
+}
+
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark -- UI and Animations

@@ -54,6 +54,7 @@
     self.pdf = CGPDFDocumentCreateWithProvider(provider);
    
     self.numberOfPages = (int)CGPDFDocumentGetNumberOfPages(self.pdf);
+    CFRelease(provider);
 }
 
 
@@ -155,5 +156,7 @@
 - (IBAction)goBack:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
     }
-
+-(void)dealloc{
+    
+}
 @end

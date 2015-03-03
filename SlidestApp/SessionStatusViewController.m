@@ -32,14 +32,16 @@
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 
 }
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:YES];
-    self.dataHandler.delegate = self;
-    [self.dataHandler listenAudienceNr];
-
+-(BOOL)shouldAutorotate{
+    return NO;
 }
+
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
     return UIInterfaceOrientationPortrait;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 -(void)updateAudienceNr:(int)nr{
     self.peerCounterLabel.text = [NSString stringWithFormat:@"%d", nr];
@@ -77,9 +79,6 @@
         vc.dataHandler = self.dataHandler;
         vc.presenter = YES;
     }
-}
--(BOOL)shouldAutorotate{
-    return NO;
 }
 
 - (void)updatePage:(int)pageNr{

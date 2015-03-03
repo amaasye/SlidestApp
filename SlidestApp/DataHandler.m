@@ -123,6 +123,7 @@
     NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
     [ref removeValue];
+
     self.dataFromDropbox = nil;
     self.passcode = nil;
 }
