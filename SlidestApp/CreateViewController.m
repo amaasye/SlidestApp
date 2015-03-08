@@ -132,7 +132,7 @@
 
 -(void)animateDropboxLogo {
     POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-    opacityAnimation.duration = 7.0;
+    opacityAnimation.duration = 4.0;
     opacityAnimation.fromValue = @(0);
     opacityAnimation.toValue = @(1);
     [self.logoImageView.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
