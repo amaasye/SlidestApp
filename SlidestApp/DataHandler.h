@@ -19,7 +19,7 @@
 - (void)dataDownloaded;
 - (void)updatePage:(int)pageNr;
 -(void)updateAudienceNr:(int)nr;
-
+-(void)drawGestureWithpoint:(CGPoint)point;
 
 @end
 @interface DataHandler : NSObject <UIAlertViewDelegate>
@@ -36,6 +36,9 @@
 -(void)checkPage;
 -(void)checkAudienceNumber;
 -(void)listenAudienceNr;
+-(void)updateDrawPosition:(CGPoint)point;
+-(void)observeDrawPosition;
+
 
 
 

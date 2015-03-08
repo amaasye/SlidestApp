@@ -42,20 +42,34 @@
 - (void)pushDataToDataBase:(NSString *)passcode {
 
     self.passcode = passcode;
-    self.pdfDataRef = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
+    Firebase *ref = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
     NSString *pdfData = [self.dataFromDropbox base64EncodedStringWithOptions:0];
-    //NSData *data = [[NSData alloc] initWithBase64EncodedString:stringForm options:0];
 
-
-    NSDictionary *slideshow = @{
+    NSDictionary *basic = @{
                                 @"name": self.name,
                                 @"data": pdfData,
                                 @"passcode": self.passcode,
-                                @"currentPage": [NSNumber numberWithInt:0],
-                                @"audienceNr": [NSNumber numberWithInt:0],
-                                };
+                                                                };
+    NSDictionary *currentPage = @{
+                                  @"currentPage": [NSNumber numberWithInt:0],
+                                  };
+    NSDictionary *audienceNr = @{
+                                 @"audienceNr": [NSNumber numberWithInt:0],
+                                 };
+    NSDictionary *drawPoints = @{
+                                 @"drawPointX": [NSNumber numberWithInt:0],
+                                 @"drawPointY": [NSNumber numberWithInt:0],
 
-    Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];
+                                 };
+
+    NSDictionary *slideshow = @{
+                                @"basic": basic,
+                                @"currentPage": currentPage,
+                                @"audienceNr": audienceNr,
+                                @"drawPoints": drawPoints,
+
+                                };
+    Firebase *slideshowRef = [ref childByAppendingPath: self.passcode];
 
     [slideshowRef setValue:slideshow withCompletionBlock:^(NSError *error, Firebase *ref) {
         if(!error){
@@ -68,8 +82,9 @@
 
 }
 - (void)setPage:(int)pageNr{
+    NSString *url = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     
-    self.pdfDataRef = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
+    Firebase *ref= [[Firebase alloc ]initWithUrl:url];
 
 
     NSDictionary *slideshow = @{
@@ -77,7 +92,7 @@
                                 @"currentPage": [NSNumber numberWithInt:pageNr],
                                 };
 
-    Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];
+    Firebase *slideshowRef = [ref childByAppendingPath: @"currentPage"];
     [slideshowRef updateChildValues: slideshow];
 
 }
@@ -86,7 +101,7 @@
 
     self.passcode = passcode;
 
-    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/basic",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
 
     [ref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
@@ -111,11 +126,14 @@
 }
 -(void)checkPage{
 
-    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/currentPage",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
     [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if (snapshot.exists) {
+
         [self.delegate updatePage: [snapshot.value[@"currentPage"] intValue]];
         NSLog(@"%@", snapshot.value[@"currentPage"]);
+        }
          }];
 }
 -(void)deleteFile{
@@ -128,12 +146,12 @@
     self.passcode = nil;
 }
 -(void)listenAudienceNr{
-    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/audienceNr",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
 
     [ref observeEventType:FEventTypeValue andPreviousSiblingKeyWithBlock:^(FDataSnapshot *snapshot, NSString *prevKey) {
         if(self.dataFromDropbox != nil){
-
 
         [self.delegate  updateAudienceNr:[snapshot.value[@"audienceNr"] intValue]];
         }
@@ -141,7 +159,7 @@
 
 }
 -(void)checkAudienceNumber{
-    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/audienceNr",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
 
     [ref observeSingleEventOfType:FEventTypeValue andPreviousSiblingKeyWithBlock:^(FDataSnapshot *snapshot, NSString *prevKey) {
@@ -150,8 +168,8 @@
 
 }
 -(void)updateAudienceNumber:(int)nr{
-    self.pdfDataRef = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
-
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
 
     NSDictionary *slideshow = @{
 
@@ -159,10 +177,40 @@
 
                                 };
 
-    Firebase *slideshowRef = [self.pdfDataRef childByAppendingPath: self.passcode];
+    Firebase *slideshowRef = [ref childByAppendingPath: @"audienceNr"];
     [slideshowRef updateChildValues: slideshow];
 
 
+}
+-(void)updateDrawPosition:(CGPoint)point{
+
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+
+    NSDictionary *slideshow = @{
+
+                                @"drawPointX": [NSNumber numberWithInt:point.x],
+                                @"drawPointY": [NSNumber numberWithInt:point.y],
+
+                                };
+
+    Firebase *slideshowRef = [ref childByAppendingPath: @"drawPoints"];
+    [slideshowRef updateChildValues: slideshow];
+    
+}
+-(void)observeDrawPosition{
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/drawPoints",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if (snapshot.exists) {
+
+            [self.delegate drawGestureWithpoint:CGPointMake([snapshot.value[@"drawPointX"] intValue], [snapshot.value[@"drawPointY"] intValue])];
+            NSLog(@"%@", snapshot.value[@"currentPage"]);
+        }
+    }];
+
+    
+    
 }
 
 -(void)connectionProblem:(NSString *)message {
@@ -173,4 +221,6 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [alertView dismissWithClickedButtonIndex:0 animated:YES];
 }
+
+
 @end

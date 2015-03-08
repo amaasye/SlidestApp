@@ -28,9 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUIElements];
-    [self animateGreenLine];
+
+   // [self animateGreenLine];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    self.dataHandler.delegate = self;
+    [self.dataHandler listenAudienceNr];
 }
 -(BOOL)shouldAutorotate{
     return NO;
@@ -61,13 +67,13 @@
     self.cancelSlideshowButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 }
 
--(void)animateGreenLine {
-    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-    opacityAnimation.duration = 3.0;
-    opacityAnimation.fromValue = @(0);
-    opacityAnimation.toValue = @(1);
-    [self.greenLine.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
-}
+//-(void)animateGreenLine {
+//    POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+//    opacityAnimation.duration = 3.0;
+//    opacityAnimation.fromValue = @(0);
+//    opacityAnimation.toValue = @(1);
+//    [self.greenLine.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+//}
 
 - (IBAction)onEndSessionButtonTapped:(UIButton *)sender {
     [self.dataHandler deleteFile];

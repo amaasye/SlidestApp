@@ -9,6 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "PageScrollView.h"
 
-@interface CustomCell : UICollectionViewCell
+@interface CustomCell : UICollectionViewCell{
+
+     UIBezierPath *path;
+    UIImage *bezierImage;
+
+    CGContextRef context;
+
+}
+
 @property (nonatomic) PageScrollView *pageView;
+@property (strong, nonatomic) IBOutlet UIImageView *drawImageView;
+
+
+-(void)addDrawFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint;
+
 @end

@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "DataHandler.h"
 
-@interface SlideshowViewController : UIViewController
+@interface SlideshowViewController : UIViewController{
+    int fromPointX;
+    int fromPointY;
+
+    int toPointX;
+    int toPointY;
+}
 @property DataHandler *dataHandler;
 @property BOOL presenter;
+
+-(void)drawGestureWithpoint:(CGPoint)point;
 
 @end

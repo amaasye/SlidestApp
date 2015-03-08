@@ -40,6 +40,7 @@
     [self setUIElements];
     [self animateDropboxLogo];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+
 }
 -(void)viewDidAppear:(BOOL)animated{
     
