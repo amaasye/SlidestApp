@@ -30,7 +30,6 @@
     [self setUIElements];
 
    // [self animateGreenLine];
-    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -39,7 +38,7 @@
     [self.dataHandler listenAudienceNr];
 }
 -(BOOL)shouldAutorotate{
-    return NO;
+    return YES;
 }
 
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
@@ -77,6 +76,7 @@
 
 - (IBAction)onEndSessionButtonTapped:(UIButton *)sender {
     [self.dataHandler deleteFile];
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -85,6 +85,7 @@
         vc.dataHandler = self.dataHandler;
         vc.presenter = YES;
     }
+    
 }
 
 - (void)updatePage:(int)pageNr{
@@ -93,8 +94,6 @@
 
 
 
--(IBAction)unwindToSessionStatusViewController:(UIStoryboardSegue *)sender{
 
-}
 
 @end

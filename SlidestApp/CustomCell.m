@@ -19,7 +19,6 @@
     }
     _pageView = pageView;
 
-    //[self addSubview:_pageView];
     [self insertSubview:_pageView atIndex:2];
    CGRect frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     self.drawImageView = [[UIImageView alloc] initWithFrame:frame];

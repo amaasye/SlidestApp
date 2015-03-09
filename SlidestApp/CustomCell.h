@@ -11,7 +11,7 @@
 
 @interface CustomCell : UICollectionViewCell{
 
-     UIBezierPath *path;
+    UIBezierPath *path;
     UIImage *bezierImage;
 
     CGContextRef context;

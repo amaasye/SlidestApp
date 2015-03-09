@@ -109,8 +109,8 @@
 
         if (snapshot.exists)  {
 
-            NSLog(@"%@", snapshot.value[@"name"]);
-            NSLog(@"%@",snapshot.value[@"passcode"]);
+//            NSLog(@"%@", snapshot.value[@"name"]);
+//            NSLog(@"%@",snapshot.value[@"passcode"]);
             self.dataFromDropbox = [[NSData alloc] initWithBase64EncodedString:snapshot.value[@"data"] options:0];
         
             [self.delegate dataDownloaded];
@@ -133,7 +133,7 @@
         if (snapshot.exists) {
 
         [self.delegate updatePage: [snapshot.value[@"currentPage"] intValue]];
-        NSLog(@"%@", snapshot.value[@"currentPage"]);
+        //NSLog(@"%@", snapshot.value[@"currentPage"]);
         }
          }];
 }
@@ -207,7 +207,6 @@
         if (snapshot.exists) {
 
             [self.delegate drawGestureWithpoint:CGPointMake([snapshot.value[@"drawPointX"] intValue], [snapshot.value[@"drawPointY"] intValue]) andColor:snapshot.value[@"color"]];
-            NSLog(@"%@", snapshot.value[@"currentPage"]);
         }
     }];
 

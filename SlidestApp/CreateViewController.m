@@ -45,14 +45,16 @@
 -(void)viewDidAppear:(BOOL)animated{
     
 //    [self animateTopAndBottom];
-     [super viewDidAppear:YES];
+    [super viewDidAppear:YES];
     self.dataHandler.delegate = self;
+    self.dataHandler.passcode = nil;
+    self.dataHandler.dataFromDropbox = nil;
     self.startButton.enabled = NO;
     [self openDropboxChooser];
 
 }
 -(BOOL)shouldAutorotate{
-    return NO;
+    return YES;
 }
 
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{

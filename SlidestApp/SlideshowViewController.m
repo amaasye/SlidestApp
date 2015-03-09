@@ -30,7 +30,7 @@
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
-//pdf rendering
+//pdf rendering objects
 @property CGPDFDocumentRef pdf;
 @property int numberOfPages;
 @property int currentPageNr;
@@ -44,6 +44,7 @@
     self.currentPageNr = 0;
     [self setUIElements];
     [self openPdf];
+
 
 
 }
@@ -62,6 +63,8 @@
     self.redButton.hidden = YES;
     self.panGestureRecognizer.enabled = NO;
     self.collectionView.userInteractionEnabled = YES;
+    currenDrawColor = @"black";
+
 }
 
 -(void)openPdf{
@@ -82,7 +85,8 @@
     if (!self.presenter) {
         [self.dataHandler checkAudienceNumber];
         [self.dataHandler checkPage];
-        [self.dataHandler observeDrawPosition];
+        [self.draw removeFromSuperview];
+        self.draw.hidden = YES;
 
     }
 

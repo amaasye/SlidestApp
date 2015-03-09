@@ -105,6 +105,13 @@
                                 <rect key="frame" x="290" y="306" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SlideoS" translatesAutoresizingMaskIntoConstraints="NO" id="skV-DC-boF">
+                                <rect key="frame" x="469" y="41" width="115" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="GlQ-pC-cru"/>
+                                    <constraint firstAttribute="height" constant="91" id="lkN-mN-Siy"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -116,8 +123,10 @@
                             <constraint firstItem="2Cb-bH-UJ6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="16" id="Pm6-qs-Sbw"/>
                             <constraint firstAttribute="centerX" secondItem="YaI-2i-Ovn" secondAttribute="centerX" constant="-8.5" id="SH2-8M-vXx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d8N-tv-vhL" secondAttribute="trailing" constant="-16" id="Toh-R8-Ibc"/>
+                            <constraint firstItem="skV-DC-boF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UGu-bN-VLu"/>
                             <constraint firstAttribute="centerY" secondItem="dhH-Yu-EvU" secondAttribute="centerY" constant="-83.5" id="VJG-bG-LpA"/>
                             <constraint firstItem="2Cb-bH-UJ6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="YSL-7L-8VB"/>
+                            <constraint firstItem="Po4-17-MWe" firstAttribute="top" secondItem="skV-DC-boF" secondAttribute="bottom" constant="30" id="Ysb-fv-aSK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e0k-ha-vCT" secondAttribute="trailing" constant="-16" id="cIY-Gb-dU3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e0k-ha-vCT" secondAttribute="bottom" id="d28-1A-k94"/>
                             <constraint firstAttribute="centerY" secondItem="d8N-tv-vhL" secondAttribute="centerY" constant="-22" id="d6r-6q-aaa"/>
@@ -747,64 +756,64 @@
                                 <rect key="frame" x="348" y="10" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="2oQ-yB-5Ef"/>
-                                    <constraint firstAttribute="height" constant="30" id="GT6-1g-J2M"/>
+                                    <constraint firstAttribute="height" constant="30" id="0CZ-iM-rJN"/>
+                                    <constraint firstAttribute="width" constant="46" id="8y6-Jn-E0Y"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="redButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="XZz-kf-RJk"/>
+                                    <action selector="redButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="KJv-mq-g7J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eK-cg-Cj6">
                                 <rect key="frame" x="277" y="10" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Bbv-yg-izn"/>
-                                    <constraint firstAttribute="height" constant="30" id="yFZ-Gc-dix"/>
+                                    <constraint firstAttribute="width" constant="46" id="0II-yE-DF6"/>
+                                    <constraint firstAttribute="height" constant="30" id="zAe-L0-8S6"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="blueButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="eAI-cs-u0m"/>
+                                    <action selector="blueButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="u99-pZ-lIj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZ5-9U-n8m">
                                 <rect key="frame" x="206" y="10" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="M6y-Ch-IPh"/>
-                                    <constraint firstAttribute="height" constant="30" id="qIx-um-arh"/>
+                                    <constraint firstAttribute="height" constant="30" id="foB-9c-oMu"/>
+                                    <constraint firstAttribute="width" constant="46" id="rao-mC-JRq"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="blackButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="gj1-V5-q4a"/>
+                                    <action selector="blackButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="OGo-qU-UkV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="KZ5-9U-n8m" firstAttribute="top" secondItem="1Mn-wi-HXj" secondAttribute="bottom" constant="10" id="1ka-HB-Yrn"/>
-                            <constraint firstItem="8eK-cg-Cj6" firstAttribute="leading" secondItem="KZ5-9U-n8m" secondAttribute="trailing" constant="25" id="1tx-2A-NEJ"/>
-                            <constraint firstItem="Lbq-j8-4TF" firstAttribute="top" secondItem="1Mn-wi-HXj" secondAttribute="bottom" constant="10" id="HY4-bU-BYv"/>
-                            <constraint firstItem="Lbq-j8-4TF" firstAttribute="leading" secondItem="8eK-cg-Cj6" secondAttribute="trailing" constant="25" id="IX8-LO-M6d"/>
-                            <constraint firstItem="8eK-cg-Cj6" firstAttribute="top" secondItem="1Mn-wi-HXj" secondAttribute="bottom" constant="10" id="PYe-VB-Xw4"/>
-                            <constraint firstAttribute="centerX" secondItem="8eK-cg-Cj6" secondAttribute="centerX" id="PbE-c2-v7J"/>
+                            <constraint firstItem="8eK-cg-Cj6" firstAttribute="leading" secondItem="KZ5-9U-n8m" secondAttribute="trailing" constant="25" id="4Ic-W2-74H"/>
+                            <constraint firstItem="Lbq-j8-4TF" firstAttribute="leading" secondItem="8eK-cg-Cj6" secondAttribute="trailing" constant="25" id="Pfl-D9-bg4"/>
                             <constraint firstItem="Gre-PZ-lZd" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="RWy-3e-5BX"/>
+                            <constraint firstItem="8eK-cg-Cj6" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="UVX-C5-TMz"/>
+                            <constraint firstItem="Lbq-j8-4TF" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="Ud6-ci-DEH"/>
                             <constraint firstItem="Gre-PZ-lZd" firstAttribute="trailing" secondItem="H34-wT-7EA" secondAttribute="trailingMargin" id="WIp-II-L5b"/>
                             <constraint firstItem="2YY-yg-KTf" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="ZnD-kj-70C"/>
                             <constraint firstItem="ux5-6h-f0A" firstAttribute="top" secondItem="6RR-WU-4HJ" secondAttribute="bottom" id="auJ-Zm-TM7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h6z-oD-UWw" secondAttribute="trailing" constant="-16" id="b1g-YY-MEx"/>
+                            <constraint firstItem="KZ5-9U-n8m" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="eRD-2d-jp3"/>
                             <constraint firstItem="h6z-oD-UWw" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="foL-w4-GKE"/>
                             <constraint firstItem="6RR-WU-4HJ" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-16" id="gPC-5t-g54"/>
                             <constraint firstItem="h6z-oD-UWw" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-16" id="ibF-Jh-LaM"/>
                             <constraint firstItem="2YY-yg-KTf" firstAttribute="trailing" secondItem="H34-wT-7EA" secondAttribute="trailingMargin" id="jvL-Wh-rWL"/>
                             <constraint firstItem="K7o-zc-qwM" firstAttribute="leading" secondItem="H34-wT-7EA" secondAttribute="leadingMargin" constant="-6" id="q7j-jb-lKx"/>
+                            <constraint firstAttribute="centerX" secondItem="8eK-cg-Cj6" secondAttribute="centerX" id="qwE-YR-8HG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6RR-WU-4HJ" secondAttribute="trailing" constant="-16" id="r23-sk-sGk"/>
                             <constraint firstItem="K7o-zc-qwM" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="rPw-VD-FDI"/>
                             <constraint firstItem="6RR-WU-4HJ" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" id="tnD-bg-n98"/>
@@ -913,7 +922,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onEndSessionButtonTapped:" destination="ZE8-Vg-1wb" eventType="touchUpInside" id="uEa-50-37l"/>
-                                    <segue destination="S1X-vp-sMb" kind="unwind" unwindAction="unwindToCreateViewController:" id="y6q-pe-pss"/>
+                                    <segue destination="S1X-vp-sMb" kind="unwind" unwindAction="unwind:" id="YXG-5a-niy"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audience" translatesAutoresizingMaskIntoConstraints="NO" id="Ge8-xW-ar4">
@@ -1025,6 +1034,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SlideoS" width="346" height="282"/>
         <image name="audience" width="980" height="999"/>
         <image name="dave" width="120" height="151"/>
         <image name="dropboxglyph" width="102" height="96"/>
