@@ -35,7 +35,7 @@
     if ([color isEqual:@"red"]) {
         [[UIColor redColor] set];
     }
-    if ([color isEqual:@"blue"]) {
+    else if ([color isEqual:@"blue"]) {
         [[UIColor blueColor ] set];
 
     } else {

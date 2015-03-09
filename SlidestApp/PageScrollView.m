@@ -10,19 +10,7 @@
 
 @implementation PageScrollView
 
--(void)addPanHandler{
 
-    UIPanGestureRecognizer *panRecognizer =
-    [[UIPanGestureRecognizer alloc]
-
-     initWithTarget:self action:@selector(handlePan:)];
-    self.gestureRecognizers = @[panRecognizer];
-
-}
-- (void) handlePan: (UIPanGestureRecognizer *) panGesture
-{
-    NSLog(@"panning%f",[panGesture translationInView:self.superview].x);
-}
 
 -(void)displayPdf:(CGPDFDocumentRef)pdf{
     self.pdf = pdf;
