@@ -15,10 +15,11 @@
 
     int toPointX;
     int toPointY;
+    NSString *currenDrawColor;
 }
 @property DataHandler *dataHandler;
 @property BOOL presenter;
 
--(void)drawGestureWithpoint:(CGPoint)point;
+-(void)drawGestureWithpoint:(CGPoint)point andColor:(NSString*)color;
 
 @end

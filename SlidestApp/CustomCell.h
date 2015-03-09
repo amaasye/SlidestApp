@@ -19,9 +19,9 @@
 }
 
 @property (nonatomic) PageScrollView *pageView;
-@property (strong, nonatomic) IBOutlet UIImageView *drawImageView;
+@property UIImageView *drawImageView;
 
 
--(void)addDrawFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint;
+-(void)addDrawFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint withColor:(NSString*)color;
 
 @end

@@ -14,12 +14,23 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UILabel *topLabel;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+
+//draw Controls
+
+@property (strong, nonatomic) IBOutlet UIButton *blackButton;
+
+@property (strong, nonatomic) IBOutlet UIButton *blueButton;
+
+@property (strong, nonatomic) IBOutlet UIButton *redButton;
+
 @property (strong, nonatomic) IBOutlet UIButton *draw;
 @property (strong, nonatomic) IBOutlet UIButton *closeButton;
-@property (strong, nonatomic) IBOutlet UIImageView *drawImageView;
 
+//gesture recognizers
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
+
+//pdf rendering
 @property CGPDFDocumentRef pdf;
 @property int numberOfPages;
 @property int currentPageNr;
@@ -46,6 +57,9 @@
     self.backButton.hidden = YES;
     self.draw.hidden = YES;
     self.closeButton.hidden = YES;
+    self.blackButton.hidden = YES;
+    self.blueButton.hidden = YES;
+    self.redButton.hidden = YES;
     self.panGestureRecognizer.enabled = NO;
     self.collectionView.userInteractionEnabled = YES;
 }
@@ -98,10 +112,13 @@
 }
 
 - (IBAction)drawTapped:(UIButton *)sender {
+
     self.topLabel.hidden = YES;
     self.backButton.hidden = YES;
     self.draw.hidden = YES;
-    self.draw.hidden = YES;
+    self.redButton.hidden = NO;
+    self.blackButton.hidden = NO;
+    self.blueButton.hidden = NO;
     self.collectionView.userInteractionEnabled = NO;
     self.tapGestureRecognizer.enabled = NO;
     self.panGestureRecognizer.enabled = YES;
@@ -119,6 +136,9 @@
     self.backButton.hidden = NO;
     self.draw.hidden = NO;
     self.draw.hidden = NO;
+    self.redButton.hidden = YES;
+    self.blackButton.hidden = YES;
+    self.blueButton.hidden = YES;
     self.collectionView.userInteractionEnabled = YES;
     self.tapGestureRecognizer.enabled = YES;
     self.panGestureRecognizer.enabled = NO;
@@ -157,9 +177,9 @@
         int xPercentage = toPointX / (self.view.frame.size.width/100);
         int yPercentage = toPointY / (self.view.frame.size.height/100);
 
-        [self.dataHandler updateDrawPosition:CGPointMake(xPercentage, yPercentage)];
+        [self.dataHandler updateDrawPosition:CGPointMake(xPercentage, yPercentage) withColor:currenDrawColor];
 
-        [self.collectionView.visibleCells.firstObject addDrawFromPoint:CGPointMake(fromPointX, fromPointY) toPoint:CGPointMake(toPointX, toPointY)];
+        [self.collectionView.visibleCells.firstObject addDrawFromPoint:CGPointMake(fromPointX, fromPointY) toPoint:CGPointMake(toPointX, toPointY) withColor:currenDrawColor];
 
         fromPointX = toPointX;
         fromPointY = toPointY;
@@ -167,11 +187,10 @@
     }
 
 }
--(void)drawGestureWithpoint:(CGPoint)point{
+-(void)drawGestureWithpoint:(CGPoint)point andColor:(NSString*)color{
 
     toPointX = (self.view.frame.size.width /100) * point.x;
     toPointY = (self.view.frame.size.height/100) * point.y;
-
 
     if (((fromPointX-toPointX >40) || (fromPointX-toPointX < -40) || (fromPointY-toPointY >40) || (fromPointY-toPointY <-40) )) {
         fromPointX = toPointX;
@@ -180,12 +199,25 @@
 
     else  {
 
-        [self.collectionView.visibleCells.firstObject addDrawFromPoint:CGPointMake(fromPointX, fromPointY) toPoint:CGPointMake(toPointX, toPointY)];
+        [self.collectionView.visibleCells.firstObject addDrawFromPoint:CGPointMake(fromPointX, fromPointY) toPoint:CGPointMake(toPointX, toPointY) withColor:color];
 
         fromPointX = toPointX;
         fromPointY = toPointY;
         
     }
+
+}
+
+- (IBAction)blackButtonTapped:(id)sender {
+    currenDrawColor = @"black";
+}
+
+- (IBAction)blueButtonTapped:(id)sender {
+    currenDrawColor = @"blue";
+
+}
+- (IBAction)redButtonTapped:(id)sender {
+    currenDrawColor = @"red";
 
 }
 
@@ -202,7 +234,6 @@
                                         animated:YES];
 
 }
-
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 

@@ -27,13 +27,22 @@
 
 }
 
--(void)addDrawFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint{
-
-
+-(void)addDrawFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint withColor:(NSString*)color{
 
     UIGraphicsBeginImageContext(self.drawImageView.frame.size);
     [self.drawImageView.image drawInRect:CGRectMake(0, 0, self.drawImageView.frame.size.width, self.drawImageView.frame.size.height)];
-    [[UIColor blackColor] set];
+
+    if ([color isEqual:@"red"]) {
+        [[UIColor redColor] set];
+    }
+    if ([color isEqual:@"blue"]) {
+        [[UIColor blueColor ] set];
+
+    } else {
+        [[UIColor blackColor] set];
+
+    }
+
     CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 3.0f);
     CGContextMoveToPoint(UIGraphicsGetCurrentContext(), fromPoint.x, fromPoint.y);
     CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), toPoint.x , toPoint.y);

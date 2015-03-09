@@ -59,6 +59,7 @@
     NSDictionary *drawPoints = @{
                                  @"drawPointX": [NSNumber numberWithInt:0],
                                  @"drawPointY": [NSNumber numberWithInt:0],
+                                 @"color": @"black",
 
                                  };
 
@@ -182,7 +183,7 @@
 
 
 }
--(void)updateDrawPosition:(CGPoint)point{
+-(void)updateDrawPosition:(CGPoint)point withColor:(NSString*)color{
 
     NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
@@ -191,6 +192,7 @@
 
                                 @"drawPointX": [NSNumber numberWithInt:point.x],
                                 @"drawPointY": [NSNumber numberWithInt:point.y],
+                                @"color": color,
 
                                 };
 
@@ -204,7 +206,7 @@
     [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         if (snapshot.exists) {
 
-            [self.delegate drawGestureWithpoint:CGPointMake([snapshot.value[@"drawPointX"] intValue], [snapshot.value[@"drawPointY"] intValue])];
+            [self.delegate drawGestureWithpoint:CGPointMake([snapshot.value[@"drawPointX"] intValue], [snapshot.value[@"drawPointY"] intValue]) andColor:snapshot.value[@"color"]];
             NSLog(@"%@", snapshot.value[@"currentPage"]);
         }
     }];

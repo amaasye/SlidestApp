@@ -743,10 +743,58 @@
                                     <action selector="closeTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="Ba5-Ye-tGt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbq-j8-4TF">
+                                <rect key="frame" x="348" y="10" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="2oQ-yB-5Ef"/>
+                                    <constraint firstAttribute="height" constant="30" id="GT6-1g-J2M"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="XZz-kf-RJk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eK-cg-Cj6">
+                                <rect key="frame" x="277" y="10" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Bbv-yg-izn"/>
+                                    <constraint firstAttribute="height" constant="30" id="yFZ-Gc-dix"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blueButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="eAI-cs-u0m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZ5-9U-n8m">
+                                <rect key="frame" x="206" y="10" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="M6y-Ch-IPh"/>
+                                    <constraint firstAttribute="height" constant="30" id="qIx-um-arh"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blackButtonTapped:" destination="ljp-N3-uLQ" eventType="touchUpInside" id="gj1-V5-q4a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="KZ5-9U-n8m" firstAttribute="top" secondItem="1Mn-wi-HXj" secondAttribute="bottom" constant="10" id="1ka-HB-Yrn"/>
+                            <constraint firstItem="8eK-cg-Cj6" firstAttribute="leading" secondItem="KZ5-9U-n8m" secondAttribute="trailing" constant="25" id="1tx-2A-NEJ"/>
+                            <constraint firstItem="Lbq-j8-4TF" firstAttribute="top" secondItem="1Mn-wi-HXj" secondAttribute="bottom" constant="10" id="HY4-bU-BYv"/>
+                            <constraint firstItem="Lbq-j8-4TF" firstAttribute="leading" secondItem="8eK-cg-Cj6" secondAttribute="trailing" constant="25" id="IX8-LO-M6d"/>
+                            <constraint firstItem="8eK-cg-Cj6" firstAttribute="top" secondItem="1Mn-wi-HXj" secondAttribute="bottom" constant="10" id="PYe-VB-Xw4"/>
+                            <constraint firstAttribute="centerX" secondItem="8eK-cg-Cj6" secondAttribute="centerX" id="PbE-c2-v7J"/>
                             <constraint firstItem="Gre-PZ-lZd" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="RWy-3e-5BX"/>
                             <constraint firstItem="Gre-PZ-lZd" firstAttribute="trailing" secondItem="H34-wT-7EA" secondAttribute="trailingMargin" id="WIp-II-L5b"/>
                             <constraint firstItem="2YY-yg-KTf" firstAttribute="top" secondItem="H34-wT-7EA" secondAttribute="topMargin" constant="10" id="ZnD-kj-70C"/>
@@ -769,10 +817,13 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="K7o-zc-qwM" id="AMO-2p-OW6"/>
+                        <outlet property="blackButton" destination="KZ5-9U-n8m" id="aZz-mI-EgN"/>
+                        <outlet property="blueButton" destination="8eK-cg-Cj6" id="oiK-ny-Klc"/>
                         <outlet property="closeButton" destination="Gre-PZ-lZd" id="x6D-mf-mU1"/>
                         <outlet property="collectionView" destination="6RR-WU-4HJ" id="bFv-02-d9l"/>
                         <outlet property="draw" destination="2YY-yg-KTf" id="4tT-99-Ggb"/>
                         <outlet property="panGestureRecognizer" destination="LUk-6F-zng" id="tHr-Xl-bWt"/>
+                        <outlet property="redButton" destination="Lbq-j8-4TF" id="hDT-XJ-tS2"/>
                         <outlet property="tapGestureRecognizer" destination="DtR-Cm-cXv" id="Wcb-KB-I7a"/>
                         <outlet property="topLabel" destination="h6z-oD-UWw" id="vXC-2S-yHI"/>
                     </connections>
