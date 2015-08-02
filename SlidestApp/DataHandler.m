@@ -95,6 +95,8 @@
 
     Firebase *slideshowRef = [ref childByAppendingPath: @"currentPage"];
     [slideshowRef updateChildValues: slideshow];
+    self.pageNr = pageNr;
+    [self setPageAtWatch:pageNr];
 
 }
 
@@ -145,6 +147,7 @@
 
     self.dataFromDropbox = nil;
     self.passcode = nil;
+    [self deactivateWatchApp];
 }
 -(void)listenAudienceNr{
     
@@ -222,6 +225,33 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [alertView dismissWithClickedButtonIndex:0 animated:YES];
 }
+
+#pragma mark applewatch comminication
+
+-(void)setPageAtWatch:(int)number{
+
+    NSUserDefaults *defaults = [[NSUserDefaults standardUserDefaults]initWithSuiteName:@"group.Matt"];
+
+    [defaults setInteger:number forKey:@"pageNr"];
+    [defaults setBool:YES forKey:@"isPresentation"];
+    [defaults setObject:[NSString stringWithFormat:@"%d",self.totalPages] forKey:@"totalPages"];
+
+    [defaults synchronize];
+
+    NSLog(@"Watchkit app has nr: %d",number);
+
+}
+-(void)deactivateWatchApp{
+    NSUserDefaults *defaults = [[NSUserDefaults standardUserDefaults]initWithSuiteName:@"group.Matt"];
+
+    [defaults setBool:NO forKey:@"isPresentation"];
+    [defaults setInteger:0 forKey:@"pageNr"];
+
+    [defaults synchronize];
+
+    NSLog(@"Watchkit app has being inactive");
+}
+
 
 
 @end

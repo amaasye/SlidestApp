@@ -33,12 +33,25 @@
 		B0196D141A93A23B0025D959 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D131A93A23B0025D959 /* libicucore.dylib */; };
 		B0196D161A93A2480025D959 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D151A93A2480025D959 /* libc++.dylib */; };
 		B041C8FC1A9E693400164544 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B041C8FB1A9E693400164544 /* LaunchScreen.xib */; };
-		C9086F1D1AAD070A008162E3 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9086F181AAD06EA008162E3 /* pop.framework */; };
-		C9086F1E1AAD070A008162E3 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9086F181AAD06EA008162E3 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C90999B31A9CE1A9003A1E12 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90999B21A9CE1A9003A1E12 /* NavigationController.m */; };
+		C93FEA6A1B686DA60012F3ED /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FEA691B686DA60012F3ED /* RootInterfaceController.m */; };
+		C93FEA6B1B686DA60012F3ED /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FEA691B686DA60012F3ED /* RootInterfaceController.m */; };
+		C93FEA6C1B686DA60012F3ED /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FEA691B686DA60012F3ED /* RootInterfaceController.m */; };
 		C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C940F1451A8C43D700D7B2C0 /* CustomCell.m */; };
+		C9877AA71B53052E00B85246 /* pop-master-3 in Resources */ = {isa = PBXBuildFile; fileRef = C9877AA61B53052E00B85246 /* pop-master-3 */; };
+		C9877AA81B53052E00B85246 /* pop-master-3 in Resources */ = {isa = PBXBuildFile; fileRef = C9877AA61B53052E00B85246 /* pop-master-3 */; };
+		C9877AA91B53052E00B85246 /* pop-master-3 in Resources */ = {isa = PBXBuildFile; fileRef = C9877AA61B53052E00B85246 /* pop-master-3 */; };
+		C9877AAA1B53052E00B85246 /* pop-master-3 in Resources */ = {isa = PBXBuildFile; fileRef = C9877AA61B53052E00B85246 /* pop-master-3 */; };
+		C9877AAC1B53053700B85246 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9877AAB1B53053700B85246 /* pop.framework */; };
+		C9877AAD1B53053700B85246 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9877AAB1B53053700B85246 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
 		C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B21A8E60C200D70D47 /* DataHandler.m */; };
+		C9D0F6631B52FE2B005F87DC /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D0F6621B52FE2B005F87DC /* InterfaceController.m */; };
+		C9D0F6651B52FE2B005F87DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D0F6641B52FE2B005F87DC /* Images.xcassets */; };
+		C9D0F6691B52FE2B005F87DC /* Slideo WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = C9D0F6681B52FE2B005F87DC /* Slideo WatchKit App.app */; };
+		C9D0F6711B52FE2B005F87DC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D0F66F1B52FE2B005F87DC /* Interface.storyboard */; };
+		C9D0F6731B52FE2B005F87DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D0F6721B52FE2B005F87DC /* Images.xcassets */; };
+		C9D0F6761B52FE2B005F87DC /* Slideo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C9D0F65D1B52FE2B005F87DC /* Slideo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,12 +97,19 @@
 			remoteGlobalIDString = EC7E319918C93D6500B38170;
 			remoteInfo = "pop-tests-osx";
 		};
-		C9086F1F1AAD070B008162E3 /* PBXContainerItemProxy */ = {
+		C9D0F66A1B52FE2B005F87DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C9086F0B1AAD06E9008162E3 /* pop.xcodeproj */;
+			containerPortal = B00371431A89C8860037157D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0B6BE74719FFD3B900762101;
-			remoteInfo = "pop-embedded";
+			remoteGlobalIDString = C9D0F6671B52FE2B005F87DC;
+			remoteInfo = "Slideo WatchKit App";
+		};
+		C9D0F6741B52FE2B005F87DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B00371431A89C8860037157D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9D0F65C1B52FE2B005F87DC;
+			remoteInfo = "Slideo WatchKit Extension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -100,9 +120,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C9086F1E1AAD070A008162E3 /* pop.framework in Embed Frameworks */,
+				C9877AAD1B53053700B85246 /* pop.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D0F67D1B52FE2B005F87DC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C9D0F6761B52FE2B005F87DC /* Slideo WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -146,12 +177,28 @@
 		C9086F0B1AAD06E9008162E3 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../Downloads/pop-master-2/pop.xcodeproj"; sourceTree = "<group>"; };
 		C90999B11A9CE1A9003A1E12 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		C90999B21A9CE1A9003A1E12 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		C93FEA681B686DA60012F3ED /* RootInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInterfaceController.h; sourceTree = "<group>"; };
+		C93FEA691B686DA60012F3ED /* RootInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootInterfaceController.m; sourceTree = "<group>"; };
 		C940F1441A8C43D700D7B2C0 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		C940F1451A8C43D700D7B2C0 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		C9877AA61B53052E00B85246 /* pop-master-3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "pop-master-3"; sourceTree = "<group>"; };
+		C9877AAB1B53053700B85246 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = "/Users/matt/Library/Developer/Xcode/DerivedData/SlidestApp-aklrobwaqyipslcubbbwndpwgmnk/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<absolute>"; };
+		C9877AAE1B53054500B85246 /* libpop.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpop.a; path = "pop-master-3/build/Debug-iphoneos/libpop.a"; sourceTree = "<group>"; };
+		C9877AB01B530F2500B85246 /* Slideo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Slideo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		C9B808C61A8BE7FC0044932E /* PageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageScrollView.h; sourceTree = "<group>"; };
 		C9B808C71A8BE7FC0044932E /* PageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageScrollView.m; sourceTree = "<group>"; };
 		C9BBB8B11A8E60C200D70D47 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
 		C9BBB8B21A8E60C200D70D47 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
+		C9D0F65D1B52FE2B005F87DC /* Slideo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Slideo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D0F6601B52FE2B005F87DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D0F6611B52FE2B005F87DC /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		C9D0F6621B52FE2B005F87DC /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		C9D0F6641B52FE2B005F87DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C9D0F6681B52FE2B005F87DC /* Slideo WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slideo WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D0F66E1B52FE2B005F87DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D0F6701B52FE2B005F87DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C9D0F6721B52FE2B005F87DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C9D0F67E1B530088005F87DC /* Slideo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Slideo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,10 +214,10 @@
 				B00371911A89CA380037157D /* CoreGraphics.framework in Frameworks */,
 				B003718F1A89CA2A0037157D /* MobileCoreServices.framework in Frameworks */,
 				B003718D1A89CA1C0037157D /* Security.framework in Frameworks */,
-				C9086F1D1AAD070A008162E3 /* pop.framework in Frameworks */,
 				B00371891A89CA070037157D /* SystemConfiguration.framework in Frameworks */,
 				B00371871A89C9F70037157D /* libz.dylib in Frameworks */,
 				B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */,
+				C9877AAC1B53053700B85246 /* pop.framework in Frameworks */,
 				B00371851A89C9ED0037157D /* libsqlite3.dylib in Frameworks */,
 				B00371831A89C9DF0037157D /* MessageUI.framework in Frameworks */,
 				B00371811A89C9CE0037157D /* ImageIO.framework in Frameworks */,
@@ -185,12 +232,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9D0F65A1B52FE2B005F87DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B00371421A89C8860037157D = {
 			isa = PBXGroup;
 			children = (
+				C9877AAB1B53053700B85246 /* pop.framework */,
+				C9D0F65E1B52FE2B005F87DC /* Slideo WatchKit Extension */,
+				C9D0F66C1B52FE2B005F87DC /* Slideo WatchKit App */,
 				B00371961A89CA710037157D /* Frameworks */,
 				B003714D1A89C8860037157D /* SlidestApp */,
 				B00371671A89C8860037157D /* SlidestAppTests */,
@@ -203,6 +260,8 @@
 			children = (
 				B003714B1A89C8860037157D /* Slideo.app */,
 				B00371641A89C8860037157D /* SlidestAppTests.xctest */,
+				C9D0F65D1B52FE2B005F87DC /* Slideo WatchKit Extension.appex */,
+				C9D0F6681B52FE2B005F87DC /* Slideo WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +269,7 @@
 		B003714D1A89C8860037157D /* SlidestApp */ = {
 			isa = PBXGroup;
 			children = (
+				C9D0F67E1B530088005F87DC /* Slideo.entitlements */,
 				B00371521A89C8860037157D /* AppDelegate.h */,
 				B00371531A89C8860037157D /* AppDelegate.m */,
 				B00371A01A89CEAA0037157D /* View Controllers */,
@@ -249,8 +309,10 @@
 		B00371961A89CA710037157D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9877AAE1B53054500B85246 /* libpop.a */,
 				B0196D151A93A2480025D959 /* libc++.dylib */,
 				B0196D131A93A23B0025D959 /* libicucore.dylib */,
+				C9877AA61B53052E00B85246 /* pop-master-3 */,
 				C9086F0B1AAD06E9008162E3 /* pop.xcodeproj */,
 				B0196D111A93A20A0025D959 /* Firebase.framework */,
 				B00371A21A8A53610037157D /* DBChooser.bundle */,
@@ -314,6 +376,46 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C9D0F65E1B52FE2B005F87DC /* Slideo WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C9877AB01B530F2500B85246 /* Slideo WatchKit Extension.entitlements */,
+				C93FEA681B686DA60012F3ED /* RootInterfaceController.h */,
+				C93FEA691B686DA60012F3ED /* RootInterfaceController.m */,
+				C9D0F6611B52FE2B005F87DC /* InterfaceController.h */,
+				C9D0F6621B52FE2B005F87DC /* InterfaceController.m */,
+				C9D0F6641B52FE2B005F87DC /* Images.xcassets */,
+				C9D0F65F1B52FE2B005F87DC /* Supporting Files */,
+			);
+			path = "Slideo WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		C9D0F65F1B52FE2B005F87DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9D0F6601B52FE2B005F87DC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9D0F66C1B52FE2B005F87DC /* Slideo WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				C9D0F66F1B52FE2B005F87DC /* Interface.storyboard */,
+				C9D0F6721B52FE2B005F87DC /* Images.xcassets */,
+				C9D0F66D1B52FE2B005F87DC /* Supporting Files */,
+			);
+			path = "Slideo WatchKit App";
+			sourceTree = "<group>";
+		};
+		C9D0F66D1B52FE2B005F87DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9D0F66E1B52FE2B005F87DC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,11 +427,12 @@
 				B00371481A89C8860037157D /* Frameworks */,
 				B00371491A89C8860037157D /* Resources */,
 				C9086E1B1AAD03E4008162E3 /* Embed Frameworks */,
+				C9D0F67D1B52FE2B005F87DC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C9086F201AAD070B008162E3 /* PBXTargetDependency */,
+				C9D0F6751B52FE2B005F87DC /* PBXTargetDependency */,
 			);
 			name = SlidestApp;
 			productName = SlidestApp;
@@ -354,6 +457,39 @@
 			productReference = B00371641A89C8860037157D /* SlidestAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C9D0F65C1B52FE2B005F87DC /* Slideo WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D0F67C1B52FE2B005F87DC /* Build configuration list for PBXNativeTarget "Slideo WatchKit Extension" */;
+			buildPhases = (
+				C9D0F6591B52FE2B005F87DC /* Sources */,
+				C9D0F65A1B52FE2B005F87DC /* Frameworks */,
+				C9D0F65B1B52FE2B005F87DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9D0F66B1B52FE2B005F87DC /* PBXTargetDependency */,
+			);
+			name = "Slideo WatchKit Extension";
+			productName = "Slideo WatchKit Extension";
+			productReference = C9D0F65D1B52FE2B005F87DC /* Slideo WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		C9D0F6671B52FE2B005F87DC /* Slideo WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D0F67B1B52FE2B005F87DC /* Build configuration list for PBXNativeTarget "Slideo WatchKit App" */;
+			buildPhases = (
+				C9D0F6661B52FE2B005F87DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Slideo WatchKit App";
+			productName = "Slideo WatchKit App";
+			productReference = C9D0F6681B52FE2B005F87DC /* Slideo WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -367,6 +503,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = DPC69RZ76Z;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
@@ -376,6 +515,19 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = DPC69RZ76Z;
 						TestTargetID = B003714A1A89C8860037157D;
+					};
+					C9D0F65C1B52FE2B005F87DC = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = DPC69RZ76Z;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					C9D0F6671B52FE2B005F87DC = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = DPC69RZ76Z;
 					};
 				};
 			};
@@ -400,6 +552,8 @@
 			targets = (
 				B003714A1A89C8860037157D /* SlidestApp */,
 				B00371631A89C8860037157D /* SlidestAppTests */,
+				C9D0F65C1B52FE2B005F87DC /* Slideo WatchKit Extension */,
+				C9D0F6671B52FE2B005F87DC /* Slideo WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -449,6 +603,7 @@
 			files = (
 				B003715A1A89C8860037157D /* Main.storyboard in Resources */,
 				B041C8FC1A9E693400164544 /* LaunchScreen.xib in Resources */,
+				C9877AA71B53052E00B85246 /* pop-master-3 in Resources */,
 				B00371A41A8A53610037157D /* DBChooser.bundle in Resources */,
 				B003715C1A89C8860037157D /* Images.xcassets in Resources */,
 			);
@@ -458,6 +613,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9877AA81B53052E00B85246 /* pop-master-3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D0F65B1B52FE2B005F87DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9877AA91B53052E00B85246 /* pop-master-3 in Resources */,
+				C9D0F6691B52FE2B005F87DC /* Slideo WatchKit App.app in Resources */,
+				C9D0F6651B52FE2B005F87DC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D0F6661B52FE2B005F87DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9877AAA1B53052E00B85246 /* pop-master-3 in Resources */,
+				C9D0F6711B52FE2B005F87DC /* Interface.storyboard in Resources */,
+				C9D0F6731B52FE2B005F87DC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +652,7 @@
 				B00371511A89C8860037157D /* main.m in Sources */,
 				B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */,
 				C90999B31A9CE1A9003A1E12 /* NavigationController.m in Sources */,
+				C93FEA6A1B686DA60012F3ED /* RootInterfaceController.m in Sources */,
 				B00371A81A8BA2C60037157D /* SessionStatusViewController.m in Sources */,
 				C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */,
 			);
@@ -486,6 +663,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B003716B1A89C8860037157D /* SlidestAppTests.m in Sources */,
+				C93FEA6B1B686DA60012F3ED /* RootInterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D0F6591B52FE2B005F87DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D0F6631B52FE2B005F87DC /* InterfaceController.m in Sources */,
+				C93FEA6C1B686DA60012F3ED /* RootInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,10 +684,15 @@
 			target = B003714A1A89C8860037157D /* SlidestApp */;
 			targetProxy = B00371651A89C8860037157D /* PBXContainerItemProxy */;
 		};
-		C9086F201AAD070B008162E3 /* PBXTargetDependency */ = {
+		C9D0F66B1B52FE2B005F87DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "pop-embedded";
-			targetProxy = C9086F1F1AAD070B008162E3 /* PBXContainerItemProxy */;
+			target = C9D0F6671B52FE2B005F87DC /* Slideo WatchKit App */;
+			targetProxy = C9D0F66A1B52FE2B005F87DC /* PBXContainerItemProxy */;
+		};
+		C9D0F6751B52FE2B005F87DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9D0F65C1B52FE2B005F87DC /* Slideo WatchKit Extension */;
+			targetProxy = C9D0F6741B52FE2B005F87DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,6 +703,14 @@
 				B00371591A89C8860037157D /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9D0F66F1B52FE2B005F87DC /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9D0F6701B52FE2B005F87DC /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -550,7 +750,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -587,7 +787,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
@@ -601,14 +801,21 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mateusz Pis (5NG7NNAGK4)";
+				CODE_SIGN_ENTITLEMENTS = SlidestApp/Slideo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SlidestApp-aklrobwaqyipslcubbbwndpwgmnk/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SlidestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/pop-master-3/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Slideo;
 				PROVISIONING_PROFILE = "";
@@ -621,14 +828,21 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mateusz Pis (5NG7NNAGK4)";
+				CODE_SIGN_ENTITLEMENTS = SlidestApp/Slideo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SlidestApp-aklrobwaqyipslcubbbwndpwgmnk/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SlidestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/pop-master-3/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Slideo;
 				PROVISIONING_PROFILE = "";
@@ -670,6 +884,84 @@
 			};
 			name = Release;
 		};
+		C9D0F6771B52FE2B005F87DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Slideo WatchKit Extension/Slideo WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Slideo WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C9D0F6781B52FE2B005F87DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Slideo WatchKit Extension/Slideo WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Slideo WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C9D0F6791B52FE2B005F87DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Slideo_WatchKit_Extension;
+				INFOPLIST_FILE = "Slideo WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		C9D0F67A1B52FE2B005F87DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = Slideo_WatchKit_Extension;
+				INFOPLIST_FILE = "Slideo WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -696,6 +988,24 @@
 			buildConfigurations = (
 				B00371721A89C8860037157D /* Debug */,
 				B00371731A89C8860037157D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9D0F67B1B52FE2B005F87DC /* Build configuration list for PBXNativeTarget "Slideo WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D0F6791B52FE2B005F87DC /* Debug */,
+				C9D0F67A1B52FE2B005F87DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9D0F67C1B52FE2B005F87DC /* Build configuration list for PBXNativeTarget "Slideo WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D0F6771B52FE2B005F87DC /* Debug */,
+				C9D0F6781B52FE2B005F87DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

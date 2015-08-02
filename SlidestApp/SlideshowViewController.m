@@ -43,8 +43,9 @@
 
     self.currentPageNr = 0;
     [self setUIElements];
-    [self openPdf];
+    [self setWatchListener];
 
+    [self openPdf];
 
 
 }
@@ -74,6 +75,7 @@
     self.pdf = CGPDFDocumentCreateWithProvider(provider);
    
     self.numberOfPages = (int)CGPDFDocumentGetNumberOfPages(self.pdf);
+    self.dataHandler.totalPages = (int)CGPDFDocumentGetNumberOfPages(self.pdf);
     CFRelease(provider);
 }
 
@@ -82,13 +84,16 @@
     [super viewDidAppear:YES];
     self.dataHandler.delegate = self;
 
-    if (!self.presenter) {
+    if (!self.presenter == YES) {
         [self.dataHandler checkAudienceNumber];
         [self.dataHandler checkPage];
+        [self.dataHandler observeDrawPosition];
         [self.draw removeFromSuperview];
         self.draw.hidden = YES;
 
+
     }
+    [self.dataHandler setPageAtWatch:0];
 
    }
 
@@ -285,4 +290,27 @@
     [self.collectionView performBatchUpdates:nil completion:nil];
 }
 
+-(void)setWatchListener{
+
+
+    [NSTimer scheduledTimerWithTimeInterval:0.2f
+                                     target:self selector:@selector(listenForChangesFromWatch) userInfo:nil repeats:YES];
+}
+
+-(void)listenForChangesFromWatch{
+
+    NSUserDefaults *defaults = [[NSUserDefaults standardUserDefaults]initWithSuiteName:@"group.Matt"];
+
+    int pageNr = (int)[defaults integerForKey:@"pageNr"];
+
+    if (pageNr != self.currentPageNr) {
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:pageNr  inSection:0]
+                                    atScrollPosition:UICollectionViewScrollPositionLeft
+                                            animated:YES];
+        self.currentPageNr = pageNr;
+        [self.dataHandler setPage:pageNr];
+        self.topLabel.text = [NSString stringWithFormat:@"%d",pageNr+1];
+
+    }
+}
 @end

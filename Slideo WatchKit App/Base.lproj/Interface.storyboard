@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9jb-Ft-nUi">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Slideo-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="Slideo" title="Slideo" id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="Aej-iL-ySH">
+                            <items>
+                                <label width="70" height="70" alignment="left" text="1" textAlignment="right" id="sGZ-Uo-GIS">
+                                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="50"/>
+                                </label>
+                                <label width="15" height="58" alignment="left" verticalAlignment="bottom" text="/" textAlignment="right" id="8iR-ux-rfy">
+                                    <fontDescription key="font" type="system" pointSize="26"/>
+                                </label>
+                                <label width="43" height="53" alignment="left" verticalAlignment="bottom" text="20" textAlignment="left" id="lbL-Be-msp">
+                                    <fontDescription key="font" type="system" pointSize="23"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="KlE-3G-Nt1">
+                            <items>
+                                <button width="50" height="80" alignment="left" verticalAlignment="bottom" title="&lt;&lt;" id="ATR-gf-OpJ">
+                                    <fontDescription key="font" type="system" pointSize="25"/>
+                                    <connections>
+                                        <action selector="backButtonTapped" destination="AgC-eL-Hgc" id="14N-pA-qFo"/>
+                                    </connections>
+                                </button>
+                                <button width="80" height="90" alignment="right" verticalAlignment="bottom" title="&gt;&gt;" id="lQF-hC-R36">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="35"/>
+                                    <connections>
+                                        <action selector="forwardButtonTapped" destination="AgC-eL-Hgc" id="zo1-n8-EDd"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="pageNumberLabel" destination="sGZ-Uo-GIS" id="d7l-Pf-0Sf"/>
+                        <outlet property="totalPageNumber" destination="lbL-Be-msp" id="3Ar-PD-pNN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="652" y="176.5"/>
+        </scene>
+        <!--Root Interface Controller-->
+        <scene sceneID="Szo-Yf-WSg">
+            <objects>
+                <controller id="9jb-Ft-nUi" customClass="RootInterfaceController">
+                    <items>
+                        <imageView width="45" height="45" alignment="center" image="rounded_corners" id="wUZ-n4-OVN"/>
+                        <label width="1" height="70" alignment="left" text="Create a slideshow in Slideo for iPhone to continue." textAlignment="center" numberOfLines="4" id="t9Z-7b-JuL">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="411" y="177"/>
+        </scene>
+    </scenes>
+</document>

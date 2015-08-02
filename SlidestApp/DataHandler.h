@@ -28,6 +28,8 @@
 @property id<DataHandlerDelegate> delegate;
 @property NSData *dataFromDropbox;
 @property Firebase *pdfDataRef;
+@property int pageNr;
+@property int totalPages;
 - (void)downloadPDF:(DBChooserResult *)chooser;
 - (void)pushDataToDataBase:(NSString *)passcode;
 -(void)deleteFile;
@@ -38,6 +40,8 @@
 -(void)listenAudienceNr;
 -(void)updateDrawPosition:(CGPoint)point withColor:(NSString*)color;
 -(void)observeDrawPosition;
+-(void)setPageAtWatch:(int)number;
+-(void)deactivateWatchApp;
 
 
 

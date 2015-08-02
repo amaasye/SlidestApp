@@ -34,7 +34,7 @@
     self.goButton.enabled = NO;
 
     [self setUIElements];
-
+    [self.datahandler deactivateWatchApp];
 }
 
 -(BOOL)shouldAutorotate{
@@ -192,6 +192,7 @@
     else if ([[segue identifier] isEqualToString:@"slideshowVCfromJoinVC"]){
         SlideshowViewController *svc = [segue destinationViewController];
                    svc.dataHandler = self.datahandler;
+        svc.presenter = NO;
     }
 }
 
