@@ -10,7 +10,7 @@
 #import <DBChooser/DBChooser.h>
 #import <Firebase/Firebase.h>
 
-@protocol DataHandlerDelegate
+@protocol DataHandlerDelegate <NSURLConnectionDataDelegate, NSURLConnectionDelegate>
 @optional
 - (void)downloadingShouldStart;
 - (void)downloadingShouldEnd;
@@ -20,6 +20,7 @@
 - (void)updatePage:(int)pageNr;
 -(void)updateAudienceNr:(int)nr;
 -(void)drawGestureWithpoint:(CGPoint)point andColor:(NSString*)color;
+-(void)userSettingsShouldChange:(BOOL)canSwipe andCanSave:(BOOL)canSave;
 
 @end
 @interface DataHandler : NSObject <UIAlertViewDelegate>
@@ -30,6 +31,7 @@
 @property Firebase *pdfDataRef;
 @property int pageNr;
 @property int totalPages;
+@property NSString *link;
 - (void)downloadPDF:(DBChooserResult *)chooser;
 - (void)pushDataToDataBase:(NSString *)passcode;
 -(void)deleteFile;
@@ -42,8 +44,10 @@
 -(void)observeDrawPosition;
 -(void)setPageAtWatch:(int)number;
 -(void)deactivateWatchApp;
-
-
-
+-(void)canUserSwipe:(BOOL)canSwipe;
+-(void)canUserSave:(BOOL)canSave;
+-(void)listenUserSettings;
+-(NSString*)savePDFAndReturnPath;
+-(void)downloadPDFFromLink:(NSString*)passcode;
 
 @end

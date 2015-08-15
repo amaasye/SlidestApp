@@ -44,7 +44,7 @@
                     </items>
                     <connections>
                         <outlet property="pageNumberLabel" destination="sGZ-Uo-GIS" id="d7l-Pf-0Sf"/>
-                        <outlet property="totalPageNumber" destination="lbL-Be-msp" id="3Ar-PD-pNN"/>
+                        <outlet property="totalPageNumberLabel" destination="lbL-Be-msp" id="qmB-9B-8Kj"/>
                     </connections>
                 </controller>
             </objects>
@@ -61,6 +61,9 @@
                             <fontDescription key="font" type="system" pointSize="15"/>
                         </label>
                     </items>
+                    <connections>
+                        <outlet property="label" destination="t9Z-7b-JuL" id="txk-Aq-oPO"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="411" y="177"/>

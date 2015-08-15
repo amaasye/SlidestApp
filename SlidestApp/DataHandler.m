@@ -9,12 +9,19 @@
 #import "DataHandler.h"
 
 
-@implementation DataHandler 
+@implementation DataHandler
+
 
 - (void)downloadPDF:(DBChooserResult *)chooser {
     [self.delegate downloadingShouldStart];
     NSURLRequest *request = [NSURLRequest requestWithURL:chooser.link];
+    NSLog(@"%@",chooser.link);
+    self.link = [NSString stringWithFormat:@"%@", chooser.link];
+
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+        NSLog(@"%lld",[response expectedContentLength]);
+
         if (!connectionError) {
         self.dataFromDropbox = data;
 
@@ -37,9 +44,47 @@
     }
 }
 
+-(void)downloadPDFFromLink:(NSString*)passcode{
+    self.passcode = passcode;
+
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/basic",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+
+    [ref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+
+        if (snapshot.exists)  {
+            [self runConnection:snapshot.value[@"link"]];
+                   }
+        else{
+
+        }
+
+    } withCancelBlock:^(NSError *error) {
+        [self connectionProblem:@"There was a problem in completing this request"];
+        NSLog(@"%@", error.description);
+    }];
+}
+-(void)runConnection:(NSString*)url{
+        [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+        NSLog(@"%lld",[response expectedContentLength]);
+
+        if (!connectionError) {
+            self.dataFromDropbox = data;
+
+            [self.delegate dataDownloaded];
+
+        }
+        else {
+            [self connectionProblem:@"There was an error in completing this request"];
+        }
+    }];
 
 
+
+}
 - (void)pushDataToDataBase:(NSString *)passcode {
+
 
     self.passcode = passcode;
     Firebase *ref = [[Firebase alloc ]initWithUrl:@"https://brilliant-fire-3573.firebaseio.com/"];
@@ -47,8 +92,9 @@
 
     NSDictionary *basic = @{
                                 @"name": self.name,
-                                @"data": pdfData,
+                                @"data": [self validateData:pdfData],
                                 @"passcode": self.passcode,
+                                @"link": self.link,
                                                                 };
     NSDictionary *currentPage = @{
                                   @"currentPage": [NSNumber numberWithInt:0],
@@ -82,6 +128,15 @@
     }];
 
 }
+-(NSString*)validateData:(NSString*)data{
+    NSLog(@"%@",data);
+    if (data.length >7999999) {
+        return @"";
+    }
+    else{
+        return data;
+    }
+}
 - (void)setPage:(int)pageNr{
     NSString *url = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     
@@ -111,8 +166,6 @@
 
         if (snapshot.exists)  {
 
-//            NSLog(@"%@", snapshot.value[@"name"]);
-//            NSLog(@"%@",snapshot.value[@"passcode"]);
             self.dataFromDropbox = [[NSData alloc] initWithBase64EncodedString:snapshot.value[@"data"] options:0];
         
             [self.delegate dataDownloaded];
@@ -140,7 +193,7 @@
          }];
 }
 -(void)deleteFile{
-
+    
     NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
     Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
     [ref removeValue];
@@ -217,6 +270,49 @@
     
 }
 
+-(void)canUserSwipe:(BOOL)canSwipe{
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+
+    NSDictionary *slideshow = @{
+
+                                @"canSwipe": [NSNumber numberWithBool:canSwipe],
+                                };
+
+    Firebase *slideshowRef = [ref childByAppendingPath: @"userSettings"];
+    [slideshowRef updateChildValues: slideshow];
+
+}
+
+-(void)canUserSave:(BOOL)canSave{
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+
+    NSDictionary *slideshow = @{
+
+                                @"canSave": [NSNumber numberWithBool:canSave],
+                                };
+
+    Firebase *slideshowRef = [ref childByAppendingPath: @"userSettings"];
+    [slideshowRef updateChildValues: slideshow];
+    
+}
+-(void)listenUserSettings{
+    NSString *urlString = [NSString stringWithFormat:@"https://brilliant-fire-3573.firebaseio.com/%@/userSettings",self.passcode];
+    Firebase *ref = [[Firebase alloc] initWithUrl:urlString];
+    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if (snapshot.exists) {
+            NSNumber *userCanSwipe = snapshot.valueInExportFormat[@"canSwipe"];
+            NSNumber *userCanSave = snapshot.valueInExportFormat[@"canSave"];
+
+            [self.delegate userSettingsShouldChange:[userCanSwipe boolValue] andCanSave:[userCanSave boolValue]];
+        }
+    }];
+
+
+}
+#pragma mark alertViews
+
 -(void)connectionProblem:(NSString *)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alert show];
@@ -234,7 +330,7 @@
 
     [defaults setInteger:number forKey:@"pageNr"];
     [defaults setBool:YES forKey:@"isPresentation"];
-    [defaults setObject:[NSString stringWithFormat:@"%d",self.totalPages] forKey:@"totalPages"];
+    [defaults setInteger:self.totalPages forKey:@"totalPages"];
 
     [defaults synchronize];
 
@@ -242,6 +338,7 @@
 
 }
 -(void)deactivateWatchApp{
+    
     NSUserDefaults *defaults = [[NSUserDefaults standardUserDefaults]initWithSuiteName:@"group.Matt"];
 
     [defaults setBool:NO forKey:@"isPresentation"];
@@ -249,9 +346,23 @@
 
     [defaults synchronize];
 
-    NSLog(@"Watchkit app has being inactive");
 }
+-(NSString*)pdfString{
+    return @"";
+}
+-(NSString*)savePDFAndReturnPath{
 
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 
+    NSString *dirctryForSaving = paths.firstObject;
 
+    NSString *saveFileName = @"File.pdf";
+
+    NSString *newFilePath = [dirctryForSaving stringByAppendingPathComponent:saveFileName];
+
+    [self.dataFromDropbox writeToFile:newFilePath atomically:YES];
+
+    NSLog(@"%@", newFilePath);
+    return newFilePath;
+}
 @end

@@ -33,7 +33,6 @@
 		B0196D141A93A23B0025D959 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D131A93A23B0025D959 /* libicucore.dylib */; };
 		B0196D161A93A2480025D959 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0196D151A93A2480025D959 /* libc++.dylib */; };
 		B041C8FC1A9E693400164544 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B041C8FB1A9E693400164544 /* LaunchScreen.xib */; };
-		C90999B31A9CE1A9003A1E12 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90999B21A9CE1A9003A1E12 /* NavigationController.m */; };
 		C93FEA6A1B686DA60012F3ED /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FEA691B686DA60012F3ED /* RootInterfaceController.m */; };
 		C93FEA6B1B686DA60012F3ED /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FEA691B686DA60012F3ED /* RootInterfaceController.m */; };
 		C93FEA6C1B686DA60012F3ED /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FEA691B686DA60012F3ED /* RootInterfaceController.m */; };
@@ -42,8 +41,6 @@
 		C9877AA81B53052E00B85246 /* pop-master-3 in Resources */ = {isa = PBXBuildFile; fileRef = C9877AA61B53052E00B85246 /* pop-master-3 */; };
 		C9877AA91B53052E00B85246 /* pop-master-3 in Resources */ = {isa = PBXBuildFile; fileRef = C9877AA61B53052E00B85246 /* pop-master-3 */; };
 		C9877AAA1B53052E00B85246 /* pop-master-3 in Resources */ = {isa = PBXBuildFile; fileRef = C9877AA61B53052E00B85246 /* pop-master-3 */; };
-		C9877AAC1B53053700B85246 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9877AAB1B53053700B85246 /* pop.framework */; };
-		C9877AAD1B53053700B85246 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9877AAB1B53053700B85246 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9B808C81A8BE7FC0044932E /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B808C71A8BE7FC0044932E /* PageScrollView.m */; };
 		C9BBB8B31A8E60C200D70D47 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBB8B21A8E60C200D70D47 /* DataHandler.m */; };
 		C9D0F6631B52FE2B005F87DC /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D0F6621B52FE2B005F87DC /* InterfaceController.m */; };
@@ -114,17 +111,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C9086E1B1AAD03E4008162E3 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C9877AAD1B53053700B85246 /* pop.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C9D0F67D1B52FE2B005F87DC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,8 +161,6 @@
 		B0196D151A93A2480025D959 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		B041C8FB1A9E693400164544 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C9086F0B1AAD06E9008162E3 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../Downloads/pop-master-2/pop.xcodeproj"; sourceTree = "<group>"; };
-		C90999B11A9CE1A9003A1E12 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		C90999B21A9CE1A9003A1E12 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		C93FEA681B686DA60012F3ED /* RootInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInterfaceController.h; sourceTree = "<group>"; };
 		C93FEA691B686DA60012F3ED /* RootInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootInterfaceController.m; sourceTree = "<group>"; };
 		C940F1441A8C43D700D7B2C0 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
@@ -217,7 +201,6 @@
 				B00371891A89CA070037157D /* SystemConfiguration.framework in Frameworks */,
 				B00371871A89C9F70037157D /* libz.dylib in Frameworks */,
 				B00371A51A8A53610037157D /* DBChooser.framework in Frameworks */,
-				C9877AAC1B53053700B85246 /* pop.framework in Frameworks */,
 				B00371851A89C9ED0037157D /* libsqlite3.dylib in Frameworks */,
 				B00371831A89C9DF0037157D /* MessageUI.framework in Frameworks */,
 				B00371811A89C9CE0037157D /* ImageIO.framework in Frameworks */,
@@ -349,8 +332,6 @@
 				B003719E1A89CEA40037157D /* SlideshowViewController.m */,
 				C940F1441A8C43D700D7B2C0 /* CustomCell.h */,
 				C940F1451A8C43D700D7B2C0 /* CustomCell.m */,
-				C90999B11A9CE1A9003A1E12 /* NavigationController.h */,
-				C90999B21A9CE1A9003A1E12 /* NavigationController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -426,7 +407,6 @@
 				B00371471A89C8860037157D /* Sources */,
 				B00371481A89C8860037157D /* Frameworks */,
 				B00371491A89C8860037157D /* Resources */,
-				C9086E1B1AAD03E4008162E3 /* Embed Frameworks */,
 				C9D0F67D1B52FE2B005F87DC /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -651,7 +631,6 @@
 				B00371541A89C8860037157D /* AppDelegate.m in Sources */,
 				B00371511A89C8860037157D /* main.m in Sources */,
 				B003719F1A89CEA40037157D /* SlideshowViewController.m in Sources */,
-				C90999B31A9CE1A9003A1E12 /* NavigationController.m in Sources */,
 				C93FEA6A1B686DA60012F3ED /* RootInterfaceController.m in Sources */,
 				B00371A81A8BA2C60037157D /* SessionStatusViewController.m in Sources */,
 				C940F1461A8C43D700D7B2C0 /* CustomCell.m in Sources */,

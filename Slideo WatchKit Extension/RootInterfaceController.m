@@ -11,6 +11,7 @@
     BOOL isActive;
 }
 @property NSUserDefaults *defaults;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *label;
 
 @end
 
@@ -33,7 +34,7 @@
 -(void)listenForActiveSlideshow{
 
     isActive = [self.defaults boolForKey:@"isPresentation"];
-
+    NSLog(@"%i",isActive);
     if (isActive) {
         [self presentControllerWithName:@"Slideo" context:nil];
     }

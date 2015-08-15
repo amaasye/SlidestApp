@@ -8,11 +8,10 @@
 
 #import "RootViewController.h"
 #import "SlideshowViewController.h"
-#import "POP/POP.h"
 #import "DataHandler.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface RootViewController () <DataHandlerDelegate, UITextFieldDelegate, POPAnimationDelegate>
+@interface RootViewController () <DataHandlerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *passcodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *createSlideshowButton;
@@ -29,12 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.datahandler = [DataHandler new];
-    self.passcodeTextField.delegate = self;
-    self.goButton.enabled = NO;
 
-    [self setUIElements];
+    self.passcodeTextField.delegate = self;
+    self.goButton.enabled = YES;
+    self.navigationController.navigationBar.hidden = YES;
     [self.datahandler deactivateWatchApp];
+    self.spinner.hidden = YES;
 }
 
 -(BOOL)shouldAutorotate{
@@ -51,134 +50,45 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
+    self.datahandler = [DataHandler new];
     self.datahandler.delegate = self;
 
-    [self animationOnReturningToVC];
+
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.passcodeTextField.text = @"ENTER PASSCODE ";
 }
 
-#pragma mark -- UI Elements and Animations 
-
--(void)setUIElements{
-    self.logoImageView.hidden = NO;
-    self.navigationController.navigationBar.hidden = YES;
-    self.spinner.hidden = YES;
-    self.createSlideshowButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
-    self.createSlideshowButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-
-    self.joinOneButton.enabled = YES;
-    self.joinOneButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
-    self.joinOneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    [self.joinOneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.joinOneButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-
-    self.goButton.backgroundColor = [UIColor colorWithRed:44/255.0f green:62/255.0f blue:80/255.0f alpha:1.0f];
-    self.goButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    self.goButton.hidden = YES;
-
-    self.passcodeTextField.hidden = YES;
-    self.passcodeTextField.text = @"";
-    self.passcodeTextField.layer.borderWidth = 1.0f;
-    self.passcodeTextField.layer.borderColor = [[UIColor whiteColor] CGColor];
-}
-
--(void)setUIElementsAfterReturnAnimation {
-    self.joinOneButton.hidden = NO;
-    self.joinOneButton.enabled = YES;
-    //
-    self.goButton.hidden = YES;
-    self.passcodeTextField.text = @"";
-    self.passcodeTextField.hidden = YES;
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
     [self.passcodeTextField resignFirstResponder];
-}
-
--(void)animationsOfUIElements {
-
-    //animation for JoinButton
-    POPSpringAnimation *joinAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
-    joinAnimation.springSpeed = 10.0f;
-    joinAnimation.springBounciness = 5.0f;
-    joinAnimation.toValue = @(-83); //-20
-    joinAnimation.delegate = self;
-    joinAnimation.removedOnCompletion = YES;
-    [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
-    self.joinOneButton.enabled = NO;
-    self.joinOneButton.hidden = YES;
-
-    //animation for createButton
-    POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
-    createAnimation.springSpeed = 10.0f;
-    createAnimation.springBounciness = 5.0f;
-    createAnimation.toValue = @(100);
-    createAnimation.removedOnCompletion = YES;
-    [self.createConstrain pop_addAnimation:createAnimation forKey:@"createButtonAnime"];
-
-    //animation for goButton
-    self.goButton.hidden = NO;
-    POPSpringAnimation *goAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
-    goAnimation.springSpeed = 10.0f;
-    goAnimation.springBounciness = 5.0f;
-    goAnimation.toValue = @(-20); //80
-    goAnimation.removedOnCompletion = YES;
-    [self.goConstraint pop_addAnimation:goAnimation forKey:@"goButtonAnime"];
-
-    //animation for passcodeTextField
-    POPSpringAnimation *animatePasscodeTextField = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    animatePasscodeTextField.springBounciness = 0;
-    animatePasscodeTextField.springSpeed = 2;
-    animatePasscodeTextField.toValue = @(self.passcodeTextField.center.y - 0);
-    animatePasscodeTextField.removedOnCompletion = YES;
-    [self.passcodeTextField pop_addAnimation:animatePasscodeTextField forKey:@"positionY"];
-    self.passcodeTextField.hidden = NO;
 
 }
-
--(void)animationOnReturningToVC {
-    //animation for JoinButton
-    POPSpringAnimation *joinAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
-    joinAnimation.springSpeed = 10.0f;
-    joinAnimation.springBounciness = 5.0f;
-    joinAnimation.toValue = @(5); //-20, 5
-    joinAnimation.delegate = self;
-    joinAnimation.removedOnCompletion = YES;
-    [self.joinConstraint pop_addAnimation:joinAnimation forKey:@"joinButtonAnime"];
-
-    //animation for createButton
-    POPSpringAnimation *createAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayoutConstraintConstant];
-    createAnimation.springSpeed = 10.0f;
-    createAnimation.springBounciness = 5.0f;
-    createAnimation.toValue = @(85); //85
-    createAnimation.removedOnCompletion = YES;
-    [self.createConstrain pop_addAnimation:createAnimation forKey:@"createButtonAnime"];
-    [self setUIElementsAfterReturnAnimation];
-}
-
 #pragma mark -- Actions --
 
-- (IBAction)onJoinButtonTapped:(UIButton *)sender {
-    if (self.joinOneButton.enabled == YES) {
-    [self animationsOfUIElements];
-    }
-    else {
-       self.joinOneButton.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:0.5f];
-    }
-}
 
 - (IBAction)onGoButtonTapped:(UIButton *)sender {
-    self.spinner.hidden = NO;
-    [self.spinner startAnimating];
-    [self.datahandler pullFromDataBase:self.passcodeTextField.text];
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self startConnection];
 
 }
 
-- (void)pop_animationDidStop:(POPSpringAnimation *)anim finished:(BOOL)finished {
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self startConnection];
+    return YES;
 }
+
+
 
 #pragma mark -- Data and Segues --
-
+-(void)startConnection{
+    self.spinner.hidden = NO;
+    [self.spinner startAnimating];
+    [self.datahandler downloadPDFFromLink:self.passcodeTextField.text];
+   // [self.datahandler pullFromDataBase:self.passcodeTextField.text];
+    [self.passcodeTextField resignFirstResponder];
+}
 - (void)dataDownloaded {
     [self.spinner stopAnimating];
     self.spinner.hidden=YES;
@@ -199,17 +109,7 @@
 
 -(IBAction)unwind:(UIStoryboardSegue *)segue {
     [self.passcodeTextField endEditing:YES];
-    [self animationOnReturningToVC];
     [self.passcodeTextField resignFirstResponder];
-    [self setUIElements];
-}
-- (IBAction)textfieldChangedValue:(UITextField *)sender forEvent:(UIEvent *)event {
-    if (sender.text.length > 0) {
-        self.goButton.enabled = YES;
-    }
-    else if (sender.text.length == 0) {
-        self.goButton.enabled = NO;
-    }
 }
 
 - (void)updatePage:(int)pageNr{

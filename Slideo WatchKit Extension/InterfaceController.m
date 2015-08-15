@@ -20,6 +20,7 @@
 @property NSUserDefaults *defaults;
 @end
 
+//in communication way within this app, currentPage is euqivalent of indexPath to drive collectionView
 
 @implementation InterfaceController
 
@@ -29,24 +30,28 @@
     self.defaults = [[NSUserDefaults standardUserDefaults]initWithSuiteName:@"group.Matt"];
     [NSTimer scheduledTimerWithTimeInterval:.2f
                                      target:self selector:@selector(listenForPageAndActivity) userInfo:nil repeats:YES];
-    self.totalPageNumberLabel.text = [[self defaults]objectForKey:@"totalPages"];
-    totalPageNumber = (int) [[self defaults]objectForKey:@"totalPages"];
+    totalPageNumber =(int) [self.defaults integerForKey:@"totalPages"];
+    self.totalPageNumberLabel.text = [NSString stringWithFormat:@"%d", totalPageNumber];
+
     // Configure interface objects here.
 }
 
 - (IBAction)forwardButtonTapped {
-    if (currentNumber < totalPageNumber) {
+    if ( currentNumber +1 < totalPageNumber) {
         [self changePageBy:1];
     }
 
 }
 - (IBAction)backButtonTapped {
-    if (currentNumber > 0){
+    if (currentNumber> 0){
         [self changePageBy:-1];
     }
 
 }
 -(void)changePageBy:(int)number{
+
+    NSLog(@"%d",totalPageNumber);
+
 
     int pageNr = (int)[self.defaults integerForKey:@"pageNr"];
 

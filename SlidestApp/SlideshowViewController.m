@@ -10,10 +10,17 @@
 #import "PageScrollView.h"
 #import "CustomCell.h"
 
-@interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, DataHandlerDelegate>
+@interface SlideshowViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, DataHandlerDelegate, UIDocumentInteractionControllerDelegate>
+
+//this view cointains button appears/desappears on tap, but button on remote settings
+@property (strong, nonatomic) IBOutlet UIView *saveButtonBackgroundView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UILabel *topLabel;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UIView *bottomNavigationView;
+@property (retain)UIDocumentInteractionController *documentController;
+
 
 //draw Controls
 
@@ -24,7 +31,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *redButton;
 
 @property (strong, nonatomic) IBOutlet UIButton *draw;
-@property (strong, nonatomic) IBOutlet UIButton *closeButton;
 
 //gesture recognizers
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
@@ -41,9 +47,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentPageNr = 0;
+    self.dataHandler.pageNr = 0;
     [self setUIElements];
-    [self setWatchListener];
 
     [self openPdf];
 
@@ -55,16 +60,32 @@
     self.navigationController.navigationBar.hidden = YES;
     self.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.topLabel.hidden = YES;
-    self.topLabel.backgroundColor = [UIColor colorWithRed:34/255.0f green:167/255.0f blue:240/255.0f alpha:1.0f];
+
     self.backButton.hidden = YES;
     self.draw.hidden = YES;
-    self.closeButton.hidden = YES;
     self.blackButton.hidden = YES;
     self.blueButton.hidden = YES;
     self.redButton.hidden = YES;
     self.panGestureRecognizer.enabled = NO;
     self.collectionView.userInteractionEnabled = YES;
     currenDrawColor = @"black";
+
+    self.blackButton.layer.cornerRadius = 30;
+    self.blackButton.layer.borderWidth = 1;
+    self.blackButton.layer.borderColor = [[UIColor blackColor]CGColor];
+
+    self.redButton.layer.cornerRadius = 30;
+    self.redButton.layer.borderWidth = 1;
+    self.redButton.layer.borderColor = [[UIColor blackColor]CGColor];
+
+    self.blueButton.layer.cornerRadius = 30;
+    self.blueButton.layer.borderWidth = 1;
+    self.blueButton.layer.borderColor = [[UIColor blackColor]CGColor];
+
+    self.saveButtonBackgroundView.hidden = YES;
+    self.saveButton.layer.cornerRadius = 15;
+    self.draw.hidden = YES;
+    self.bottomNavigationView.hidden = YES;
 
 }
 
@@ -73,7 +94,7 @@
     CFDataRef myPDFData = (__bridge CFDataRef)self.dataHandler.dataFromDropbox;
     CGDataProviderRef provider = CGDataProviderCreateWithCFData(myPDFData);
     self.pdf = CGPDFDocumentCreateWithProvider(provider);
-   
+
     self.numberOfPages = (int)CGPDFDocumentGetNumberOfPages(self.pdf);
     self.dataHandler.totalPages = (int)CGPDFDocumentGetNumberOfPages(self.pdf);
     CFRelease(provider);
@@ -84,91 +105,108 @@
     [super viewDidAppear:YES];
     self.dataHandler.delegate = self;
 
-    if (!self.presenter == YES) {
+    if (!self.presenter) {
         [self.dataHandler checkAudienceNumber];
         [self.dataHandler checkPage];
         [self.dataHandler observeDrawPosition];
+        [self.dataHandler listenUserSettings];
         [self.draw removeFromSuperview];
-        self.draw.hidden = YES;
-
+        [self.bottomNavigationView removeFromSuperview];
+    }
+    else{
+        // Watch listener enabled only for presenter
+        [self setWatchListener];
+        [self.dataHandler setPageAtWatch:0];
+        [self.saveButtonBackgroundView removeFromSuperview];
 
     }
-    [self.dataHandler setPageAtWatch:0];
 
-   }
+}
 
 - (IBAction)tapped:(UITapGestureRecognizer *)sender {
     if (self.topLabel.hidden) {
         self.topLabel.hidden = NO;
         self.backButton.hidden = NO;
         self.draw.hidden = NO;
-
+        self.saveButtonBackgroundView.hidden = NO;
+        self.bottomNavigationView.hidden = NO;
     }
 
     else {
         self.topLabel.hidden = YES;
         self.backButton.hidden = YES;
         self.draw.hidden = YES;
+        self.saveButtonBackgroundView.hidden = YES;
+        self.bottomNavigationView.hidden = YES;
 
     }
 
-}
--(void)updateAudienceNr:(int)nr{
-    NSLog(@"Audience memeber connected. Total :%i",nr);
 }
 -(BOOL)shouldAutorotate{
     return YES;
 }
 
+-(void)updateAudienceNr:(int)nr{
+    NSLog(@"Audience memeber connected. Total :%i",nr);
+}
+
 - (IBAction)drawTapped:(UIButton *)sender {
 
-    self.topLabel.hidden = YES;
-    self.backButton.hidden = YES;
-    self.draw.hidden = YES;
-    self.redButton.hidden = NO;
-    self.blackButton.hidden = NO;
-    self.blueButton.hidden = NO;
-    self.collectionView.userInteractionEnabled = NO;
-    self.tapGestureRecognizer.enabled = NO;
-    self.panGestureRecognizer.enabled = YES;
-    self.closeButton.hidden = NO;
+    if ([sender.titleLabel.text isEqual: @"DRAW"]) {
 
-    //setup drawing coordinates;
-    fromPointX = 0;
-    fromPointY = 0;
-    toPointX = 0;
-    toPointX = 0;
+        self.topLabel.hidden = YES;
+        self.backButton.hidden = YES;
+        self.redButton.hidden = NO;
+        self.blackButton.hidden = NO;
+        self.blueButton.hidden = NO;
+        self.collectionView.userInteractionEnabled = NO;
+        self.tapGestureRecognizer.enabled = NO;
+        self.panGestureRecognizer.enabled = YES;
+
+
+        //setup drawing coordinates;
+        fromPointX = 0;
+        toPointX = 0;
+
+        [self.draw setTitle:@"CLOSE" forState:UIControlStateNormal];
+    }
+    else {
+
+        self.topLabel.hidden = NO;
+        self.backButton.hidden = NO;
+        self.redButton.hidden = YES;
+        self.blackButton.hidden = YES;
+        self.blueButton.hidden = YES;
+        self.collectionView.userInteractionEnabled = YES;
+        self.tapGestureRecognizer.enabled = YES;
+        self.panGestureRecognizer.enabled = NO;
+
+        [self.draw setTitle:@"DRAW" forState:UIControlStateNormal];
+    }
 }
-- (IBAction)closeTapped:(id)sender {
-
-    self.topLabel.hidden = NO;
-    self.backButton.hidden = NO;
-    self.draw.hidden = NO;
-    self.draw.hidden = NO;
-    self.redButton.hidden = YES;
-    self.blackButton.hidden = YES;
-    self.blueButton.hidden = YES;
-    self.collectionView.userInteractionEnabled = YES;
-    self.tapGestureRecognizer.enabled = YES;
-    self.panGestureRecognizer.enabled = NO;
-
-    self.closeButton.hidden = YES;
-}
-
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
+}
+- (IBAction)savePDF:(id)sender {
+    NSURL *fileURL = [NSURL fileURLWithPath:[self.dataHandler savePDFAndReturnPath]];
+
+    self.documentController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
+    self.documentController.delegate = self;
+
+    [self.documentController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
+
 }
 
 - (IBAction)goBack:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
-    }
+}
 
 - (IBAction)handlePan:(UIPanGestureRecognizer *)sender {
 
     [self analizeDrawGestureWithpoint:[sender locationInView:self.view]];
 
 
-   }
+}
 -(void)analizeDrawGestureWithpoint:(CGPoint)point{
 
     toPointX = point.x;
@@ -192,7 +230,7 @@
 
         fromPointX = toPointX;
         fromPointY = toPointY;
-        
+
     }
 
 }
@@ -212,9 +250,16 @@
 
         fromPointX = toPointX;
         fromPointY = toPointY;
-        
+
     }
 
+}
+
+-(void)userSettingsShouldChange:(BOOL)canSwipe andCanSave:(BOOL)canSave{
+
+    self.collectionView.userInteractionEnabled = canSwipe;
+    self.saveButton.hidden = !canSave;
+    
 }
 
 - (IBAction)blackButtonTapped:(id)sender {
@@ -284,6 +329,7 @@
     }
     return CGSizeMake(self.collectionView.frame.size.width, self.collectionView.frame.size.height);
 }
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self.collectionView reloadData];
@@ -303,14 +349,14 @@
 
     int pageNr = (int)[defaults integerForKey:@"pageNr"];
 
-    if (pageNr != self.currentPageNr) {
+    if (pageNr != self.currentPageNr ) {
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:pageNr  inSection:0]
                                     atScrollPosition:UICollectionViewScrollPositionLeft
                                             animated:YES];
         self.currentPageNr = pageNr;
         [self.dataHandler setPage:pageNr];
         self.topLabel.text = [NSString stringWithFormat:@"%d",pageNr+1];
-
+        
     }
 }
 @end

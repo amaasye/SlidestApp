@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CreateViewController : UIViewController
-@property NSData *dataFromDropbox;
 @property NSString *name;
-@property NSString *passcode;
 @end
